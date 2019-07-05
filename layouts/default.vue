@@ -17,9 +17,19 @@
     <div class="ld__header">
       <Header />
     </div>
+
+    <div class="ld__menu-trigger">
+      <MenuTrigger />
+    </div>
+
+    <div class="ld__menu">
+      <Menu />
+    </div>
+
     <div class="ld__main">
       <nuxt />
     </div>
+
     <div class="ld__footer">
       <Footer />
     </div>
@@ -32,7 +42,9 @@
 import Vue from 'vue'
 import Footer from '~/components/layout/Footer.vue'
 import Debug from '~/components/layout/Debug.vue'
-import Header from '@/components/layout/Header.vue'
+import Header from '~/components/layout/Header.vue'
+import Menu from '~/components/layout/Menu.vue'
+import MenuTrigger from '~/components/layout/MenuTrigger.vue'
 
 export type Data = {
   animationID: number
@@ -43,6 +55,8 @@ export default Vue.extend({
     Footer,
     Debug,
     Header,
+    Menu,
+    MenuTrigger,
   },
   data: (): Data => ({
     animationID: 0,
@@ -105,6 +119,21 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.ld__header {
+  position: relative;
+  z-index: 99;
+}
+
+.ld__menu {
+  position: relative;
+  z-index: 98;
+}
+
+.ld__menu-trigger {
+  position: relative;
+  z-index: 99;
+}
+
 .ld__main {
   position: relative;
   z-index: 1;
