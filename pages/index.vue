@@ -1,10 +1,10 @@
 <template>
   <Wrapper class="page-home">
+    <h1 class="ph__title">
+      this is home
+    </h1>
     <div class="ph__inner">
-      <p>
-        hellow world
-      </p>
-      <figure v-for="item in 10" :key="`figure${item}`" class="ph__figure">
+      <figure v-for="item in 5" :key="`figure${item}`" class="ph__figure">
         <LazyImage :src="require(`Images/test/01.jpg`)" />
       </figure>
     </div>
@@ -56,5 +56,12 @@ export default mixins(headMixin).extend({
   + .ph__figure {
     margin-top: 10vw;
   }
+}
+
+.ph__title {
+  font-family: $font-montserrat;
+  font-size: 10vw;
+  text-transform: capitalize;
+  opacity: 0.2;
 }
 </style>
