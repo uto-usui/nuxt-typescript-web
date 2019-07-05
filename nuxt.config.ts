@@ -78,6 +78,9 @@ module.exports = {
     ],
   ],
 
+  /**
+   * import common scss variable and functions
+   */
   styleResources: {
     scss: [
       '~/assets/sass/foundation/variable/_variable.scss',

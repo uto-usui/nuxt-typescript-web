@@ -14,12 +14,13 @@ import Wrapper from '~/components/Wrapper.vue'
 import LazyImage from '~/components/util/LazyImage.vue'
 
 import headMixin from '~/mixins/Head.vue'
+import TransitionMixin from '~/mixins/Transition.vue'
 
 // interface data {
 // test: string
 // }
 
-export default mixins(headMixin).extend({
+export default mixins(headMixin, TransitionMixin).extend({
   components: {
     Wrapper,
     LazyImage,
