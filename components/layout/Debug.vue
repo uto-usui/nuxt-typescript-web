@@ -49,8 +49,8 @@ export default vue.extend({
   padding-right: 15px;
   padding-left: 15px;
   font-weight: bold;
-  color: #666;
-  background-color: rgba(#eee, 0.5);
+  color: rgba($color-black, 0.5);
+  background-color: rgba($color-white, 0.1);
   //
   @include tablet {
     //
@@ -60,15 +60,20 @@ export default vue.extend({
   &::before {
     position: fixed;
     top: calc(50% - 1px);
-    right: 0;
-    left: 0;
     height: 2px;
     content: '';
-    background-color: rgba(#666, 0.5);
+    background-color: rgba($color-black, 0.1);
+  }
+  //
+  &::after {
+    left: 0;
+    width: 100vw;
   }
   //
   &::before {
-    transform: rotate(90deg) translateX(1px);
+    left: 50%;
+    width: 100vh;
+    transform: translateX(-50%) rotate(90deg);
   }
 }
 </style>
