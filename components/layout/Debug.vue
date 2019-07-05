@@ -1,0 +1,74 @@
+<template>
+  <div class="debug">
+    fps : {{ fps }} / w : {{ $state.global.window.w }} / h :
+    {{ $state.global.window.h }} / s : {{ $state.global.scrollY }}
+  </div>
+</template>
+
+<script lang="ts">
+import vue from 'vue'
+import { FpsCalculator } from '~/assets/js/FpsCalculator'
+
+export default vue.extend({
+  name: 'Debug',
+  data: () => ({
+    fps: 0,
+  }),
+  computed: {
+    //
+  },
+  watch: {
+    getPageReady(value) {
+      console.log('getPageReady getPageReady getPageReady', value)
+    },
+  },
+  mounted() {
+    this.fpsCalc()
+  },
+  methods: {
+    fpsCalc() {
+      const fps = new FpsCalculator({
+        callBack: this.setFps,
+        log: false,
+      })
+      fps.start()
+    },
+    setFps(val: number) {
+      this.fps = val
+    },
+  },
+})
+</script>
+
+<style lang="scss" scoped>
+.debug {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: bold;
+  color: #666;
+  background-color: rgba(#eee, 0.5);
+  //
+  @include tablet {
+    //
+  }
+  //
+  &::after,
+  &::before {
+    position: fixed;
+    top: calc(50% - 1px);
+    right: 0;
+    left: 0;
+    height: 2px;
+    content: '';
+    background-color: rgba(#666, 0.5);
+  }
+  //
+  &::before {
+    transform: rotate(90deg) translateX(1px);
+  }
+}
+</style>

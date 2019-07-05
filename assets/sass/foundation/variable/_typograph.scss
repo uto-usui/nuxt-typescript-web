@@ -1,0 +1,52 @@
+// =========================================================
+//
+// typograph
+//
+// =========================================================//
+//
+
+//
+// ---------------------------------------------------------
+// site base typo parameter
+// ---------------------------------------------------------
+//
+$base-fontsize: 10px !default;
+$base-fontweight: 400 !default;
+//
+//
+// ---------------------------------------------------------
+// text color
+// ---------------------------------------------------------
+//
+$text-color: $color-black !default;
+$text-link-color: $color-black !default;
+//$text-primary-color: $black !default;
+//$text-secondary-color: #878788 !default;
+//
+//
+//
+// ---------------------------------------------------------
+// font set
+// ---------------------------------------------------------
+//
+$font-serif: 游明朝, YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', HG明朝E, 'MS P明朝', 'MS 明朝', Georgia, "Times New Roman", Times, serif !default;
+//
+$font-sans-serif-hiragino: -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", MyYuGothicM, YuGothic, メイリオ, Meiryo, "Noto Sans Japanese", "Noto Sans CJK JP", sans-serif !default;
+//
+$font-sans-serif-yu: "Helvetica Neue", Helvetica, Arial, YuGothic, "Yu Gothic", 游ゴシック体, 游ゴシック, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, "MS ゴシック", "MS Gothic", sans-serif !default;
+//
+$font-sans-serif: $font-sans-serif-yu;
+//
+$font-mono: 'Source Code Pro', monospace !default;
+//
+$font-tsukushi: 'Tsukushi A Round Gothic', '筑紫A丸ゴシック', "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN", -apple-system, BlinkMacSystemFont, Meiryo, メイリオ !default;
+//
+$font-ie: "Helvetica", Meiryo, sans-serif !default;
+
+$font-futura: futura-pt, sans-serif;
+$font-weight-futura-medium: 500;
+$font-weight-futura-heavy: 700;
+$font-interstate: interstate, sans-serif;
+$font-weight-interstate-regular: 500;
+$font-meno: meno-banner-condensed, serif;
+$font-weight-meno-black: 900;
