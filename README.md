@@ -8,10 +8,29 @@
 * 🏷️ [takefumi-yoshii/ts-nuxtjs-express: ts-nuxtjs-express](https://github.com/takefumi-yoshii/ts-nuxtjs-express)
   * [nanaki14/ts-nuxt](https://github.com/nanaki14/ts-nuxt) 
 * 🏞 [Swiper - Most Modern Mobile Touch Slider](http://idangero.us/swiper/)
-* 🍱[Nuxt Optimized Images | Bazzite Docs](https://www.bazzite.com/docs/nuxt-optimized-images/?utm_source=npm&utm_medium=readme&utm_campaign=nuxt-optimized-images)
+* 🍱 [Nuxt Optimized Images | Bazzite Docs](https://www.bazzite.com/docs/nuxt-optimized-images/?utm_source=npm&utm_medium=readme&utm_campaign=nuxt-optimized-images)
   * [vue-lz-2.0](http://hilongjw.github.io/vue-lazyload/)
 * 🔥 [greensock/GreenSock-JS: GreenSock’s GSAP JavaScript animation library (including Draggable).](https://github.com/greensock/GreenSock-JS)
+* ⚡ [Workbox Module | Nuxt PWA](https://pwa.nuxtjs.org/modules/workbox.html)
 
+## Features
+
+* TypeScript
+  * type safe Vuex
+* formatter
+  * ESLint / stylelint / Prettier
+* PWA with Workbox
+  * support iOS video
+* auto images optimize
+* lazyload images
+* contents slider by swiper
+* GSAP animation
+* webfontloader
+  * google / adobe
+* import common scss variable and functions
+* detect device type with nuxt-user-agent
+* CSS grid support for IE
+* switch components at breakpoint with nuxt-mq
 
 ## Build Setup
 
