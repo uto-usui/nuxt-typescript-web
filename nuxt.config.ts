@@ -67,11 +67,11 @@ module.exports = {
     [
       '@uto-usui/nuxt-google-gtag',
       {
-        id: 'UA-23679855-1',
+        id: 'UA-xxxxxxxxx',
         config: {
           send_page_view: true,
           custom_map: {
-            dimension12: 'canada',
+            dimension12: 'myCategory',
           },
         },
       },
