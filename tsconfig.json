@@ -32,7 +32,8 @@
       "@types/node",
       "@types/jest",
       "@nuxt/vue-app",
-      "@types/swiper"
+      "@types/swiper",
+      "@types/gsap"
     ]
   }
 }
