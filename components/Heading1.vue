@@ -1,7 +1,5 @@
 <template>
-  <h1 class="ph__title">
-    this is home
-  </h1>
+  <h1 class="ph__title" v-text="text" />
 </template>
 
 <script lang="ts">
@@ -11,6 +9,12 @@ import { TweenConfig } from '~/types/gsap/index'
 
 export default Vue.extend({
   name: 'Headding1',
+  props: {
+    text: {
+      type: String,
+      default: '',
+    },
+  },
   mounted(): void {
     const animation = TweenMax.to(this.$el, 5, {
       scale: 1.2,
