@@ -33,7 +33,17 @@
       "@types/jest",
       "@nuxt/vue-app",
       "@types/swiper",
-      "@types/gsap"
+      "@types/gsap",
+      "./types"
     ]
-  }
+  },
+  "include": [
+    "components/**/*.ts",
+    "layouts/**/*.ts",
+    "middleware/**/*.ts",
+    "pages/**/*.ts",
+    "plugins/**/*.ts",
+    "server/**/*.ts",
+    "store/**/*.ts"
+  ]
 }
