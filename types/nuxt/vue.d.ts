@@ -2,6 +2,7 @@
 import * as Vuex from 'vuex'
 
 import { UA } from 'nuxt-user-agent/lib/types'
+import { Gtag } from './gtag'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -12,11 +13,13 @@ declare module 'vue/types/vue' {
     $dispatch: Vuex.ExStore['dispatch']
     //
     $ua: UA
+    $gtag: Gtag
   }
 }
 
 declare module '@nuxt/vue-app/types/index' {
   interface Context {
     $ua: UA
+    $gtag: Gtag
   }
 }

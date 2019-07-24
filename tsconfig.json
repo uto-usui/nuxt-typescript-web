@@ -36,14 +36,5 @@
       "@types/gsap",
       "./types"
     ]
-  },
-  "include": [
-    "components/**/*.ts",
-    "layouts/**/*.ts",
-    "middleware/**/*.ts",
-    "pages/**/*.ts",
-    "plugins/**/*.ts",
-    "server/**/*.ts",
-    "store/**/*.ts"
-  ]
+  }
 }
