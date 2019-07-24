@@ -14,6 +14,7 @@ declare module 'vue/types/vue' {
     //
     $ua: UA
     $gtag: Gtag
+    $mq: string
   }
 }
 
