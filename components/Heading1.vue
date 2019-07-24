@@ -4,8 +4,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import TweenMax from 'gsap/umd/TweenMax'
-import { TweenConfig } from '~/types/gsap/index'
+import * as TweenMax from 'gsap/umd/TweenMax'
+import * as Ease from 'gsap/umd/EasePack'
 
 export default Vue.extend({
   name: 'Headding1',
@@ -16,12 +16,12 @@ export default Vue.extend({
     },
   },
   mounted(): void {
-    const animation = TweenMax.to(this.$el, 5, {
+    TweenMax.to(this.$el, 5, {
       scale: 1.2,
       repeat: -1,
       yoyo: true,
-    } as TweenConfig)
-    console.log()
+      ease: Ease.Power3.easeOut,
+    })
   },
 })
 </script>
