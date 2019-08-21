@@ -1,8 +1,8 @@
 import { StoreContext } from 'vuex'
-import { Context } from '@nuxt/vue-app/types'
+import { Context } from '@nuxt/types'
 
 export const actions = {
-  nuxtServerInit(store: StoreContext, ctx: Context) {
+  nuxtServerInit(_store: StoreContext, _ctx: Context) {
     // console.log('🎉 nuxtServerInit', ctx)
   },
 }

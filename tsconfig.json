@@ -31,7 +31,7 @@
     "types": [
       "@types/node",
       "@types/jest",
-      "@nuxt/vue-app",
+      "@nuxt/types",
       "@types/swiper",
       "@types/gsap",
       "./types"

@@ -7,10 +7,10 @@ import Vue from 'vue'
 export default Vue.extend({
   transition: {
     css: false,
-    enter(el, done) {
+    enter(_el, done) {
       done() // end
     },
-    leave(el, done) {
+    leave(_el, done) {
       this.$dispatch('global/setIsMenuOpen', false)
       done() // end
     },

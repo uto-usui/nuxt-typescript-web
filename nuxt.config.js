@@ -5,6 +5,12 @@ import StylelintPlugin from 'stylelint-webpack-plugin'
 module.exports = {
   mode: 'universal',
 
+  buildModules: ['@nuxt/typescript-build'],
+
+  typescript: {
+    typeCheck: true,
+  },
+
   /*
    ** Headers of the page
    */

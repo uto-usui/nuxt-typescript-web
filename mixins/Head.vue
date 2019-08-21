@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from 'vue'
+import { NuxtConfigurationHead } from '@nuxt/types/config/head'
 
 export type Data = {
   title?: string
@@ -47,7 +48,7 @@ export default Vue.extend({
    * Meta information of each page
    * Insert from data
    */
-  head(): Head {
+  head(): NuxtConfigurationHead {
     return {
       title: this.title || meta.title,
       meta: [
