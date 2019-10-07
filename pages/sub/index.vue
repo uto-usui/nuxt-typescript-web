@@ -2,12 +2,7 @@
   <Wrapper class="page-sub">
     <Heading1 :text="`this is sub`" />
     <div class="ps__inner">
-      <div
-        ref="mySwiper"
-        v-swiper:mySwiper="swiperOption"
-        class="sl__items"
-        @transitionEnd="transitionEnd"
-      >
+      <div ref="mySwiper" v-swiper:mySwiper="swiperOption" class="sl__items">
         <div class="swiper-wrapper">
           <div v-for="item in 5" :key="`figure${item}`" class="swiper-slide">
             <figure class="ph__figure">
@@ -60,6 +55,10 @@ export default mixins(headMixin, TransitionMixin).extend({
         el: '.swiper-pagination',
         clickable: true,
         bulletElement: 'a',
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       slidesPerView: 1,
       centeredSlides: true,
