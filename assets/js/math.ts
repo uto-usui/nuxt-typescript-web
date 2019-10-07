@@ -67,6 +67,34 @@ export const map = (
   return result
 }
 
+
+/**
+ * 特定の範囲の値を3時間数の範囲に変換して返す
+ * default では -1 から 1 の値を返す
+ * toMax で係数を掛けて最大値を変化させる
+ * shift で原点をずらす
+ *
+ * @param value {number}
+ * @param fromMin {number}
+ * @param fromMax {number}
+ * @param toMax {number} default = 1
+ * @param shift {number}
+ *
+ * @returns {number}
+ *
+ * ex.
+ * 0to1to0 : map3(n, a, b) * -1 + 1
+ */
+export const map3 = (
+  value: number,
+  fromMin: number,
+  fromMax: number,
+  toMax: number = 1,
+  shift: number = 0,
+): number => {
+  return map(value, fromMin, fromMax, -1, 1) ** 2 * toMax + shift
+}
+
 /**
  * ２点間の距離を求める
  * @param x0 {number}
