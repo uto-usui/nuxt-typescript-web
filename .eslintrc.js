@@ -31,5 +31,6 @@ module.exports = {
     'vue/no-v-html': [
       'off',
     ],
+    'standard/computed-property-even-spacing': 'off',
   },
 }
