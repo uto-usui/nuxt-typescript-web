@@ -183,7 +183,7 @@ module.exports = {
       preset: {
         // IE grid support
         autoprefixer: {
-          grid: true,
+          grid: 'autoplace',
         },
       },
     },
