@@ -33,7 +33,6 @@
       "@types/jest",
       "@nuxt/types",
       "@types/swiper",
-      "@types/gsap",
       "./types"
     ]
   }

@@ -4,8 +4,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import * as TweenMax from 'gsap/umd/TweenMax'
-import * as Ease from 'gsap/umd/EasePack'
+import { gsap } from 'gsap'
 
 export default Vue.extend({
   name: 'Headding1',
@@ -16,11 +15,12 @@ export default Vue.extend({
     },
   },
   mounted(): void {
-    TweenMax.to(this.$el, 5, {
+    gsap.to(this.$el, {
+      duration: 2,
       scale: 1.2,
       repeat: -1,
       yoyo: true,
-      ease: Ease.Power3.easeOut,
+      ease: 'Expo.inOut',
     })
   },
 })
