@@ -1,8 +1,8 @@
 <template>
   <a
     :class="[{ 'is-open': $state.global.isMenuOpen }]"
-    class="menu-trigger"
     @click="onClick(!$state.global.isMenuOpen)"
+    class="menu-trigger"
   >
     <span class="mt__text">menu</span>
     <span class="mt__inner">

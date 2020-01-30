@@ -1,9 +1,11 @@
 <template>
   <Wrapper class="page-home">
-    <Heading1 :text="`this is home`" />
+    <no-ssr>
+      <Heading1 :text="`this is home`" />
+    </no-ssr>
     <div class="ph__inner">
       <figure v-for="item in 5" :key="`figure${item}`" class="ph__figure">
-        <LazyImage :src="require(`Images/test/01.jpg`)" />
+        <LazyImage :src="require(`~/assets/images/test/01.jpg`)" />
       </figure>
     </div>
   </Wrapper>
@@ -13,7 +15,7 @@
 import mixins from 'vue-typed-mixins'
 import Wrapper from '~/components/Wrapper.vue'
 import LazyImage from '~/components/util/LazyImage.vue'
-import Heading1 from '@/components/Heading1.vue'
+import Heading1 from '~/components/Heading1.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'

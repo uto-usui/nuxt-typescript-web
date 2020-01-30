@@ -67,7 +67,6 @@ export const map = (
   return result
 }
 
-
 /**
  * 特定の範囲の値を3時間数の範囲に変換して返す
  * default では -1 から 1 の値を返す

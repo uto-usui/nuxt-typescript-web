@@ -1,6 +1,5 @@
 <template>
   <div
-    class="layout-default"
     :class="[
       {
         'is-ready': $state.global.isPageReady,
@@ -13,6 +12,7 @@
       $ua.browser(),
       $ua.deviceType(),
     ]"
+    class="layout-default"
   >
     <div class="ld__header">
       <Header />

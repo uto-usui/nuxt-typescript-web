@@ -1,13 +1,10 @@
 <template>
-  <h1 class="ph__title" v-text="text" />
+  <h1 v-text="text" class="ph__title" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { gsap, TextPlugin } from 'gsap/all'
-// import { TextPlugin } from 'gsap/TextPlugin'
-
-gsap.registerPlugin(TextPlugin)
+import { gsap } from 'gsap'
 
 export default Vue.extend({
   name: 'Heading1',
@@ -27,7 +24,6 @@ export default Vue.extend({
         scale: 2,
         repeat: -1,
         yoyo: true,
-        text: 'Is this new text ?',
         ease: 'none',
       })
     },
