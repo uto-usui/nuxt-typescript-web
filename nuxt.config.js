@@ -53,7 +53,8 @@ module.exports = {
     '~plugins/vue-swiper.client.js',
     // add page name to store
     '~plugins/routerOption.js',
-    //
+    // add gsap plugins
+    '~plugins/gsap.client.js',
     {
       src: '~plugins/exStore',
       ssr: true,

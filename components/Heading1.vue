@@ -24,6 +24,7 @@ export default Vue.extend({
         scale: 2,
         repeat: -1,
         yoyo: true,
+        text: 'Is this new text ?',
         ease: 'none',
       })
     },
