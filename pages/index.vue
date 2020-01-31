@@ -1,11 +1,9 @@
 <template>
   <Wrapper class="page-home">
-    <no-ssr>
-      <Heading1 :text="`this is home`" />
-    </no-ssr>
+    <Heading1 :text="`this is home`" />
     <div class="ph__inner">
       <figure v-for="item in 5" :key="`figure${item}`" class="ph__figure">
-        <LazyImage :src="require(`~/assets/images/test/01.jpg`)" />
+        <LazyImage :src="require(`Images/test/01.jpg`)" />
       </figure>
     </div>
   </Wrapper>

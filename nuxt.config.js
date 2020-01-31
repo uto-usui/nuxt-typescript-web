@@ -68,7 +68,7 @@ module.exports = {
     '@nuxtjs/style-resources',
     '@nuxtjs/pwa',
     'nuxt-user-agent',
-    // '@bazzite/nuxt-optimized-images',
+    '@bazzite/nuxt-optimized-images',
     'nuxt-mq',
     'nuxt-webfontloader',
     [
@@ -132,9 +132,9 @@ module.exports = {
    * doc
    * : https://www.bazzite.com/docs/nuxt-optimized-images/
    */
-  //  optimizedImages: {
-  //    optimizeImages: true,
-  //  },
+  optimizedImages: {
+    optimizeImages: true,
+  },
 
   /*
    ** Build configuration
