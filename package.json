@@ -11,6 +11,7 @@
     "analyze": "NODE_ENV=production nuxt build --analyze",
     "start": "nuxt start",
     "generate": "NODE_ENV=production nuxt generate",
+    "generate:GitHub": "NODE_ENV=production SITE_BASE=/nuxt-typescript-web/ nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintjs": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
     "lintcss": "stylelint --fix ./**/*.vue ./**/*.scss",

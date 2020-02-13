@@ -136,6 +136,10 @@ module.exports = {
     optimizeImages: true,
   },
 
+  router: {
+    base: process.env.SITE_BASE ? process.env.SITE_BASE : '/',
+  },
+
   /*
    ** Build configuration
    */
