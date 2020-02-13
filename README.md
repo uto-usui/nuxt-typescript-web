@@ -2,6 +2,10 @@
 
 > Nuxt x TypeScript boilerplates for building websites without decorators
 
+![github pages](https://github.com/uto-usui/nuxt-typescript-web/workflows/github%20pages/badge.svg) 
+
+* [preview](https://uto-usui.github.io/nuxt-typescript-web/)
+
 ## Links
 
 * △▲ [nuxt/nuxt.js: The Vue.js Framework](https://github.com/nuxt/nuxt.js)
