@@ -51,7 +51,7 @@ $displays: "block" "flex" "inline" "inline-block" "inline-flex";
 }
 
 .is-hidden-widescreen {
-  @include widescreen {
+  @include wideScreen {
     display: none !important;
   }
 }
@@ -98,13 +98,13 @@ $displays: "block" "flex" "inline" "inline-block" "inline-flex";
   }
 
   .is-#{$display}-widescreen {
-    @include widescreen {
+    @include wideScreen {
       display: #{$display};
     }
   }
 
   .is-#{$display}-fullhd {
-    @include fullhd {
+    @include fullHd {
       display: #{$display};
     }
   }

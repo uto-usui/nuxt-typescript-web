@@ -43,25 +43,25 @@
 }
 
 @mixin desktop-only {
-  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+  @media screen and (min-width: $desktop) and (max-width: $wideScreen - 1px) {
     @content;
   }
 }
 
-@mixin widescreen {
-  @media screen and (min-width: $widescreen) {
+@mixin wideScreen {
+  @media screen and (min-width: $wideScreen) {
     @content;
   }
 }
 
-@mixin widescreen-only {
-  @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px) {
+@mixin wideScreen-only {
+  @media screen and (min-width: $wideScreen) and (max-width: $fullHd - 1px) {
     @content;
   }
 }
 
-@mixin fullhd {
-  @media screen and (min-width: $fullhd) {
+@mixin fullHd {
+  @media screen and (min-width: $fullHd) {
     @content;
   }
 }
