@@ -1,0 +1,30 @@
+.row {
+  display: flex;
+  flex: 1 1 100%;
+  flex-flow: wrap;
+
+  // negative margin
+  @each $size, $width in $grid-breakpoints {
+    @media all and (min-width: #{$width}) {
+      $gutter: map-deep-get($grid-gutters, $size);
+
+      margin-right: calc(#{$gutter} / 2 * -1);
+      margin-left: calc(#{$gutter} / 2 * -1);
+    }
+  }
+
+  // no gutter class
+  @include touch {
+    &.is-no-gutter-touch {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  @include desktop {
+    &.is-no-gutter-desktop {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.layout {
+  display: flex;
+  flex-flow: wrap;
+  max-width: $layout-max-width;
+  //
+  @include make-container;
+
+  //
+  @each $size, $width in $grid-breakpoints {
+    @media all and (min-width: #{$width}) {
+      $gutter: map-deep-get($grid-gutters, $size);
+
+      padding-right: calc(#{$gutter} / 2);
+      padding-left: calc(#{$gutter} / 2);
+    }
+  }
+
+  // full width
+  &--full {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

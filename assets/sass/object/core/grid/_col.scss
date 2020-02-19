@@ -1,0 +1,55 @@
+.col {
+  // responsive gutter
+  @each $size, $width in $grid-breakpoints {
+    //
+    @media all and (min-width: #{$width}) {
+
+      // gutter
+      $gutter: map-deep-get($grid-gutters, $size);
+
+      padding-right: calc(#{$gutter} / 2);
+      padding-left: calc(#{$gutter} / 2);
+
+      // size class
+      $n: $grid-columns;
+
+      @while $n > 0 {
+        &--span-#{$size}-#{$n} {
+          flex: 0 0 $n / $grid-columns * 100%;
+          max-width: $n / $grid-columns * 100%;
+        }
+
+        &--order-#{$size}-#{$n} {
+          order: $n
+        }
+
+        $n: $n - 1;
+      }
+
+      $m: $grid-columns;
+
+      @while $m >= 0 {
+        &--offset-#{$size}-#{$m} {
+          margin-left: $m / $grid-columns * 100%;
+        }
+        $m: $m - 1;
+      }
+
+    }
+  }
+
+  // no gutter
+  .row.is-no-gutter-touch & {
+    @include touch {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  //
+  .row.is-no-gutter-desktop & {
+    @include desktop {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
