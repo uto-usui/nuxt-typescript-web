@@ -2,6 +2,7 @@
   <div :class="[{ 'is-open': $state.global.isMenuOpen }]" class="menu">
     <n-link exact class="m__target" to="/">home</n-link>
     <n-link exact class="m__target" to="/sub/">sub</n-link>
+    <n-link exact class="m__target" to="/component/">component</n-link>
   </div>
 </template>
 
