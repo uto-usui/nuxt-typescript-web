@@ -9,4 +9,4 @@ export const breakpoints = [
   'desktop',
   'wideScreen',
   'fullHd',
-]
+] as const
