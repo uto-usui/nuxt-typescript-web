@@ -118,5 +118,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import '~Sass/object/core/grid/_col';
+@import '~Sass/object/core/grid/_col.scss';
 </style>

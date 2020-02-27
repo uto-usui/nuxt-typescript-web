@@ -3,7 +3,7 @@ import Vue from 'vue'
 import { mergeData } from 'vue-functional-data-merge'
 
 export default Vue.extend({
-  name: 'Layout',
+  name: 'Row',
 
   functional: true,
 
@@ -12,23 +12,28 @@ export default Vue.extend({
       type: String,
       default: 'div',
     },
-    full: {
+    noGutterTouch: {
+      type: Boolean,
+      default: false,
+    },
+    noGutterDesktop: {
       type: Boolean,
       default: false,
     },
   },
 
   render(h, { props, data, children }) {
-    const classList = [
-      {
-        'layout--full': props.full,
-      },
-    ]
+    const classList: string[] = []
+
+    const { noGutterTouch, noGutterDesktop } = props
+
+    noGutterTouch && classList.push('is-no-gutter-touch')
+    noGutterDesktop && classList.push('is-no-gutter-desktop')
 
     return h(
       props.tag,
       mergeData(data, {
-        staticClass: 'layout',
+        staticClass: 'row',
         class: classList,
       }),
       children,
@@ -38,5 +43,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import '~Sass/object/core/grid/_layout';
+@import '~Sass/object/core/grid/_row.scss';
 </style>

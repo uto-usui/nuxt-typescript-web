@@ -1,24 +1,42 @@
 <template>
-  <Wrapper class="page-home">
-    <Layout :full="true">
-      <Row :noGutterDesktop="false" :noGutterTouch="false">
-        <Col :spanMobile="4">
-          <div class="inner">
-            1
-          </div>
-        </Col>
-        <Col :spanMobile="4">
-          <div class="inner">
-            2
-          </div>
-        </Col>
-        <Col :spanMobile="4">
-          <div class="inner">
-            3
-          </div>
-        </Col>
-      </Row>
-    </Layout>
+  <Wrapper class="page-component">
+    <div class="pc__layout">
+      <Layout :full="true">
+        <Row :noGutterDesktop="false" :noGutterTouch="false">
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              1
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              2
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              3
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row :noGutterDesktop="true" :noGutterTouch="true">
+          <Col :spanMobile="4" :offsetMobile="2">
+            <div class="pc__inner">
+              1
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              2
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -27,9 +45,9 @@ import mixins from 'vue-typed-mixins'
 import Wrapper from '~/components/Wrapper.vue'
 import Heading1 from '~/components/Heading1.vue'
 
-import Col from '~/components/core/Col.vue'
-import Row from '~/components/core/Row.vue'
-import Layout from '~/components/core/Layout.vue'
+import Col from '@/components/core/grid/Col.vue'
+import Row from '@/components/core/grid/Row.vue'
+import Layout from '@/components/core/grid/Layout.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -66,18 +84,11 @@ export default mixins(headMixin, TransitionMixin).extend({
   //
 }
 
-.ph__inner {
-  padding-right: 10vw;
-  padding-left: 10vw;
+.pc__layout {
+  margin-top: 50px;
 }
 
-.ph__figure {
-  + .ph__figure {
-    margin-top: 10vw;
-  }
-}
-
-.inner {
+.pc__inner {
   display: flex;
   align-items: center;
   justify-content: center;
