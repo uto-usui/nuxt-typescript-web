@@ -2,6 +2,16 @@ import path from 'path'
 // import NuxtConfiguration from '@nuxt/config'
 import StylelintPlugin from 'stylelint-webpack-plugin'
 
+import Fiber from 'fibers'
+import Sass from 'sass'
+
+const scss = {
+  implementation: Sass,
+  sassOptions: {
+    fiber: Fiber,
+  },
+}
+
 module.exports = {
   mode: 'universal',
 
@@ -149,6 +159,10 @@ module.exports = {
       layouts: true,
     },
 
+    loaders: {
+      scss,
+    },
+
     terser: {
       terserOptions: {
         // disable console on prod
@@ -174,6 +188,7 @@ module.exports = {
           }),
         )
       }
+
       // import alias
       config.resolve.alias.Sass = path.resolve(__dirname, './assets/sass/')
       config.resolve.alias.Js = path.resolve(__dirname, './assets/js/')
