@@ -1,0 +1,216 @@
+@include theme(button-default) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+
+  &.button-default--disabled {
+    color: map-deep-get($material, 'buttons', 'disabled') !important;
+
+    &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined) {
+      background-color: map-deep-get($material, 'buttons', 'focused') !important;
+    }
+  }
+
+  &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined):not(.button-default--color) {
+    background-color: map-deep-get($material, 'buttons', 'default');
+  }
+
+  &.button-default--outlined.button-default--text {
+    border-color: map-get($material, 'dividers');
+  }
+
+  &.button-default--icon {
+    color: map-deep-get($material, 'icons', 'active');
+  }
+
+  @include states($material);
+}
+
+.button-default {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  font-weight: $btn-font-weight;
+  text-decoration: none;
+  text-indent: $btn-letter-spacing;
+  text-transform: $btn-text-transform;
+  letter-spacing: $btn-letter-spacing;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border-radius: $btn-border-radius;
+  outline: 0;
+  //
+  @each $name, $size in $btn-font-sizes {
+    &--#{$name} {
+      font-size: $size;
+    }
+  }
+
+  @each $name, $color in $btn-colors {
+    &--#{$name} {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+
+  &.button-default--primary,
+  &.button-default--secondary {
+    &:not(.button-default--outlined) {
+      color: map-deep-get($material-dark, 'text', 'primary');
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: inherit;
+    pointer-events: none;
+    content: '';
+    background-color: currentColor;
+    border-radius: inherit;
+    opacity: 0;
+  }
+
+  &:not(.button-default--disabled) {
+    // will-change: box-shadow;
+  }
+
+
+  @each $name, $size in $btn-sizes {
+    &.button-default--#{$name} {
+      &:not(.button-default--round) {
+        min-width: #{round($size * 1.777777777777778)}px; // default ratio
+        height: #{$size}px;
+        padding: 0 #{$size / 2.25}px
+      }
+    }
+  }
+
+  > .button-default__content .icon {
+    color: inherit;
+  }
+
+  &.button-default--outlined {
+    border: $btn-outline-border-width solid currentColor;
+
+    &::before {
+      border-radius: 0;
+    }
+  }
+
+  &.button-default--outlined,
+  &.button-default--round {
+    .button-default__content {
+      .icon {
+        color: currentColor;
+      }
+    }
+  }
+
+  &.button-default--outlined,
+  &.button-default--flat,
+  &.button-default--text {
+    background-color: transparent;
+  }
+
+  &.button-default--round,
+  &.button-default--rounded {
+    &::before {
+      border-radius: inherit;
+    }
+  }
+
+  &.button-default--round {
+    border-radius: 50%;
+  }
+
+  &.button-default--rounded {
+    border-radius: $btn-rounded-border-radius;
+  }
+
+  &.button-default--tile {
+    border-radius: 0;
+  }
+
+  &.button-default--full {
+    display: flex;
+    flex: 1 0 auto;
+    min-width: 100% !important;
+    // max-width: auto;
+  }
+
+  &.button-default--disabled {
+    pointer-events: none;
+    box-shadow: none;
+  }
+
+  &.button-default--icon,
+  &.button-default--circle {
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+
+    @each $name, $size in $circle-icon-sizes {
+      &.button-default--#{$name} {
+        .icon {
+          width: #{$size}px;
+          height: #{$size}px;
+          font-size: #{$size}px;
+        }
+      }
+    }
+  }
+
+  &.button-default--icon {
+    @each $name, $size in $btn-sizes {
+      &.button-default--#{$name} {
+        width: #{$size}px;
+        height: #{$size}px;
+      }
+    }
+  }
+
+  &.button-default--circle {
+    @each $name, $size in $circle-sizes {
+      &.button-default--#{$name} {
+        width: #{$size}px;
+        height: #{$size}px;
+      }
+    }
+  }
+}
+
+.bd__inner {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  justify-content: inherit;
+  line-height: normal;
+  color: inherit;
+
+  .icon.icon--left,
+  .icon.icon--right {
+    width: $btn-icon-font-size;
+    height: $btn-icon-font-size;
+    font-size: $btn-icon-font-size;
+  }
+}
+
+.button-default:not(.button-default--text):not(.button-default--outlined) {
+  &.button-default--active::before {
+    opacity: $btn-active-opacity;
+  }
+
+  &:hover::before {
+    opacity: $btn-hover-opacity;
+  }
+
+  &:focus::before {
+    opacity: $btn-focus-opacity;
+  }
+}
