@@ -1,0 +1,13 @@
+@mixin theme($component) {
+  @media (prefers-color-scheme: light) {
+    .#{$component} {
+      @content($material-light);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .#{$component} {
+      @content($material-dark);
+    }
+  }
+}
