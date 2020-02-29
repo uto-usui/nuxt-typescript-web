@@ -23,15 +23,67 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="true" :noGutterTouch="true">
-          <Col :spanMobile="4" :offsetMobile="2">
+        <Row :noGutterDesktop="false" :noGutterTouch="false">
+          <Col :spanMobile="1" v-for="index in 12" :key="`col2${index}`">
             <div class="pc__inner">
-              1
+              {{ index }}
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row :noGutterDesktop="true" :noGutterTouch="true">
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault color="primary" small>small</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault color="secondary">medium</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault large>large</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault outlined>outlined</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault rounded>rounded</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault large tile>tile</ButtonDefault>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row :noGutterDesktop="true" :noGutterTouch="true">
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault circle>🐈</ButtonDefault>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault disabled>disabled</ButtonDefault>
             </div>
           </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
-              2
+              <ButtonDefault full x-large color="primary">full</ButtonDefault>
             </div>
           </Col>
         </Row>
@@ -49,6 +101,8 @@ import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
+import ButtonDefault from '@/components/ButtonDefault.vue'
+
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
 
@@ -63,6 +117,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     Col,
     Row,
     Layout,
+    ButtonDefault,
   },
   data: () => ({
     //
