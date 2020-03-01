@@ -13,7 +13,7 @@ body {
   color: $text-color;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  background-color: $color-bg-primary;
+  background-color: map-get($grey, 'ligeten-5');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "palt";
@@ -69,5 +69,5 @@ select {
 
 ::selection {
   color: $color-black;
-  background: $color-gray-level4;
+  background: map-get($grey, 'ligeten-4');
 }

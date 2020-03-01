@@ -114,8 +114,8 @@ $colors: map-deep-merge(
   $colors
 );
 
-$color-primaries: () !default;
-$color-primaries: map-deep-merge(
+$color-primary-group: () !default;
+$color-primary-group: map-deep-merge(
   (
     'base': #4ecca3,
     'lighten-2': lighten(#4ecca3, 20%),
@@ -123,11 +123,11 @@ $color-primaries: map-deep-merge(
     'darken-1': darken(#4ecca3, 10%),
     'darken-2': darken(#4ecca3, 20%),
   ),
-  $color-primaries
+  $color-primary-group
 );
 
-$color-secondaries: () !default;
-$color-secondaries: map-deep-merge(
+$color-secondary-group: () !default;
+$color-secondary-group: map-deep-merge(
   (
     'base': #4e72cc,
     'lighten-2': lighten(#4e72cc, 20%),
@@ -135,21 +135,14 @@ $color-secondaries: map-deep-merge(
     'darken-1': darken(#4e72cc, 10%),
     'darken-2': darken(#4e72cc, 20%),
   ),
-  $color-secondaries
+  $color-secondary-group
 );
 
-$color-primary: #4e72cc !default;
+$color-primary: map-get($color-primary-group, 'base') !default;
+$color-secondary: map-get($color-secondary-group, 'base') !default;
 
 $color-black: #000 !default;
 $color-white: #fff !default;
-
-$color-bg-primary: #f8faf7;
-
-$color-gray-level1: #444 !default;
-$color-gray-level2: #808080 !default;
-$color-gray-level3: #a8a8a8 !default;
-$color-gray-level4: #dedede !default;
-$color-gray-level5: #e5e5e5 !default;
 
 @import "color-light";
 @import "color-dark";

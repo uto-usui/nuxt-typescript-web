@@ -1,4 +1,4 @@
-@include theme(button-default) using($material) {
+@include scheme(button-default) using($material) {
   color: map-deep-get($material, 'text', 'primary');
 
   &.button-default--disabled {

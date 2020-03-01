@@ -1,4 +1,4 @@
-@mixin theme($component) {
+@mixin scheme($component) {
   @media (prefers-color-scheme: light) {
     .#{$component} {
       @content($material-light);

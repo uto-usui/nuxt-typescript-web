@@ -14,8 +14,8 @@ $btn-transition-duration: 0.28s !default;
 $btn-colors: () !default;
 $btn-colors: map-deep-merge(
   (
-    'primary': map-deep-get($color-primaries, 'base'),
-    'secondary': map-deep-get($color-secondaries, 'base'),
+    'primary': map-deep-get($color-primary-group, 'base'),
+    'secondary': map-deep-get($color-secondary-group, 'base'),
   ),
   $btn-colors
 );
