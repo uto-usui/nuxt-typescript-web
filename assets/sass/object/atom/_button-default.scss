@@ -5,11 +5,13 @@
     color: map-deep-get($material, 'buttons', 'disabled') !important;
 
     &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined) {
+      // default disabled background color
       background-color: map-deep-get($material, 'buttons', 'focused') !important;
     }
   }
 
   &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined):not(.button-default--color) {
+    // default background color
     background-color: map-deep-get($material, 'buttons', 'default');
   }
 

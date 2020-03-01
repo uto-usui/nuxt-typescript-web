@@ -29,7 +29,7 @@ $material-light: map-deep-merge(
       'solo-inverted-focused-text': map-get($shades, 'white')
     ),
     'buttons': (
-      'default': rgba(map-get($shades, 'black'), 0.26),
+      'default': rgba((#f5f5f5), 1),
       'disabled': rgba(map-get($shades, 'black'), 0.26),
       'focused': rgba(map-get($shades, 'black'), 0.12),
       'focused-alt': rgba(map-get($shades, 'white'), 0.6),
