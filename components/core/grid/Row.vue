@@ -27,8 +27,8 @@ export default Vue.extend({
 
     const { noGutterTouch, noGutterDesktop } = props
 
-    noGutterTouch && classList.push('is-no-gutter-touch')
-    noGutterDesktop && classList.push('is-no-gutter-desktop')
+    noGutterTouch && classList.push('row--no-gutter-touch')
+    noGutterDesktop && classList.push('row--no-gutter-desktop')
 
     return h(
       props.tag,

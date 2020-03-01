@@ -39,14 +39,14 @@
   }
 
   // no gutter
-  .row.is-no-gutter-touch & {
+  .row.row--no-gutter-touch & {
     @include touch {
       padding-right: 0;
       padding-left: 0;
     }
   }
   //
-  .row.is-no-gutter-desktop & {
+  .row.row--no-gutter-desktop & {
     @include desktop {
       padding-right: 0;
       padding-left: 0;
