@@ -86,6 +86,11 @@
               <ButtonDefault full x-large color="primary">full</ButtonDefault>
             </div>
           </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <ButtonDefault x-large text>text</ButtonDefault>
+            </div>
+          </Col>
         </Row>
       </Layout>
     </div>
@@ -148,6 +153,6 @@ export default mixins(headMixin, TransitionMixin).extend({
   align-items: center;
   justify-content: center;
   height: 300px;
-  background-color: lightblue;
+  background-color: #e2e4e5;
 }
 </style>
