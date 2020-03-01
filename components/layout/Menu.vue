@@ -48,14 +48,14 @@ export default Vue.extend({
   color: $color-white;
   text-align: left;
   text-transform: capitalize;
-  background-color: rgba($color-gray-level1, 0);
+  background-color: rgba(map-get($grey, 'darken-4'), 0);
   opacity: 0;
   transition: background-color 0.4s $easeInSine, opacity 0.6s $easeInSine,
     transform 0.8s $easeOutSine;
   transform: translateY(60px);
   //
   &:hover {
-    background-color: rgba($color-gray-level1, 1);
+    background-color: rgba(map-get($grey, 'darken-4'), 1);
   }
   //
   &.nuxt-link-active {
