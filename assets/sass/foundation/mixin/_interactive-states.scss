@@ -13,8 +13,8 @@
 }
 
 @mixin active-states ($material){
-  &:hover::before,
-  &::before{
+  &::before,
+  &:hover::before{
     opacity: map-deep-get($material, 'states', 'activated');
   }
 
