@@ -1,32 +1,34 @@
-@include scheme(button-default) using($material) {
+@import "./variable";
+
+@include scheme(the-button) using($material) {
   color: map-deep-get($material, 'text', 'primary');
 
-  &.button-default--disabled {
+  &.the-button--disabled {
     color: map-deep-get($material, 'buttons', 'disabled') !important;
 
-    &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined) {
+    &:not(.the-button--flat):not(.the-button--text):not(.the-button--outlined) {
       // default disabled background color
       background-color: map-deep-get($material, 'buttons', 'focused') !important;
     }
   }
 
-  &:not(.button-default--flat):not(.button-default--text):not(.button-default--outlined):not(.button-default--color) {
+  &:not(.the-button--flat):not(.the-button--text):not(.the-button--outlined):not(.the-button--color) {
     // default background color
     background-color: map-deep-get($material, 'buttons', 'default');
   }
 
-  &.button-default--outlined.button-default--text {
+  &.the-button--outlined.the-button--text {
     border-color: map-get($material, 'dividers');
   }
 
-  &.button-default--icon {
+  &.the-button--icon {
     color: map-deep-get($material, 'icons', 'active');
   }
 
   @include states($material);
 }
 
-.button-default {
+.the-button {
   position: relative;
   display: inline-flex;
   flex: 0 0 auto;
@@ -44,21 +46,21 @@
   outline: 0;
   //
   @each $name, $size in $btn-font-sizes {
-    &.button-default--#{$name} {
+    &.the-button--#{$name} {
       font-size: $size;
     }
   }
 
   @each $name, $color in $btn-colors {
-    &.button-default--#{$name} {
+    &.the-button--#{$name} {
       background-color: $color;
       border-color: $color;
     }
   }
 
-  &.button-default--primary,
-  &.button-default--secondary {
-    &:not(.button-default--outlined) {
+  &.the-button--primary,
+  &.the-button--secondary {
+    &:not(.the-button--outlined) {
       color: map-deep-get($material-dark, 'text', 'primary');
     }
   }
@@ -77,14 +79,14 @@
     opacity: 0;
   }
 
-  &:not(.button-default--disabled) {
+  &:not(.the-button--disabled) {
     // will-change: box-shadow;
   }
 
 
   @each $name, $size in $btn-sizes {
-    &.button-default--#{$name} {
-      &:not(.button-default--round) {
+    &.the-button--#{$name} {
+      &:not(.the-button--round) {
         min-width: #{round($size * 1.777777777777778)}px; // default ratio
         height: #{$size}px;
         padding: 0 #{$size / 2.25}px
@@ -92,11 +94,11 @@
     }
   }
 
-  > .button-default__content .icon {
+  > .the-button__content .icon {
     color: inherit;
   }
 
-  &.button-default--outlined {
+  &.the-button--outlined {
     border: $btn-outline-border-width solid currentColor;
 
     &::before {
@@ -104,60 +106,60 @@
     }
   }
 
-  &.button-default--outlined,
-  &.button-default--round {
-    .button-default__content {
+  &.the-button--outlined,
+  &.the-button--round {
+    .the-button__content {
       .icon {
         color: currentColor;
       }
     }
   }
 
-  &.button-default--outlined,
-  &.button-default--flat,
-  &.button-default--text {
+  &.the-button--outlined,
+  &.the-button--flat,
+  &.the-button--text {
     background-color: transparent;
   }
 
-  &.button-default--round,
-  &.button-default--rounded {
+  &.the-button--round,
+  &.the-button--rounded {
     &::before {
       border-radius: inherit;
     }
   }
 
-  &.button-default--round {
+  &.the-button--round {
     border-radius: 50%;
   }
 
-  &.button-default--rounded {
+  &.the-button--rounded {
     border-radius: $btn-rounded-border-radius;
   }
 
-  &.button-default--tile {
+  &.the-button--tile {
     border-radius: 0;
   }
 
-  &.button-default--full {
+  &.the-button--full {
     display: flex;
     flex: 1 0 auto;
     min-width: 100% !important;
     // max-width: auto;
   }
 
-  &.button-default--disabled {
+  &.the-button--disabled {
     pointer-events: none;
     box-shadow: none;
   }
 
-  &.button-default--icon,
-  &.button-default--circle {
+  &.the-button--icon,
+  &.the-button--circle {
     min-width: 0;
     min-height: 0;
     padding: 0;
 
     @each $name, $size in $circle-icon-sizes {
-      &.button-default--#{$name} {
+      &.the-button--#{$name} {
         .icon {
           width: #{$size}px;
           height: #{$size}px;
@@ -167,18 +169,18 @@
     }
   }
 
-  &.button-default--icon {
+  &.the-button--icon {
     @each $name, $size in $btn-sizes {
-      &.button-default--#{$name} {
+      &.the-button--#{$name} {
         width: #{$size}px;
         height: #{$size}px;
       }
     }
   }
 
-  &.button-default--circle {
+  &.the-button--circle {
     @each $name, $size in $circle-sizes {
-      &.button-default--#{$name} {
+      &.the-button--#{$name} {
         width: #{$size}px;
         height: #{$size}px;
       }
@@ -203,8 +205,8 @@
   }
 }
 
-.button-default:not(.button-default--text):not(.button-default--outlined) {
-  &.button-default--active::before {
+.the-button:not(.the-button--text):not(.the-button--outlined) {
+  &.the-button--active::before {
     opacity: $btn-active-opacity;
   }
 

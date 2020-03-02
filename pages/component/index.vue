@@ -94,6 +94,22 @@
         </Row>
       </Layout>
     </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row :noGutterDesktop="true" :noGutterTouch="true">
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheHed>title</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheHed large>title</TheHed>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -106,7 +122,8 @@ import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
-import ButtonDefault from '@/components/ButtonDefault.vue'
+import ButtonDefault from '@/components/atom/TheButton.vue'
+import TheHed from '@/components/atom/TheHed.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -123,6 +140,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     Row,
     Layout,
     ButtonDefault,
+    TheHed,
   },
   data: () => ({
     //

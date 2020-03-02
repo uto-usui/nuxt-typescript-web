@@ -1,0 +1,26 @@
+$hed-font-sizes: () !default;
+$hed-font-sizes: map-deep-merge(
+  (
+    'x-small': (
+      'mobile': 1rem,
+      'desktop': 1rem,
+    ),
+    'small': (
+      'mobile': 2rem,
+      'desktop': 2rem,
+    ),
+    'medium': (
+      'mobile': 4rem,
+      'desktop': 4rem,
+    ),
+    'large': (
+      'mobile': 8rem,
+      'desktop': 8rem,
+    ),
+    'x-large': (
+      'mobile': 16rem,
+      'desktop': 16rem,
+    )
+  ),
+  $hed-font-sizes
+);

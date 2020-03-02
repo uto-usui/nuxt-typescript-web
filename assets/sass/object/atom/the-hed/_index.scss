@@ -1,0 +1,18 @@
+@import "./variable";
+
+@include scheme(the-hed) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+}
+
+.the-hed {
+  //
+  @each $name, $sizes in $hed-font-sizes {
+    &.the-hed--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}

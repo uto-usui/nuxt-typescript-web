@@ -72,28 +72,28 @@ export default Vue.extend({
     },
     sizeableClasses(): object {
       return {
-        'button-default--x-small': this.xSmall,
-        'button-default--small': this.small,
-        'button-default--medium': this.medium,
-        'button-default--large': this.large,
-        'button-default--x-large': this.xLarge,
+        'the-button--x-small': this.xSmall,
+        'the-button--small': this.small,
+        'the-button--medium': this.medium,
+        'the-button--large': this.large,
+        'the-button--x-large': this.xLarge,
       }
     },
     classes(): any {
       return {
-        'button-default': true,
-        'button-default--full': this.full,
-        'button-default--disabled': this.disabled,
-        'button-default--circle': this.circle,
-        'button-default--flat': this.isFlat,
-        'button-default--icon': this.icon,
-        'button-default--outlined': this.outlined,
-        'button-default--round': this.isRound,
-        'button-default--rounded': this.rounded,
-        'button-default--router': this.to,
-        'button-default--text': this.text,
-        'button-default--tile': this.tile,
-        'button-default--link': this.isLink,
+        'the-button': true,
+        'the-button--full': this.full,
+        'the-button--disabled': this.disabled,
+        'the-button--circle': this.circle,
+        'the-button--flat': this.isFlat,
+        'the-button--icon': this.icon,
+        'the-button--outlined': this.outlined,
+        'the-button--round': this.isRound,
+        'the-button--rounded': this.rounded,
+        'the-button--router': this.to,
+        'the-button--text': this.text,
+        'the-button--tile': this.tile,
+        'the-button--link': this.isLink,
         ...this.sizeableClasses,
       }
     },
@@ -176,8 +176,8 @@ export default Vue.extend({
       if (color) {
         data.class = {
           ...data.class,
-          [`button-default--${color}`]: true,
-          'button-default--color': true,
+          [`the-button--${color}`]: true,
+          'the-button--color': true,
         }
       }
 
@@ -211,7 +211,7 @@ export default Vue.extend({
       ? this.value
       : JSON.stringify(this.value)
 
-    data.staticClass = 'button-default'
+    data.staticClass = 'the-button'
 
     return h(tag, this.disabled ? data : setColor(this.color, data), children)
   },
@@ -219,5 +219,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import '~Sass/object/atom/_button-default';
+@import '~Sass/object/atom/the-button/_index.scss';
 </style>
