@@ -2,7 +2,7 @@
   width: 100%;
 
   // responsive gutter
-  @each $size, $width in $grid-breakpoints {
+  @each $size, $width in $breakpoints {
     //
     @media all and (min-width: #{$width}) {
 

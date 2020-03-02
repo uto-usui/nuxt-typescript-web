@@ -1,38 +1,16 @@
-// break points
-$tablet: 600px !default;
-$desktop: 980px !default;
-$wideScreen: 1200px !default;
-$fullHd: 1400px !default;
-
 // rhythm
 $spacer: 4 !default;
 
-$spacers: () !default;
-
-@if (type-of($spacers) == list) {
-  @for $i from 0 through 12 {
-    $spacers: map-merge($spacers, ($i: $spacer * $i))
-  }
-}
-
-$negative-spacers: () !default;
-
-@if (type-of($negative-spacers) == list) {
-  @for $i from 1 through 12 {
-    $negative-spacers: map-merge($negative-spacers, ("n" + $i: -$spacer * $i))
-  }
-}
-
-$grid-breakpoints: () !default;
-$grid-breakpoints: map-deep-merge(
+$breakpoints: () !default;
+$breakpoints: map-deep-merge(
   (
     'mobile': 0,
-    'tablet': $tablet,
-    'desktop': $desktop,
-    'wideScreen': $wideScreen,
-    'fullHd': $fullHd,
+    'tablet': 600px,
+    'desktop': 980px,
+    'wideScreen': 1200px,
+    'fullHd': 1600px,
   ),
-  $grid-breakpoints
+  $breakpoints
 );
 
 $grid-gutter: $spacer * 6 !default;

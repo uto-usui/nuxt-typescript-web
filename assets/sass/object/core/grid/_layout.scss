@@ -1,7 +1,7 @@
 .layout {
   display: flex;
   //
-  @each $size, $width in $grid-breakpoints {
+  @each $size, $width in $breakpoints {
     @media all and (min-width: #{$width}) {
       $gutter: map-deep-get($grid-gutters, $size);
 

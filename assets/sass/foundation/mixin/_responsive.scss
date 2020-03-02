@@ -13,55 +13,55 @@
 }
 
 @mixin mobile {
-  @media screen and (max-width: $tablet - 1px) {
+  @media screen and (max-width: map-deep-get($breakpoints, 'tablet') - 1px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (min-width: $tablet), print {
+  @media screen and (min-width: map-deep-get($breakpoints, 'tablet')), print {
     @content;
   }
 }
 
 @mixin tablet-only {
-  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'tablet')) and (max-width: map-deep-get($breakpoints, 'desktop') - 1px) {
     @content;
   }
 }
 
 @mixin touch {
-  @media screen and (max-width: $desktop - 1px) {
+  @media screen and (max-width: map-deep-get($breakpoints, 'desktop') - 1px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'desktop')) {
     @content;
   }
 }
 
 @mixin desktop-only {
-  @media screen and (min-width: $desktop) and (max-width: $wideScreen - 1px) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'desktop')) and (max-width: map-deep-get($breakpoints, 'wideScreen') - 1px) {
     @content;
   }
 }
 
 @mixin wideScreen {
-  @media screen and (min-width: $wideScreen) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'wideScreen')) {
     @content;
   }
 }
 
 @mixin wideScreen-only {
-  @media screen and (min-width: $wideScreen) and (max-width: $fullHd - 1px) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'wideScreen')) and (max-width: map-deep-get($breakpoints, 'fullHd') - 1px) {
     @content;
   }
 }
 
 @mixin fullHd {
-  @media screen and (min-width: $fullHd) {
+  @media screen and (min-width: map-deep-get($breakpoints, 'fullHd')) {
     @content;
   }
 }
