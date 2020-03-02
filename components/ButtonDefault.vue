@@ -63,8 +63,7 @@ export default Vue.extend({
   },
 
   data: () => ({
-    isActive: false,
-    proxyClass: '',
+    //
   }),
 
   computed: {
@@ -94,6 +93,7 @@ export default Vue.extend({
         'button-default--router': this.to,
         'button-default--text': this.text,
         'button-default--tile': this.tile,
+        'button-default--link': this.isLink,
         ...this.sizeableClasses,
       }
     },
@@ -102,16 +102,6 @@ export default Vue.extend({
     },
     isRound(): boolean {
       return Boolean(this.icon || this.circle)
-    },
-    isClickable(): boolean {
-      if (this.disabled) return false
-
-      return Boolean(
-        this.isLink ||
-          this.$listeners.click ||
-          this.$listeners['!click'] ||
-          this.$attrs.tabindex,
-      )
     },
     isLink(): boolean {
       return Boolean(this.to || this.href || this.link)
@@ -227,12 +217,6 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-.button-default {
-  //
-}
-</style>
 
 <style lang="scss" scoped>
 @import '~Sass/object/atom/_button-default';
