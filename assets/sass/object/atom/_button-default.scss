@@ -44,13 +44,13 @@
   outline: 0;
   //
   @each $name, $size in $btn-font-sizes {
-    &--#{$name} {
+    &.button-default--#{$name} {
       font-size: $size;
     }
   }
 
   @each $name, $color in $btn-colors {
-    &--#{$name} {
+    &.button-default--#{$name} {
       background-color: $color;
       border-color: $color;
     }
