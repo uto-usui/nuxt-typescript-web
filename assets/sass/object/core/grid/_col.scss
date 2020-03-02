@@ -1,4 +1,6 @@
 .col {
+  width: 100%;
+
   // responsive gutter
   @each $size, $width in $grid-breakpoints {
     //
@@ -30,7 +32,7 @@
 
       @while $m >= 0 {
         &--offset-#{$size}-#{$m} {
-          margin-left: $m / $grid-columns * 100%;
+          margin-left: $m / $grid-columns * 100vw;
         }
         $m: $m - 1;
       }

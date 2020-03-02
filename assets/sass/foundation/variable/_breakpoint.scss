@@ -43,10 +43,10 @@ $container-padding-x: $grid-gutter / 2 !default;
 $grid-gutters: () !default;
 $grid-gutters: map-deep-merge(
   (
-    'mobile': $spacer + '%',
-    'tablet': $spacer + '%',
-    'desktop': $spacer + '%',
-    'wideScreen': $spacer + '%',
+    'mobile': $spacer + 'vw',
+    'tablet': $spacer + 'vw',
+    'desktop': $spacer + 'vw',
+    'wideScreen': $spacer + 'vw',
     'fullHd': $spacer * 6 + px
   ),
   $grid-gutters

@@ -1,10 +1,5 @@
 .layout {
   display: flex;
-  flex-flow: wrap;
-  max-width: $layout-max-width;
-  //
-  @include make-container;
-
   //
   @each $size, $width in $grid-breakpoints {
     @media all and (min-width: #{$width}) {
@@ -14,11 +9,16 @@
       padding-left: calc(#{$gutter} / 2);
     }
   }
-
-  // full width
-  &--full {
-    max-width: 100%;
-    padding-right: 0;
-    padding-left: 0;
+  //
+  &:not(.layout--full) {
+    flex-flow: wrap;
+    width: calc(100% - 5vw * 2);
+    max-width: $layout-max-width;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    //
+    @include fullHd {
+      @include make-container;
+    }
   }
 }
