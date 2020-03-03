@@ -57,8 +57,8 @@ export default Vue.extend({
       default: 'button',
     },
     value: {
-      type: String as PropType<any>,
-      default: '',
+      type: (null as any) as PropType<any>,
+      default: undefined,
     },
   },
 
