@@ -1,0 +1,28 @@
+@import "./variable";
+
+@include scheme(the-kicker) using($material) {
+  color: map-deep-get($material, 'text', 'secondary');
+}
+
+.the-kicker {
+  //
+  @each $name, $sizes in $kicker-font-sizes {
+    &.the-kicker--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  @each $name, $heights in $kicker-line-heights {
+    &.the-kicker--#{$name} {
+      @each $breakpoint, $height in $heights {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          line-height: $height;
+        }
+      }
+    }
+  }
+}

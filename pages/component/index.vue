@@ -112,6 +112,21 @@
               <TheHed large>title</TheHed>
             </div>
           </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheKicker small>kicker</TheKicker>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheKicker>kicker</TheKicker>
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheKicker large>kicker</TheKicker>
+            </div>
+          </Col>
         </Row>
       </Layout>
     </div>
@@ -134,8 +149,9 @@ import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
-import ButtonDefault from '@/components/atom/TheButton.vue'
-import TheHed from '@/components/atom/TheHed.vue'
+import ButtonDefault from '@/components/atom/TheButton/TheButton.vue'
+import TheHed from '@/components/atom/TheHed/TheHed.vue'
+import TheKicker from '@/components/atom/TheKicker/TheKicker.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -153,6 +169,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     Layout,
     ButtonDefault,
     TheHed,
+    TheKicker,
   },
   data: () => ({
     //
