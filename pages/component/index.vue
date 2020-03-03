@@ -96,7 +96,12 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="true" :noGutterTouch="true">
+        <Row>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheHed small>title</TheHed>
+            </div>
+          </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <TheHed>title</TheHed>
@@ -107,6 +112,13 @@
               <TheHed large>title</TheHed>
             </div>
           </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="2"></Col>
         </Row>
       </Layout>
     </div>

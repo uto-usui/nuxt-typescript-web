@@ -18,15 +18,13 @@ export default Vue.extend({
 
   computed: {
     medium(): boolean {
-      return Boolean(!this.xSmall && !this.small && !this.large && !this.xLarge)
+      return Boolean(!this.small && !this.large)
     },
     sizeableClasses(): object {
       return {
-        'the-hed--x-small': this.xSmall,
         'the-hed--small': this.small,
         'the-hed--medium': this.medium,
         'the-hed--large': this.large,
-        'the-hed--x-large': this.xLarge,
       }
     },
     classes(): any {

@@ -15,4 +15,14 @@
       }
     }
   }
+
+  @each $name, $heights in $hed-line-heights {
+    &.the-hed--#{$name} {
+      @each $breakpoint, $height in $heights {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          line-height: $height;
+        }
+      }
+    }
+  }
 }
