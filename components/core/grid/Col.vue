@@ -4,6 +4,8 @@ import { mergeData } from 'vue-functional-data-merge'
 import { breakpoints } from '@/assets/js/info'
 import { upperFirst } from '@/assets/js/helper'
 
+type Dictionary<T> = Record<string, T>
+
 /**
  * create vue component props - span
  */
@@ -14,7 +16,7 @@ const spanProps = (() => {
       default: null,
     }
     return props
-  }, {} as { string: PropOptions })
+  }, {} as Dictionary<PropOptions>)
 })()
 
 /**
@@ -27,7 +29,7 @@ const offsetProps = (() => {
       default: null,
     }
     return props
-  }, {} as { string: PropOptions })
+  }, {} as Dictionary<PropOptions>)
 })()
 
 /**
@@ -40,7 +42,7 @@ const orderProps = (() => {
       default: null,
     }
     return props
-  }, {} as { string: PropOptions })
+  }, {} as Dictionary<PropOptions>)
 })()
 
 /**
