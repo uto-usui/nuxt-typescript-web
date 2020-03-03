@@ -62,5 +62,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import '~Sass/object/atom/the-hed/_index.scss';
+@import '~Sass/object/atom/the-hed/_index';
 </style>
