@@ -219,5 +219,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import '~Sass/object/atom/the-button/_index.scss';
+@import '~Sass/object/atom/the-button/_index';
 </style>
