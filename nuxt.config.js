@@ -19,6 +19,7 @@ module.exports = {
 
   typescript: {
     typeCheck: true,
+    ignoreNotFoundWarnings: true,
   },
 
   /*
