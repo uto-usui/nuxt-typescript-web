@@ -70,6 +70,7 @@ module.exports = {
       src: '~plugins/exStore',
       ssr: true,
     },
+    '~/plugins/composition-api',
   ],
 
   /*
