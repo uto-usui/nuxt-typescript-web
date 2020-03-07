@@ -1,0 +1,29 @@
+@import "./variable";
+
+@include scheme(the-hed) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+}
+
+.the-dec {
+  text-align: left;
+  //
+  @each $name, $sizes in $dec-font-sizes {
+    &.the-dec--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  @each $name, $heights in $dec-line-heights {
+    &.the-dec--#{$name} {
+      @each $breakpoint, $height in $heights {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          line-height: $height;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+$dec-font-sizes: () !default;
+$dec-font-sizes: map-deep-merge(
+  (
+    'small': (
+      'mobile': 1.2rem,
+      'desktop': 1.2rem,
+    ),
+    'medium': (
+      'mobile': 1.6rem,
+      'desktop': 1.6rem,
+    ),
+    'large': (
+      'mobile': 1.8rem,
+      'desktop': 1.8rem,
+    ),
+  ),
+  $dec-font-sizes
+);
+
+$dec-line-heights: () !default;
+$dec-line-heights: map-deep-merge(
+  (
+    'small': (
+      'mobile': 1.5,
+      'desktop': 1.5,
+    ),
+    'medium': (
+      'mobile': 1.5,
+      'desktop': 1.5,
+    ),
+    'large': (
+      'mobile': 1.5,
+      'desktop': 1.5,
+    ),
+  ),
+  $dec-line-heights
+);

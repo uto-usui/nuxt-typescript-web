@@ -154,6 +154,33 @@
               >
             </div>
           </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheDec small
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consectetur cumque debitis delectus ipsum iusto maxime nemo non
+                officiis optio provident recusandae</TheDec
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheDec
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consectetur cumque debitis delectus ipsum iusto maxime nemo non
+                officiis optio provident recusandae</TheDec
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheDec large
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Consectetur cumque debitis delectus ipsum iusto maxime nemo non
+                officiis optio provident recusandae</TheDec
+              >
+            </div>
+          </Col>
         </Row>
       </Layout>
     </div>
@@ -173,6 +200,7 @@ import TheButton from '@/components/atom/TheButton/TheButton'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
 import PublishDate from '@/components/atom/PublishDate/PublishDate'
+import TheDec from '@/components/atom/TheDec/TheDec'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -185,6 +213,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     Row,
     Layout,
     TheButton,
+    TheDec,
     TheHed,
     TheKicker,
     PublishDate,
