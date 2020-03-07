@@ -26,6 +26,12 @@
       ],
       "Js/*": [
         "/assets/js/*"
+      ],
+      "Sass/*": [
+        "/assets/sass/*"
+      ],
+      "Images/*": [
+        "/assets/images/*"
       ]
     },
     "types": [
