@@ -121,12 +121,8 @@ export default defineComponent({
       }
     })
 
-    console.log(classes)
-
     const click = (e: MouseEvent) => {
       _ctx.emit('click', e)
-
-      // this.btnToggle && this.toggle()
     }
 
     const generateRouteLink = () => {

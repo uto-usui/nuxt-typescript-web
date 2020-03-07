@@ -1,0 +1,18 @@
+@import "./variable";
+
+@include scheme(publish-date) using($material) {
+  color: map-deep-get($material, 'text', 'secondary');
+}
+
+.publish-date {
+  //
+  @each $name, $sizes in $publish-date-font-size {
+    &.publish-date--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+}

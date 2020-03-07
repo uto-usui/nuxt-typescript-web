@@ -1,0 +1,18 @@
+$publish-date-font-size: () !default;
+$publish-date-font-size: map-deep-merge(
+  (
+    'small': (
+      'mobile': 1rem,
+      'desktop': 1rem,
+    ),
+    'medium': (
+      'mobile': 1.2rem,
+      'desktop': 1.2rem,
+    ),
+    'large': (
+      'mobile': 1.5rem,
+      'desktop': 1.5rem,
+    ),
+  ),
+  $publish-date-font-size
+);
