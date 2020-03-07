@@ -37,32 +37,32 @@
         <Row :noGutterDesktop="true" :noGutterTouch="true">
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault color="primary" small>small</ButtonDefault>
+              <TheButton color="primary" small>small</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault color="secondary">medium</ButtonDefault>
+              <TheButton color="secondary">medium</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault large>large</ButtonDefault>
+              <TheButton large>large</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault outlined>outlined</ButtonDefault>
+              <TheButton outlined>outlined</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault rounded>rounded</ButtonDefault>
+              <TheButton rounded>rounded</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault large tile>tile</ButtonDefault>
+              <TheButton large tile>tile</TheButton>
             </div>
           </Col>
         </Row>
@@ -73,22 +73,22 @@
         <Row :noGutterDesktop="true" :noGutterTouch="true">
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault circle>🐈</ButtonDefault>
+              <TheButton circle>🐈</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault disabled>disabled</ButtonDefault>
+              <TheButton disabled>disabled</TheButton>
             </div>
           </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
-              <ButtonDefault full x-large color="primary">full</ButtonDefault>
+              <TheButton full x-large color="primary">full</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <ButtonDefault x-large text>text</ButtonDefault>
+              <TheButton x-large text>text</TheButton>
             </div>
           </Col>
         </Row>
@@ -114,17 +114,17 @@
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <TheKicker small>kicker</TheKicker>
+              <TheKicker small>kicker<br />kicker</TheKicker>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <TheKicker>kicker</TheKicker>
+              <TheKicker :html="`kicker`">kicker</TheKicker>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <TheKicker large>kicker</TheKicker>
+              <TheKicker :html="`kicker`" large>kicker</TheKicker>
             </div>
           </Col>
         </Row>
@@ -133,7 +133,27 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="2"></Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" small
+                >2000.12.12 TUE 18:00</PublishDate
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <PublishDate :datetime="`2020-03-03T01:55:09.304Z`"
+                >2000.12.12 TUE 18:00</PublishDate
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" large
+                >2000.12.12 TUE 18:00</PublishDate
+              >
+            </div>
+          </Col>
         </Row>
       </Layout>
     </div>
@@ -149,16 +169,13 @@ import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
-import ButtonDefault from '@/components/atom/TheButton/TheButton.vue'
-import TheHed from '@/components/atom/TheHed/TheHed.vue'
-import TheKicker from '@/components/atom/TheKicker/TheKicker.vue'
+import TheButton from '@/components/atom/TheButton/TheButton'
+import TheHed from '@/components/atom/TheHed/TheHed'
+import TheKicker from '@/components/atom/TheKicker/TheKicker'
+import PublishDate from '@/components/atom/PublishDate/PublishDate'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
-
-// interface data {
-// test: string
-// }
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -167,9 +184,10 @@ export default mixins(headMixin, TransitionMixin).extend({
     Col,
     Row,
     Layout,
-    ButtonDefault,
+    TheButton,
     TheHed,
     TheKicker,
+    PublishDate,
   },
   data: () => ({
     //
@@ -201,5 +219,10 @@ export default mixins(headMixin, TransitionMixin).extend({
   justify-content: center;
   height: 300px;
   background-color: #e2e4e5;
+  //
+  @media (prefers-color-scheme: dark) {
+    color: #eee;
+    background-color: #333;
+  }
 }
 </style>
