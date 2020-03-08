@@ -7,6 +7,8 @@
         'is-firefox': $ua.browser() === 'Firefox',
         'is-edge': $ua.browser() === 'Edge',
         'is-mobile': !$ua.isFromPc(),
+        'is-webp': $image.webP,
+        'is-lazy': $image.lazy,
       },
       $state.global.pageName,
       $ua.browser(),

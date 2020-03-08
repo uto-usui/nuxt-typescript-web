@@ -71,6 +71,7 @@ module.exports = {
       ssr: true,
     },
     '~/plugins/composition-api',
+    '~/plugins/image-env.ts',
   ],
 
   /*

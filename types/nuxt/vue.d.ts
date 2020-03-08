@@ -3,6 +3,7 @@ import * as Vuex from 'vuex'
 
 import { UA } from 'nuxt-user-agent/lib/types'
 import { Gtag } from './gtag'
+import { ImageEnvType } from '~/plugins/image-env'
 
 declare module 'vue/types/vue' {
   interface Vue {
@@ -15,12 +16,14 @@ declare module 'vue/types/vue' {
     $ua: UA
     $gtag: Gtag
     $mq: string
+    $image: ImageEnvType
   }
 }
 
-declare module '@nuxt/vue-app/types/index' {
+declare module '@nuxt/vue-app/' {
   interface Context {
     $ua: UA
     $gtag: Gtag
+    $image: ImageEnvType
   }
 }
