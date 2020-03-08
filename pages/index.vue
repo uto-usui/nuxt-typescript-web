@@ -12,7 +12,7 @@
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
 import Wrapper from '~/components/Wrapper.vue'
-import LazyImage from '~/components/util/LazyImage.vue'
+import LazyImage from '~/components/core/LazyImage/LazyImage'
 import Heading1 from '~/components/Heading1.vue'
 
 import headMixin from '~/mixins/Head.vue'
