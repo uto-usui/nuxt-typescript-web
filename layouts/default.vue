@@ -10,9 +10,9 @@
         'is-webp': $image.webP,
         'is-lazy': $image.lazy,
       },
-      $state.global.pageName,
-      $ua.browser(),
-      $ua.deviceType(),
+      `is-${$state.global.pageName}-page`,
+      `is-${$ua.browser()}`,
+      `is-${$ua.deviceType()}`,
     ]"
     class="layout-default"
   >
