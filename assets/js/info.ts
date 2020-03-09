@@ -10,3 +10,5 @@ export const breakpoints = [
   'wideScreen',
   'fullHd',
 ] as const
+
+export const srcSetPoints = ['600w', '980w', '1200w', '1600w', '2000w'] as const

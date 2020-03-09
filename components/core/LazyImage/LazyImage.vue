@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <img
     v-lazy="src"
     :alt="alt"

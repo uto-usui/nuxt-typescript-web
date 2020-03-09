@@ -31,6 +31,9 @@ function canUseNativeLazy() {
   }
 }
 
+/**
+ * create object
+ */
 function imageEnv() {
   return {
     lazy: canUseNativeLazy(),
@@ -38,6 +41,7 @@ function imageEnv() {
   }
 }
 
+// insert vue instance
 export default (ctx, inject) => {
   ctx.$image = imageEnv()
   inject('image', imageEnv())
