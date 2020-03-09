@@ -1,0 +1,10 @@
+@import "./variable";
+
+@include scheme(the-divider) using($material) {
+  background-color: map-deep-get($material, 'text', 'primary');
+}
+
+.the-divider {
+  width: 100%;
+  height: 1px;
+}

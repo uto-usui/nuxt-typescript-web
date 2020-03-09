@@ -1,5 +1,5 @@
 <template>
-  <Wrapper class="page-component">
+  <Wrapper>
     <div class="pc__layout">
       <Layout :full="true">
         <Row :noGutterDesktop="false" :noGutterTouch="false">
@@ -136,22 +136,22 @@
           <Col :spanMobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" small
-                >2000.12.12 TUE 18:00</PublishDate
-              >
+                >2000.12.12 TUE 18:00
+              </PublishDate>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`"
-                >2000.12.12 TUE 18:00</PublishDate
-              >
+                >2000.12.12 TUE 18:00
+              </PublishDate>
             </div>
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" large
-                >2000.12.12 TUE 18:00</PublishDate
-              >
+                >2000.12.12 TUE 18:00
+              </PublishDate>
             </div>
           </Col>
           <Col :spanMobile="2">
@@ -159,8 +159,8 @@
               <TheDec small
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Consectetur cumque debitis delectus ipsum iusto maxime nemo non
-                officiis optio provident recusandae</TheDec
-              >
+                officiis optio provident recusandae
+              </TheDec>
             </div>
           </Col>
           <Col :spanMobile="2">
@@ -168,8 +168,8 @@
               <TheDec
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Consectetur cumque debitis delectus ipsum iusto maxime nemo non
-                officiis optio provident recusandae</TheDec
-              >
+                officiis optio provident recusandae
+              </TheDec>
             </div>
           </Col>
           <Col :spanMobile="2">
@@ -177,8 +177,73 @@
               <TheDec large
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Consectetur cumque debitis delectus ipsum iusto maxime nemo non
-                officiis optio provident recusandae</TheDec
-              >
+                officiis optio provident recusandae
+              </TheDec>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ThePicture
+                :src="require(`Images/test/02.jpg`)"
+                :alt="`abc`"
+                :src-set-items="[
+                  require(`Images/test/03.jpg`),
+                  require(`Images/test/04.jpg`),
+                  require(`Images/test/05.jpg`),
+                  require(`Images/test/06.jpg`),
+                ]"
+                :width="2000"
+                :height="1330"
+              ></ThePicture>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ThePicture
+                :src="require(`Images/test/02.jpg`)"
+                :alt="`abc`"
+                :src-set-items="[
+                  require(`Images/test/03.jpg`),
+                  require(`Images/test/05.jpg`),
+                  require(`Images/test/06.jpg`),
+                  require(`Images/test/04.jpg`),
+                ]"
+                :width="2000"
+                :height="1330"
+              ></ThePicture>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ThePicture
+                :src="require(`Images/test/02.jpg`)"
+                :alt="`abc`"
+                :src-set-items="[
+                  require(`Images/test/04.jpg`),
+                  require(`Images/test/05.jpg`),
+                  require(`Images/test/06.jpg`),
+                  require(`Images/test/03.jpg`),
+                ]"
+                :width="7"
+                :height="10"
+              ></ThePicture>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout :full="true">
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheDivider />
             </div>
           </Col>
         </Row>
@@ -197,10 +262,12 @@ import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
 import TheButton from '@/components/atom/TheButton/TheButton'
+import TheDec from '@/components/atom/TheDec/TheDec'
+import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
+import ThePicture from '@/components/atom/ThePicture/ThePicture.vue'
 import PublishDate from '@/components/atom/PublishDate/PublishDate'
-import TheDec from '@/components/atom/TheDec/TheDec'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -214,8 +281,10 @@ export default mixins(headMixin, TransitionMixin).extend({
     Layout,
     TheButton,
     TheDec,
+    TheDivider,
     TheHed,
     TheKicker,
+    ThePicture,
     PublishDate,
   },
   data: () => ({
@@ -223,6 +292,8 @@ export default mixins(headMixin, TransitionMixin).extend({
   }),
   mounted() {
     this.$dispatch('global/setIsPageReady', true)
+    //
+    // console.log('webP', this.$image)
   },
   updated() {
     //
