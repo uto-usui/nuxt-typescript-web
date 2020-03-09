@@ -2,7 +2,7 @@ import { createElement as h } from '@vue/composition-api'
 import { VNodeChildren } from 'vue'
 
 export interface CreateDomInnerType {
-  slot: VNodeChildren
+  slot: VNodeChildren | undefined
   tag: string
   staticClass: string
 }
