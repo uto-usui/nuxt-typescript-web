@@ -1,0 +1,29 @@
+@import "./variable";
+
+@include scheme(the-kicker) using($material) {
+  color: map-deep-get($material, 'text', 'secondary');
+}
+
+.by-line {
+  text-align: left;
+  //
+  @each $name, $sizes in $by-line-font-sizes {
+    &.by-line--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  @each $name, $heights in $by-line-line-heights {
+    &.by-line--#{$name} {
+      @each $breakpoint, $height in $heights {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          line-height: $height;
+        }
+      }
+    }
+  }
+}

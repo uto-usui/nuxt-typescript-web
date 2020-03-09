@@ -187,51 +187,67 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
+          <Col :spanMobile="3">
+            <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
                 :alt="`abc`"
                 :src-set-items="[
-                  require(`Images/test/03.jpg`),
                   require(`Images/test/04.jpg`),
                   require(`Images/test/05.jpg`),
                   require(`Images/test/06.jpg`),
+                  require(`Images/test/03.jpg`),
                 ]"
-                :width="2000"
-                :height="1330"
+                :width="16"
+                :height="9"
               ></ThePicture>
             </div>
           </Col>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
+          <Col :spanMobile="3">
+            <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
                 :alt="`abc`"
                 :src-set-items="[
                   require(`Images/test/03.jpg`),
+                  require(`Images/test/04.jpg`),
                   require(`Images/test/05.jpg`),
                   require(`Images/test/06.jpg`),
-                  require(`Images/test/04.jpg`),
                 ]"
-                :width="2000"
-                :height="1330"
+                :width="4"
+                :height="3"
               ></ThePicture>
             </div>
           </Col>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
+          <Col :spanMobile="3">
+            <div>
+              <ThePicture
+                :src="require(`Images/test/02.jpg`)"
+                :alt="`abc`"
+                :src-set-items="[
+                  require(`Images/test/03.jpg`),
+                  require(`Images/test/05.jpg`),
+                  require(`Images/test/06.jpg`),
+                  require(`Images/test/04.jpg`),
+                ]"
+                :width="1"
+                :height="1"
+              ></ThePicture>
+            </div>
+          </Col>
+          <Col :spanMobile="3">
+            <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
                 :alt="`abc`"
                 :src-set-items="[
                   require(`Images/test/04.jpg`),
-                  require(`Images/test/05.jpg`),
                   require(`Images/test/06.jpg`),
                   require(`Images/test/03.jpg`),
+                  require(`Images/test/05.jpg`),
                 ]"
-                :width="7"
-                :height="10"
+                :width="3"
+                :height="4"
               ></ThePicture>
             </div>
           </Col>
@@ -249,6 +265,27 @@
         </Row>
       </Layout>
     </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine small>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine large>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -261,13 +298,14 @@ import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
 import Layout from '@/components/core/grid/Layout.vue'
 
+import ByLine from '@/components/atom/ByLine/ByLine'
+import PublishDate from '@/components/atom/PublishDate/PublishDate'
 import TheButton from '@/components/atom/TheButton/TheButton'
 import TheDec from '@/components/atom/TheDec/TheDec'
 import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
 import ThePicture from '@/components/atom/ThePicture/ThePicture.vue'
-import PublishDate from '@/components/atom/PublishDate/PublishDate'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -279,13 +317,14 @@ export default mixins(headMixin, TransitionMixin).extend({
     Col,
     Row,
     Layout,
+    ByLine,
+    PublishDate,
     TheButton,
     TheDec,
     TheDivider,
     TheHed,
     TheKicker,
     ThePicture,
-    PublishDate,
   },
   data: () => ({
     //
