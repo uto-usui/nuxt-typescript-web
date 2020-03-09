@@ -4,7 +4,7 @@
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main {
   width: 100%;
   padding-top: 5vw;
