@@ -5,7 +5,7 @@ import 'Sass/object/atom/the-kicker/_index.scss'
 import {
   computed,
   defineComponent,
-  // onMounted,
+  createElement as h,
 } from '@vue/composition-api'
 
 import {
@@ -28,7 +28,7 @@ export default defineComponent({
 
   props: TheKickerProps,
 
-  setup(props, _ctx) {
+  setup(props, { slots }) {
     const sizeClasses = DeliverSizeClass(props, 'the-kicker')
     const classes = computed(() => {
       return {
@@ -36,26 +36,20 @@ export default defineComponent({
       }
     })
 
-    return {
-      classes,
-    }
-  },
-  render(h, _ctx) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-    const children = [
-      createDomInner({
-        slot: _this.$slots.default,
-        tag: 'span',
-        staticClass: 'tk__inner',
-      }),
-    ]
-    return h(
-      _this.tag,
-      {
-        ..._this.$data,
-        ...{ staticClass: 'the-kicker', class: _this.classes },
-      },
-      children,
-    )
+    return () =>
+      h(
+        props.tag,
+        {
+          staticClass: 'the-kicker',
+          class: classes.value,
+        },
+        [
+          createDomInner({
+            slot: slots.default(),
+            tag: 'span',
+            staticClass: 'tk__inner',
+          }),
+        ],
+      )
   },
 })

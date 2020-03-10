@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import Vue from 'vue'
-import TheKicker from '~/components/atom/TheKicker'
-import PublishDate from '~/components/atom/PublishDate/PublishDate'
-import TheButton from 'index.ts'
-import TheHed from '~/components/atom/TheHed/TheHed'
-import Layout from '~/components/core/grid/Layout'
-import Row from '~/components/core/grid/Row'
-import Col from '~/components/core/grid/Col'
+
+import { TheKickerProps } from '~/components/atom/TheKicker/TheKicker'
+import { PublishDateProps } from '~/components/atom/PublishDate/PublishDate'
+import { TheButtonProps } from '~/components/atom/TheButton/TheButton'
+import { TheDecProps } from '~/components/atom/TheDec/TheDec'
+import { TheHedProps } from '~/components/atom/TheHed/TheHed'
+import { ThePictureProps } from '~/components/atom/ThePicture/ThePicture'
 
 Vue.component('TheKicker', TheKicker)
 Vue.component('PublishDate', PublishDate)

@@ -3,7 +3,7 @@ import 'Sass/object/atom/the-hed/_index.scss'
 import {
   computed,
   defineComponent,
-  // onMounted,
+  createElement as h,
 } from '@vue/composition-api'
 
 import {
@@ -26,7 +26,7 @@ export default defineComponent({
 
   props: TheHedProps,
 
-  setup(props, _ctx) {
+  setup(props, { slots }) {
     const sizeClasses = DeliverSizeClass(props, 'the-hed')
     const classes = computed(() => {
       return {
@@ -34,27 +34,20 @@ export default defineComponent({
       }
     })
 
-    return {
-      classes,
-    }
-  },
-
-  render(h) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-    const children = [
-      createDomInner({
-        slot: _this.$slots.default,
-        tag: 'span',
-        staticClass: 'th__inner',
-      }),
-    ]
-    return h(
-      _this.tag,
-      {
-        ..._this.$data,
-        ...{ staticClass: 'the-hed', class: _this.classes },
-      },
-      children,
-    )
+    return () =>
+      h(
+        props.tag,
+        {
+          staticClass: 'the-hed',
+          class: classes.value,
+        },
+        [
+          createDomInner({
+            slot: slots.default(),
+            tag: 'span',
+            staticClass: 'th__inner',
+          }),
+        ],
+      )
   },
 })

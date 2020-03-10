@@ -1,6 +1,6 @@
 import '~/assets/sass/object/atom/the-divider/_index.scss'
 
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, createElement as h } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'TheDivider',
@@ -10,12 +10,9 @@ export default defineComponent({
   },
 
   setup(_props, _ctx) {
-    //
-  },
-
-  render(h) {
-    return h('div', {
-      staticClass: 'the-divider',
-    })
+    return () =>
+      h('div', {
+        staticClass: 'the-divider',
+      })
   },
 })

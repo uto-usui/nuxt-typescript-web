@@ -2,7 +2,11 @@
 import '~/assets/sass/object/atom/by-line/_index.scss'
 
 // 👏🏻 hello composition API // TODO Looking forward to vue3
-import { computed, defineComponent } from '@vue/composition-api'
+import {
+  computed,
+  createElement as h,
+  defineComponent,
+} from '@vue/composition-api'
 
 import {
   DeliverSizeClassProps,
@@ -21,7 +25,7 @@ export default defineComponent({
     },
   },
 
-  setup(props, _ctx) {
+  setup: (props, { slots }) => {
     const sizeClasses = DeliverSizeClass(props, 'by-line')
     const classes = computed(() => {
       return {
@@ -29,19 +33,14 @@ export default defineComponent({
       }
     })
 
-    return {
-      classes,
-    }
-  },
-  render(h, _ctx) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-    return h(
-      _this.tag,
-      {
-        ..._this.$data,
-        ...{ staticClass: 'by-line', class: _this.classes },
-      },
-      _this.$slots.default,
-    )
+    return () =>
+      h(
+        props.tag,
+        {
+          class: classes.value,
+          staticClass: 'by-line',
+        },
+        slots.default(),
+      )
   },
 })

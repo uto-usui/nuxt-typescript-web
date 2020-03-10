@@ -23,7 +23,10 @@ export const DeliverSizeClassProps = {
   },
 }
 
-export function DeliverSizeClass(props, className: string) {
+export function DeliverSizeClass(
+  props: typeof DeliverSizeClassProps | any, // TODO 😂 I don't know props type
+  className: string,
+) {
   // no props
   const medium = computed(() => Boolean(!props.small && !props.large))
 

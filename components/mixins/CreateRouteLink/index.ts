@@ -58,7 +58,7 @@ export function generateRouteLink(
     attrs: {
       tabindex: 'tabindex' in ctx.attrs ? ctx.attrs.tabindex : undefined,
     },
-    class: classes !== undefined ? classes.value : undefined,
+    class: classes,
     props: {},
     [props.to ? 'nativeOn' : 'on']: {
       ...ctx.listeners,

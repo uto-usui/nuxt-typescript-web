@@ -1,6 +1,10 @@
 import '~/assets/sass/object/atom/the-dec/_index.scss'
 
-import { computed, defineComponent } from '@vue/composition-api'
+import {
+  computed,
+  defineComponent,
+  createElement as h,
+} from '@vue/composition-api'
 
 import {
   DeliverSizeClassProps,
@@ -22,7 +26,7 @@ export default defineComponent({
 
   props: TheDecProps,
 
-  setup(props, _ctx) {
+  setup(props, { slots }) {
     const sizeClasses = DeliverSizeClass(props, 'the-dec')
     const classes = computed(() => {
       return {
@@ -30,35 +34,26 @@ export default defineComponent({
       }
     })
 
-    return {
-      classes,
-    }
-  },
-
-  render(h) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-
-    const children = [
-      createDomInner({
-        tag: 'div',
-        staticClass: 'td__inner',
-        slot: [
+    return () =>
+      h(
+        props.tag,
+        {
+          staticClass: 'the-dec',
+          class: classes.value,
+        },
+        [
           createDomInner({
-            slot: _this.$slots.default,
-            tag: 'p',
-            staticClass: 'td__text',
+            tag: 'div',
+            staticClass: 'td__inner',
+            slot: [
+              createDomInner({
+                slot: slots.default(),
+                tag: 'p',
+                staticClass: 'td__text',
+              }),
+            ],
           }),
         ],
-      }),
-    ]
-
-    return h(
-      _this.tag,
-      {
-        ..._this.$data,
-        ...{ staticClass: 'the-dec', class: _this.classes },
-      },
-      children,
-    )
+      )
   },
 })

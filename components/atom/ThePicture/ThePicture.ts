@@ -4,7 +4,7 @@ import {
   computed,
   defineComponent,
   PropType,
-  createElement,
+  createElement as h,
 } from '@vue/composition-api'
 
 import { srcSetPoints } from '~/assets/js/info'
@@ -36,7 +36,7 @@ export const ThePictureProps = {
 
   tag: {
     type: String,
-    default: '',
+    default: 'div',
   },
 }
 
@@ -45,7 +45,7 @@ export default defineComponent({
 
   props: ThePictureProps,
 
-  setup(props, _ctx) {
+  setup(props, { root }) {
     const getSrcSet = computed(() => {
       return props.srcSetItems.reduce((prev, current, i) => {
         if (i === 1) {
@@ -64,45 +64,41 @@ export default defineComponent({
       }
     })
 
-    return {
-      getSrcSet,
-      getSize,
-    }
-  },
-
-  render(h, _ctx) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-    const children = [
-      createElement('img', {
-        attrs: {
-          src:
-            _this.$image.ready && _this.$image.lazy
-              ? _this.src
-              : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
-          srcset:
-            _this.$image.ready && _this.$image.lazy
-              ? _this.getSrcSet
-              : undefined,
-          dataSrcset: !_this.$image.lazy ? _this.getSrcSet : undefined,
-          alt: _this.alt,
-          loading: _this.$image.lazy ? 'lazy' : undefined,
-        },
-        directives: [
+    const directives = !root.$image.lazy
+      ? [
           {
-            name: !_this.$image.lazy ? 'lazy' : '',
-            value: !_this.$image.lazy ? _this.src : '',
+            name: 'lazy',
+            value: props.src,
           },
+        ]
+      : undefined
+
+    return () =>
+      h(
+        props.tag,
+        {
+          staticClass: 'the-picture',
+          style: getSize.value,
+        },
+        [
+          h('img', {
+            attrs: {
+              src:
+                root.$image.ready && root.$image.lazy
+                  ? props.src
+                  : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
+              srcset:
+                root.$image.ready && root.$image.lazy
+                  ? getSrcSet.value
+                  : undefined,
+              dataSrcset: !root.$image.lazy ? getSrcSet.value : undefined,
+              alt: props.alt,
+              loading: root.$image.lazy ? 'lazy' : undefined,
+            },
+            directives,
+            staticClass: 'tp__img',
+          }),
         ],
-        staticClass: 'tp__img',
-      }),
-    ]
-    return h(
-      _this.tag,
-      {
-        staticClass: 'the-picture',
-        class: _this.classes,
-        style: _this.getSize,
-      },
-    )
+      )
   },
 })

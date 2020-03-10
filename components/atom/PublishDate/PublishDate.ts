@@ -3,7 +3,7 @@ import '~/assets/sass/object/atom/publish-date/_index.scss'
 import {
   computed,
   defineComponent,
-  // onMounted,
+  createElement as h,
 } from '@vue/composition-api'
 
 import {
@@ -30,7 +30,7 @@ export default defineComponent({
 
   props: PublishDateProps,
 
-  setup(props, _ctx) {
+  setup(props, { slots }) {
     const sizeClasses = DeliverSizeClass(props, 'publish-date')
     const classes = computed(() => {
       return {
@@ -38,30 +38,20 @@ export default defineComponent({
       }
     })
 
-    return {
-      classes,
-    }
-  },
-
-  render(h) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-
     const attrs = {
       itemProp: 'dateModified',
-      dataTime: _this.pubDate,
+      dataTime: props.pubDate,
     }
 
-    return h(
-      _this.tag,
-      {
-        ..._this.$data,
-        ...{
+    return () =>
+      h(
+        props.tag,
+        {
           staticClass: 'publish-date',
-          class: _this.classes,
+          class: classes.value,
           attrs,
         },
-      },
-      _this.$slots.default,
-    )
+        slots.default(),
+      )
   },
 })

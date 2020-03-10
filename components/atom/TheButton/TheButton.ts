@@ -2,7 +2,11 @@ import '~/assets/sass/object/atom/the-button/_index.scss'
 
 import { VNodeData } from 'vue'
 
-import { computed, defineComponent } from '@vue/composition-api'
+import {
+  computed,
+  defineComponent,
+  createElement as h,
+} from '@vue/composition-api'
 
 import {
   DeliverSizeClassProps,
@@ -62,7 +66,7 @@ export default defineComponent({
 
   props: TheButtonProps,
 
-  setup(props, _ctx) {
+  setup(props, ctx) {
     const sizeClasses = DeliverSizeClass(props, 'the-button')
 
     const isFlat = computed(() =>
@@ -89,8 +93,6 @@ export default defineComponent({
         ...sizeClasses,
       }
     })
-
-    const _generateRouteLink = () => generateRouteLink(props, _ctx, classes)
 
     const setBackgroundColor = (
       color?: string | false,
@@ -123,35 +125,19 @@ export default defineComponent({
       return data
     }
 
-    return {
-      classes,
-
-      _generateRouteLink,
-      setTextColor,
-      setBackgroundColor,
-    }
-  },
-
-  render(h) {
-    const _this = this as any // TODO 😢 this の推論が効かなくて setup() で return したメンバーがいてない
-
-    // create inner
-    const children = [
-      createDomInner({
-        slot: _this.$slots.default,
-        tag: 'span',
-        staticClass: 'tb__inner',
-      }),
-    ]
-
     // set Class for color
-    const setColor = !_this.isFlat
-      ? _this.setBackgroundColor
-      : _this.setTextColor
-    const { tag, data } = _this._generateRouteLink()
+    const setColor = !isFlat.value ? setBackgroundColor : setTextColor
+    const { tag, data } = generateRouteLink(props, ctx, classes.value)
 
     data.staticClass = 'the-button'
 
-    return h(tag, _this.disabled ? data : setColor(_this.color, data), children)
+    return () =>
+      h(tag, props.disabled ? data : setColor(props.color, data), [
+        createDomInner({
+          slot: ctx.slots.default(),
+          tag: 'span',
+          staticClass: 'tb__inner',
+        }),
+      ])
   },
 })
