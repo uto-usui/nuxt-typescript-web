@@ -1,5 +1,6 @@
 // type
 export interface ImageEnvType {
+  ready: boolean
   lazy: boolean
   webP: boolean
 }
@@ -32,10 +33,18 @@ function canUseNativeLazy() {
 }
 
 /**
+ * Are you ready ?
+ */
+function ready() {
+  return process.client
+}
+
+/**
  * create object
  */
 function imageEnv() {
   return {
+    ready,
     lazy: canUseNativeLazy(),
     webP: canUseWebP(),
   }
