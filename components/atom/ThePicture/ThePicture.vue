@@ -1,9 +1,9 @@
-<template>
+<template lang="html">
   <div :style="getSize" class="the-picture">
     <img
       v-if="$image.lazy"
-      :src="src"
-      :srcSet="getSrcSet"
+      :src="$image.ready && src"
+      :srcset="$image.ready && getSrcSet"
       :alt="alt"
       loading="lazy"
       class="tp__img"
@@ -11,7 +11,7 @@
     <img
       v-else
       v-lazy="src"
-      :dataSrcSet="getSrcSet"
+      :data-srcset="getSrcSet"
       :alt="alt"
       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
       class="tp__img"
