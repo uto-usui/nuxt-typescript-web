@@ -2,25 +2,27 @@
 import Vue from 'vue'
 import { mergeData } from 'vue-functional-data-merge'
 
+export const RowProps = {
+  tag: {
+    type: String,
+    default: 'div',
+  },
+  noGutterTouch: {
+    type: Boolean,
+    default: false,
+  },
+  noGutterDesktop: {
+    type: Boolean,
+    default: false,
+  },
+}
+
 export default Vue.extend({
   name: 'Row',
 
   functional: true,
 
-  props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
-    noGutterTouch: {
-      type: Boolean,
-      default: false,
-    },
-    noGutterDesktop: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: RowProps,
 
   render(h, { props, data, children }) {
     const classList: string[] = []

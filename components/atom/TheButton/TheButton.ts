@@ -14,84 +14,86 @@ import {
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
+export const TheButtonProps = {
+  ...DeliverSizeClassProps,
+
+  color: {
+    type: String,
+    default: '',
+  },
+
+  append: Boolean,
+
+  full: Boolean, // full
+
+  disabled: Boolean,
+
+  exact: {
+    type: Boolean,
+    default: false,
+  },
+  link: {
+    type: Boolean,
+    default: false,
+  },
+  href: {
+    type: String,
+    default: '',
+  },
+  target: {
+    type: String,
+    default: '',
+  },
+  to: {
+    type: String,
+    default: '',
+  },
+
+  tag: {
+    type: String,
+    default: 'button',
+  },
+
+  circle: {
+    type: Boolean,
+    default: false,
+  },
+  icon: {
+    type: Boolean,
+    default: false,
+  },
+
+  tile: {
+    type: Boolean,
+    default: false,
+  },
+  outlined: {
+    type: Boolean,
+    default: false,
+  },
+  rounded: {
+    type: Boolean,
+    default: false,
+  },
+
+  text: {
+    type: Boolean,
+    default: false,
+  },
+  type: {
+    type: String,
+    default: 'button',
+  },
+  value: {
+    type: [String, Number],
+    default: undefined,
+  },
+}
+
 export default defineComponent({
   name: 'TheButton',
 
-  props: {
-    ...DeliverSizeClassProps,
-
-    color: {
-      type: String,
-      default: '',
-    },
-
-    append: Boolean,
-
-    full: Boolean, // full
-
-    disabled: Boolean,
-
-    exact: {
-      type: Boolean,
-      default: false,
-    },
-    link: {
-      type: Boolean,
-      default: false,
-    },
-    href: {
-      type: String,
-      default: '',
-    },
-    target: {
-      type: String,
-      default: '',
-    },
-    to: {
-      type: String,
-      default: '',
-    },
-
-    tag: {
-      type: String,
-      default: 'button',
-    },
-
-    circle: {
-      type: Boolean,
-      default: false,
-    },
-    icon: {
-      type: Boolean,
-      default: false,
-    },
-
-    tile: {
-      type: Boolean,
-      default: false,
-    },
-    outlined: {
-      type: Boolean,
-      default: false,
-    },
-    rounded: {
-      type: Boolean,
-      default: false,
-    },
-
-    text: {
-      type: Boolean,
-      default: false,
-    },
-    type: {
-      type: String,
-      default: 'button',
-    },
-    value: {
-      type: [String, Number],
-      default: undefined,
-    },
-  },
+  props: TheButtonProps,
 
   setup(props, _ctx) {
     const sizeClasses = DeliverSizeClass(props, 'the-button')

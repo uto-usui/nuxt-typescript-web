@@ -8,17 +8,19 @@ import {
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
+export const TheDecProps = {
+  ...DeliverSizeClassProps,
+
+  tag: {
+    type: String,
+    default: 'div',
+  },
+}
+
 export default defineComponent({
   name: 'TheDec',
 
-  props: {
-    ...DeliverSizeClassProps,
-
-    tag: {
-      type: String,
-      default: 'div',
-    },
-  },
+  props: TheDecProps,
 
   setup(props, _ctx) {
     const sizeClasses = DeliverSizeClass(props, 'the-dec')

@@ -12,17 +12,19 @@ import {
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
+export const TheHedProps = {
+  ...DeliverSizeClassProps,
+
+  tag: {
+    type: String,
+    default: 'h1',
+  },
+}
+
 export default defineComponent({
   name: 'TheHed',
 
-  props: {
-    ...DeliverSizeClassProps,
-
-    tag: {
-      type: String,
-      default: 'h1',
-    },
-  },
+  props: TheHedProps,
 
   setup(props, _ctx) {
     const sizeClasses = DeliverSizeClass(props, 'the-hed')

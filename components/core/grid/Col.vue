@@ -80,20 +80,22 @@ const createBreakpointClass = (
   return className.toLowerCase()
 }
 
+export const ColProps = {
+  ...spanProps,
+  ...offsetProps,
+  ...orderProps,
+  tag: {
+    type: String,
+    default: 'div',
+  },
+}
+
 export default Vue.extend({
   name: 'Col',
 
   functional: true,
 
-  props: {
-    ...spanProps,
-    ...offsetProps,
-    ...orderProps,
-    tag: {
-      type: String,
-      default: 'div',
-    },
-  },
+  props: ColProps,
 
   render(h, { props, data, children }) {
     const classList: string[] = []

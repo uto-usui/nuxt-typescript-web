@@ -2,21 +2,23 @@
 import Vue from 'vue'
 import { mergeData } from 'vue-functional-data-merge'
 
+export const LayoutProps = {
+  tag: {
+    type: String,
+    default: 'div',
+  },
+  full: {
+    type: Boolean,
+    default: false,
+  },
+}
+
 export default Vue.extend({
   name: 'Layout',
 
   functional: true,
 
-  props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
-    full: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  props: LayoutProps,
 
   render(h, { props, data, children }) {
     const classList = [

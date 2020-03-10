@@ -11,22 +11,24 @@ import {
   DeliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 
+export const PublishDateProps = {
+  ...DeliverSizeClassProps,
+
+  pubDate: {
+    type: String,
+    default: undefined,
+  },
+
+  tag: {
+    type: String,
+    default: 'time',
+  },
+}
+
 export default defineComponent({
   name: 'PublishDate',
 
-  props: {
-    ...DeliverSizeClassProps,
-
-    pubDate: {
-      type: String,
-      default: undefined,
-    },
-
-    tag: {
-      type: String,
-      default: 'time',
-    },
-  },
+  props: PublishDateProps,
 
   setup(props, _ctx) {
     const sizeClasses = DeliverSizeClass(props, 'publish-date')

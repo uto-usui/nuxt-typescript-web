@@ -14,17 +14,19 @@ import {
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
+export const TheKickerProps = {
+  ...DeliverSizeClassProps,
+
+  tag: {
+    type: String,
+    default: 'p',
+  },
+}
+
 export default defineComponent({
   name: 'TheKicker',
 
-  props: {
-    ...DeliverSizeClassProps,
-
-    tag: {
-      type: String,
-      default: 'p',
-    },
-  },
+  props: TheKickerProps,
 
   setup(props, _ctx) {
     const sizeClasses = DeliverSizeClass(props, 'the-kicker')

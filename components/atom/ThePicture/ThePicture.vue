@@ -24,39 +24,41 @@ import { computed, defineComponent, PropType } from '@vue/composition-api'
 
 import { srcSetPoints } from '~/assets/js/info'
 
+export const ThePictureProps = {
+  src: {
+    type: String,
+    default: '',
+  },
+
+  srcSetItems: {
+    type: Array as PropType<string[]>,
+    default: [],
+  },
+
+  width: {
+    type: Number,
+    default: 0,
+  },
+  height: {
+    type: Number,
+    default: 0,
+  },
+
+  alt: {
+    type: String,
+    default: '',
+  },
+
+  tag: {
+    type: String,
+    default: '',
+  },
+}
+
 export default defineComponent({
   name: 'ThePicture',
 
-  props: {
-    src: {
-      type: String,
-      default: '',
-    },
-
-    srcSetItems: {
-      type: Array as PropType<string[]>,
-      default: [],
-    },
-
-    width: {
-      type: Number,
-      default: 0,
-    },
-    height: {
-      type: Number,
-      default: 0,
-    },
-
-    alt: {
-      type: String,
-      default: '',
-    },
-
-    tag: {
-      type: String,
-      default: '',
-    },
-  },
+  props: ThePictureProps,
 
   setup(props, _ctx) {
     const getSrcSet = computed(() => {
