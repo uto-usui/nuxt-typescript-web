@@ -2,58 +2,33 @@ import '~/assets/sass/object/atom/the-button/_index.scss'
 
 import { VNodeData } from 'vue'
 
-import {
-  computed,
-  defineComponent,
-  // onMounted,
-} from '@vue/composition-api'
+import { computed, defineComponent } from '@vue/composition-api'
 
 import {
   DeliverSizeClassProps,
   DeliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
+import {
+  generateRouteLinkProps,
+  generateRouteLink,
+} from '~/components/mixins/CreateRouteLink'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
 export const TheButtonProps = {
   ...DeliverSizeClassProps,
+  ...generateRouteLinkProps,
 
   color: {
     type: String,
     default: '',
   },
 
-  append: Boolean,
-
   full: Boolean, // full
 
-  disabled: Boolean,
-
-  exact: {
-    type: Boolean,
-    default: false,
-  },
   link: {
     type: Boolean,
     default: false,
   },
-  href: {
-    type: String,
-    default: '',
-  },
-  target: {
-    type: String,
-    default: '',
-  },
-  to: {
-    type: String,
-    default: '',
-  },
-
-  tag: {
-    type: String,
-    default: 'button',
-  },
-
   circle: {
     type: Boolean,
     default: false,
@@ -79,14 +54,6 @@ export const TheButtonProps = {
   text: {
     type: Boolean,
     default: false,
-  },
-  type: {
-    type: String,
-    default: 'button',
-  },
-  value: {
-    type: [String, Number],
-    default: undefined,
   },
 }
 
@@ -123,48 +90,7 @@ export default defineComponent({
       }
     })
 
-    const click = (e: MouseEvent) => {
-      _ctx.emit('click', e)
-    }
-
-    const generateRouteLink = () => {
-      let exact = props.exact
-      let tag
-
-      const data: VNodeData = {
-        attrs: {
-          tabindex: 'tabindex' in _ctx.attrs ? _ctx.attrs.tabindex : undefined,
-        },
-        class: classes.value,
-        props: {},
-        [props.to ? 'nativeOn' : 'on']: {
-          ..._ctx.listeners,
-          click,
-        },
-        ref: 'link',
-      }
-
-      if (typeof props.exact === 'undefined') {
-        exact = props.to === '/'
-      }
-
-      if (props.to) {
-        tag = 'nuxt-link'
-        Object.assign(data.props, {
-          to: props.to,
-          exact,
-          append: props.append,
-        })
-      } else {
-        tag = (props.href && 'a') || props.tag || 'div'
-
-        if (tag === 'a' && props.href) data.attrs!.href = props.href
-      }
-
-      if (props.target) data.attrs!.target = props.target
-
-      return { tag, data }
-    }
+    const _generateRouteLink = () => generateRouteLink(props, _ctx, classes)
 
     const setBackgroundColor = (
       color?: string | false,
@@ -200,10 +126,9 @@ export default defineComponent({
     return {
       classes,
 
+      _generateRouteLink,
       setTextColor,
       setBackgroundColor,
-      generateRouteLink,
-      click,
     }
   },
 
@@ -223,16 +148,7 @@ export default defineComponent({
     const setColor = !_this.isFlat
       ? _this.setBackgroundColor
       : _this.setTextColor
-    const { tag, data } = _this.generateRouteLink()
-
-    // setup button
-    if (tag === 'button') {
-      data.attrs!.type = _this.type
-      data.attrs!.disabled = _this.disabled
-    }
-    data.attrs!.value = ['string', 'number'].includes(typeof _this.value)
-      ? _this.value
-      : JSON.stringify(_this.value)
+    const { tag, data } = _this._generateRouteLink()
 
     data.staticClass = 'the-button'
 
