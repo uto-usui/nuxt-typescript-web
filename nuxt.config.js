@@ -154,6 +154,10 @@ module.exports = {
     base: process.env.SITE_BASE ? process.env.SITE_BASE : '/',
   },
 
+  env: {
+    baseUrl: process.env.SITE_BASE || '/', // process.env.baseUrl
+  },
+
   /*
    ** Build configuration
    */
