@@ -77,7 +77,6 @@ export default defineComponent({
 
     const classes = computed(() => {
       return {
-        'the-button': true,
         'the-button--full': props.full,
         'the-button--disabled': props.disabled,
         'the-button--circle': props.circle,

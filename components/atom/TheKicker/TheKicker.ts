@@ -1,5 +1,5 @@
 // 💄 style
-import 'Sass/object/atom/the-kicker/_index.scss'
+import '~/assets/sass/object/atom/the-kicker/_index.scss'
 
 // 👏🏻 hello composition API // TODO Looking forward to vue3
 import {
