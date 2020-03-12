@@ -9,13 +9,13 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
 export const TheKickerProps = {
-  ...DeliverSizeClassProps,
+  ...deliverSizeClassProps,
 
   tag: {
     type: String,
@@ -29,18 +29,15 @@ export default defineComponent({
   props: TheKickerProps,
 
   setup(props, { slots }) {
-    const sizeClasses = DeliverSizeClass(props, 'the-kicker')
+    const baseClassName = 'the-kicker'
     const classes = computed(() => {
-      return {
-        ...sizeClasses,
-      }
+      return [baseClassName, deliverSizeClass(props, baseClassName).value]
     })
 
     return () =>
       h(
         props.tag,
         {
-          staticClass: 'the-kicker',
           class: classes.value,
         },
         [

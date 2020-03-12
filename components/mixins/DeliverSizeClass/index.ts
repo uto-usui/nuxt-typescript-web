@@ -4,7 +4,7 @@ import { computed } from '@vue/composition-api'
  * This is the object
  * you need to pass to props in the component you want to apply
  */
-export const DeliverSizeClassProps = {
+export const deliverSizeClassProps = {
   xSmall: {
     type: Boolean,
     default: false,
@@ -23,14 +23,13 @@ export const DeliverSizeClassProps = {
   },
 }
 
-export function DeliverSizeClass(
-  props: typeof DeliverSizeClassProps | any, // TODO 😂 I don't know props type
+export function deliverSizeClass(
+  props: typeof deliverSizeClassProps | any, // TODO 😂 I don't know props type
   className: string,
 ) {
-  // no props
   const medium = computed(() => Boolean(!props.small && !props.large))
 
-  const sizeClasses = computed((): { [k: string]: boolean } => {
+  return computed((): { [k: string]: boolean } => {
     return {
       [`${className}--x-small`]: props.xSmall,
       [`${className}--small`]: props.small,
@@ -39,6 +38,4 @@ export function DeliverSizeClass(
       [`${className}--x-large`]: props.xLarge,
     }
   })
-
-  return sizeClasses.value
 }

@@ -9,8 +9,8 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 import {
   generateRouteLinkProps,
@@ -19,7 +19,7 @@ import {
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
 export const TheButtonProps = {
-  ...DeliverSizeClassProps,
+  ...deliverSizeClassProps,
   ...generateRouteLinkProps,
 
   color: {
@@ -67,8 +67,6 @@ export default defineComponent({
   props: TheButtonProps,
 
   setup(props, ctx) {
-    const sizeClasses = DeliverSizeClass(props, 'the-button')
-
     const isFlat = computed(() =>
       Boolean(props.icon || props.text || props.outlined),
     )
@@ -76,21 +74,24 @@ export default defineComponent({
     const isLink = computed(() => Boolean(props.to || props.href || props.link))
 
     const classes = computed(() => {
-      return {
-        'the-button--full': props.full,
-        'the-button--disabled': props.disabled,
-        'the-button--circle': props.circle,
-        'the-button--flat': isFlat.value,
-        'the-button--icon': props.icon,
-        'the-button--outlined': props.outlined,
-        'the-button--round': isRound.value,
-        'the-button--rounded': props.rounded,
-        'the-button--router': props.to,
-        'the-button--text': props.text,
-        'the-button--tile': props.tile,
-        'the-button--link': isLink.value,
-        ...sizeClasses,
-      }
+      return [
+        {
+          'the-button': true,
+          'the-button--full': props.full,
+          'the-button--disabled': props.disabled,
+          'the-button--circle': props.circle,
+          'the-button--flat': isFlat.value,
+          'the-button--icon': props.icon,
+          'the-button--outlined': props.outlined,
+          'the-button--round': isRound.value,
+          'the-button--rounded': props.rounded,
+          'the-button--router': props.to,
+          'the-button--text': props.text,
+          'the-button--tile': props.tile,
+          'the-button--link': isLink.value,
+        },
+        deliverSizeClass(props, 'the-button').value,
+      ]
     })
 
     const setBackgroundColor = (
@@ -101,11 +102,10 @@ export default defineComponent({
         return data
       }
       if (color) {
-        data.class = {
-          ...data.class,
+        data.class.push({
           [`the-button--${color}`]: true,
           'the-button--color': true,
-        }
+        })
       }
 
       return data
@@ -116,27 +116,26 @@ export default defineComponent({
         return data
       }
       if (color) {
-        data.class = {
-          ...data.class,
+        data.class.push({
           [color + '--text']: true,
-        }
+        })
       }
       return data
     }
 
     // set Class for color
     const setColor = !isFlat.value ? setBackgroundColor : setTextColor
-    const { tag, data } = generateRouteLink(props, ctx, classes.value)
 
-    data.staticClass = 'the-button'
+    return () => {
+      const { tag, data } = generateRouteLink(props, ctx, classes.value)
 
-    return () =>
-      h(tag, props.disabled ? data : setColor(props.color, data), [
+      return h(tag, props.disabled ? data : setColor(props.color, data), [
         createDomInner({
           slot: ctx.slots.default(),
           tag: 'span',
           staticClass: 'tb__inner',
         }),
       ])
+    }
   },
 })

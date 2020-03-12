@@ -7,12 +7,12 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 
 export const PublishDateProps = {
-  ...DeliverSizeClassProps,
+  ...deliverSizeClassProps,
 
   pubDate: {
     type: String,
@@ -31,11 +31,9 @@ export default defineComponent({
   props: PublishDateProps,
 
   setup(props, { slots }) {
-    const sizeClasses = DeliverSizeClass(props, 'publish-date')
+    const baseClassName = 'publish-date'
     const classes = computed(() => {
-      return {
-        ...sizeClasses,
-      }
+      return [baseClassName, deliverSizeClass(props, baseClassName).value]
     })
 
     const attrs = {
@@ -47,7 +45,6 @@ export default defineComponent({
       h(
         props.tag,
         {
-          staticClass: 'publish-date',
           class: classes.value,
           attrs,
         },

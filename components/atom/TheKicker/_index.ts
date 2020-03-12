@@ -10,15 +10,15 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 
 export default defineComponent({
   name: 'TheKicker',
 
   props: {
-    ...DeliverSizeClassProps,
+    ...deliverSizeClassProps,
 
     // TODO Instead of slots - with render function ️🙅🏻‍♀️ - with template 🙆🏻‍♀
     html: {
@@ -33,7 +33,7 @@ export default defineComponent({
   },
 
   setup(props, _ctx) {
-    const sizeClasses = DeliverSizeClass(props, 'the-kicker')
+    const sizeClasses = deliverSizeClass(props, 'the-kicker')
     const classes = computed(() => {
       return {
         ...sizeClasses,

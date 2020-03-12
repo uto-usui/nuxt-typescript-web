@@ -7,13 +7,13 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 import { createDomInner } from '~/components/mixins/CreateDomInner'
 
 export const TheHedProps = {
-  ...DeliverSizeClassProps,
+  ...deliverSizeClassProps,
 
   tag: {
     type: String,
@@ -27,18 +27,15 @@ export default defineComponent({
   props: TheHedProps,
 
   setup(props, { slots }) {
-    const sizeClasses = DeliverSizeClass(props, 'the-hed')
+    const baseClassName = 'the-hed'
     const classes = computed(() => {
-      return {
-        ...sizeClasses,
-      }
+      return [baseClassName, deliverSizeClass(props, baseClassName).value]
     })
 
     return () =>
       h(
         props.tag,
         {
-          staticClass: 'the-hed',
           class: classes.value,
         },
         [

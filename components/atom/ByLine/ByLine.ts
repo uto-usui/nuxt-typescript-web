@@ -9,15 +9,15 @@ import {
 } from '@vue/composition-api'
 
 import {
-  DeliverSizeClassProps,
-  DeliverSizeClass,
+  deliverSizeClassProps,
+  deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 
 export default defineComponent({
   name: 'ByLine',
 
   props: {
-    ...DeliverSizeClassProps,
+    ...deliverSizeClassProps,
 
     tag: {
       type: String,
@@ -26,11 +26,9 @@ export default defineComponent({
   },
 
   setup: (props, { slots }) => {
-    const sizeClasses = DeliverSizeClass(props, 'by-line')
+    const baseClassName = 'by-line'
     const classes = computed(() => {
-      return {
-        ...sizeClasses,
-      }
+      return [baseClassName, deliverSizeClass(props, baseClassName).value]
     })
 
     return () =>
@@ -38,7 +36,6 @@ export default defineComponent({
         props.tag,
         {
           class: classes.value,
-          staticClass: 'by-line',
         },
         slots.default(),
       )
