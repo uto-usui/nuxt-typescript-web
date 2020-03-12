@@ -22,7 +22,7 @@ export const state = (): S => ({
  * getters
  */
 export const getters: Getters<S, G> = {
-  todosCount(state, getters, rootState, rootgetters) {
+  todosCount(state, _getters, _rootState, _rootgetters) {
     return state.todos.length
   },
   getTodos(state) {
