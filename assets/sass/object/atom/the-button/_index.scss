@@ -25,7 +25,7 @@
     color: map-deep-get($material, 'icons', 'active');
   }
 
-  @include states($material);
+  @include bg-states($material);
 }
 
 .the-button {
