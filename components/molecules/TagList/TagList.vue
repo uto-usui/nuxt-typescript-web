@@ -4,19 +4,16 @@
       <li
         v-for="(item, index) in list"
         :key="`tl__item${index}`"
-        @mouseenter="active = !active"
         class="tl__item"
       >
-        <TheTag :active="active" :to="item.link" :large="active"
-          >#{{ item.text }}</TheTag
-        >
+        <TheTag :to="item.link" large>#{{ item.text }}</TheTag>
       </li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from '@vue/composition-api'
+import { defineComponent, PropType } from '@vue/composition-api'
 
 import TagJson from './_TagList.json'
 import TheTag from '~/components/atom/TheTag/TheTag'
@@ -34,14 +31,6 @@ export default defineComponent({
   props: TagListProps,
 
   components: { TheTag },
-
-  setup() {
-    const active = ref(true)
-
-    return {
-      active,
-    }
-  },
 })
 </script>
 
