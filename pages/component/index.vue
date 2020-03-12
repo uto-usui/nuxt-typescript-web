@@ -185,6 +185,38 @@
       </Layout>
     </div>
     <div class="pc__layout">
+      <Layout :full="true">
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheDivider />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine small>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <ByLine large>By YUTARO KOSHIMOTO</ByLine>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
       <Layout>
         <Row>
           <Col :spanMobile="3">
@@ -255,32 +287,11 @@
       </Layout>
     </div>
     <div class="pc__layout">
-      <Layout :full="true">
+      <Layout>
         <Row>
           <Col :spanMobile="12">
             <div class="pc__inner">
-              <TheDivider />
-            </div>
-          </Col>
-        </Row>
-      </Layout>
-    </div>
-    <div class="pc__layout">
-      <Layout>
-        <Row>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
-              <ByLine small>By YUTARO KOSHIMOTO</ByLine>
-            </div>
-          </Col>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
-              <ByLine>By YUTARO KOSHIMOTO</ByLine>
-            </div>
-          </Col>
-          <Col :spanMobile="4">
-            <div class="pc__inner">
-              <ByLine large>By YUTARO KOSHIMOTO</ByLine>
+              <TagList />
             </div>
           </Col>
         </Row>
@@ -305,7 +316,9 @@ import TheDec from '@/components/atom/TheDec/TheDec'
 import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
-import ThePicture from '@/components/atom/ThePicture/ThePicture.vue'
+import ThePicture from '@/components/atom/ThePicture/ThePicture'
+
+import TagList from '@/components/molecules/TagList/TagList.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
@@ -319,6 +332,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     Layout,
     ByLine,
     PublishDate,
+    TagList,
     TheButton,
     TheDec,
     TheDivider,
@@ -331,8 +345,6 @@ export default mixins(headMixin, TransitionMixin).extend({
   }),
   mounted() {
     this.$dispatch('global/setIsPageReady', true)
-    //
-    // console.log('webP', this.$image)
   },
   updated() {
     //

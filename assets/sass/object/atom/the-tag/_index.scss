@@ -1,0 +1,30 @@
+@import "./variable";
+
+@include scheme(the-tag) using($material) {
+  color: map-deep-get($material, 'text', 'link');
+  //
+  @include link-states($material);
+}
+
+.the-tag {
+  //
+  @each $name, $sizes in $tag-font-sizes {
+    &.the-tag--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          font-size: $size;
+        }
+      }
+    }
+  }
+
+  @each $name, $heights in $tag-line-heights {
+    &.the-tag--#{$name} {
+      @each $breakpoint, $height in $heights {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          line-height: $height;
+        }
+      }
+    }
+  }
+}
