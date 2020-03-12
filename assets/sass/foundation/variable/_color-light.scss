@@ -13,8 +13,9 @@ $material-light: map-deep-merge(
       'primary': rgba(map-get($shades, 'black'), 0.87),
       'secondary': rgba(map-get($shades, 'black'), 0.6),
       'disabled': rgba(map-get($shades, 'black'), 0.38),
-      'link': map-get($blue, 'darken-2'),
-      'link-hover': map-get($grey, 'darken-3')
+      'link': rgba(map-get($shades, 'black'), 0.6),
+      'link-hover': map-get($color-primary-group, 'base'),
+      'link-focus': map-get($color-primary-group, 'darken-2')
     ),
     'icons': (
       'active': rgba(map-get($shades, 'black'), 0.54),

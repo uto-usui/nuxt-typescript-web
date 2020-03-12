@@ -30,8 +30,9 @@ $material-dark: map-deep-merge(
       'primary': map-get($shades, 'white'),
       'secondary': rgba(map-get($shades, 'white'), 0.7),
       'disabled': rgba(map-get($shades, 'white'), 0.5),
-      'link': map-get($blue, 'accent-1'),
-      'link-hover': map-get($grey, 'lighten-3')
+      'link':  rgba(map-get($shades, 'white'), 0.7),
+      'link-hover':map-get($color-primary-group, 'base'),
+      'link-focus': map-get($color-primary-group, 'darken-2')
     ),
     'icons': (
       'active': map-get($shades, 'white'),

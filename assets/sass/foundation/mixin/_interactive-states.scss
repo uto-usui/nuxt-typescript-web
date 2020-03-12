@@ -22,3 +22,28 @@
     opacity: map-deep-get($material, 'states', 'pressed');
   }
 }
+
+@mixin link-states($material) {
+  &:hover {
+    color: map-deep-get($material, 'text', 'link-hover');
+  }
+
+  &:focus {
+    color: map-deep-get($material, 'text', 'link-focus');
+  }
+
+  &--active {
+    @include link-active-states($material);
+  }
+}
+
+@mixin link-active-states($material) {
+  &:hover {
+    color: map-deep-get($material, 'text', 'link-hover');
+  }
+
+  &:focus {
+    color: map-deep-get($material, 'text', 'link-focus');
+  }
+}
+
