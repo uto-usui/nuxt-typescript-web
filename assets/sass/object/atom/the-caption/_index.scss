@@ -1,14 +1,14 @@
 @import "./variable";
 
-@include scheme(by-line) using($material) {
-  color: map-deep-get($material, 'text', 'secondary');
+@include scheme(the-caption) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
 }
 
-.by-line {
+.the-caption {
   text-align: left;
   //
-  @each $name, $sizes in $by-line-font-sizes {
-    &.by-line--#{$name} {
+  @each $name, $sizes in $caption-font-sizes {
+    &.the-caption--#{$name} {
       @each $breakpoint, $size in $sizes {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
           font-size: $size;
@@ -17,8 +17,8 @@
     }
   }
 
-  @each $name, $heights in $by-line-line-heights {
-    &.by-line--#{$name} {
+  @each $name, $heights in $caption-line-heights {
+    &.the-caption--#{$name} {
       @each $breakpoint, $height in $heights {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
           line-height: $height;

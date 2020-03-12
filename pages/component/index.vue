@@ -91,6 +91,11 @@
               <TheButton x-large text>text</TheButton>
             </div>
           </Col>
+          <Col :spanMobile="2">
+            <div class="pc__inner">
+              <TheButton :to="`/`" x-large>text</TheButton>
+            </div>
+          </Col>
         </Row>
       </Layout>
     </div>
@@ -289,9 +294,19 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :spanMobile="6">
             <div class="pc__inner">
               <TagList />
+            </div>
+          </Col>
+          <Col :spanMobile="3">
+            <div class="pc__inner">
+              <TheCaption small>ARCO KERSTIN/GETTY IMAGES</TheCaption>
+            </div>
+          </Col>
+          <Col :spanMobile="3">
+            <div class="pc__inner">
+              <TheCaption>ARCO KERSTIN/GETTY IMAGES</TheCaption>
             </div>
           </Col>
         </Row>
@@ -312,6 +327,7 @@ import Layout from '@/components/core/grid/Layout.vue'
 import ByLine from '@/components/atom/ByLine/ByLine'
 import PublishDate from '@/components/atom/PublishDate/PublishDate'
 import TheButton from '@/components/atom/TheButton/TheButton'
+import TheCaption from '@/components/atom/TheCaption/TheCaption'
 import TheDec from '@/components/atom/TheDec/TheDec'
 import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import TheHed from '@/components/atom/TheHed/TheHed'
@@ -334,6 +350,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     PublishDate,
     TagList,
     TheButton,
+    TheCaption,
     TheDec,
     TheDivider,
     TheHed,
