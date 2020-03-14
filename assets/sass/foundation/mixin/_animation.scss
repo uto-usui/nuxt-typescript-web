@@ -20,13 +20,15 @@
   vertical-align: middle;
 }
 
-@mixin hacks() {
+@mixin smooth-animation-hacks() {
   @include forceBlockLevel();
   @include hardwareAccel();
   @include improveAntiAlias();
   @include fontSmooth();
 }
 
+// from - https://github.com/will-stone/waitanimate
+// Copyright (c) 2016 Will Stone
 @mixin waitAnimate($options: ()) {
   $options: map-merge(( animationName: waitAnimate, duration: 1, waitTime: 0, timingFunction: linear, iterationCount: infinite), $options);
   $name: map-get($options, animationName);
