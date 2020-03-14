@@ -6,13 +6,13 @@
 
 @mixin dot-bg {
   background: transparent;
-  background-image: radial-gradient($black 35%, rgba($black, 0) 0), radial-gradient($black 35%, rgba($black, 0) 0);
+  background-image: radial-gradient(black 35%, rgba(black, 0) 0), radial-gradient(black 35%, rgba(black, 0) 0);
   background-position: 0 0, 4px 4px;
   background-size: 4px 4px;
   opacity: 0.08;
   //
   @include desktop {
-    background-image: radial-gradient($black 35%, rgba($black, 0) 0), radial-gradient($black 35%, rgba($black, 0) 0);
+    background-image: radial-gradient(black 35%, rgba(black, 0) 0), radial-gradient(black 35%, rgba(black, 0) 0);
     background-position: 0 0, 8px 8px;
     background-size: 8px 8px;
   }
