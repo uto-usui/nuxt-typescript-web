@@ -1,37 +1,18 @@
 $by-line-font-sizes: () !default;
 $by-line-font-sizes: map-deep-merge(
-  (
-    'small': (
-      'mobile': 1rem,
-      'desktop': 1rem,
+    (
+      'small': (
+        'mobile': (-2, 0),
+        'desktop': (-1, 0),
+      ),
+      'medium': (
+        'mobile': (0, 2),
+        'desktop': (1, 2),
+      ),
+      'large': (
+        'mobile': (1, 1),
+        'desktop': (2, 1),
+      ),
     ),
-    'medium': (
-      'mobile': 1.2rem,
-      'desktop': 1.2rem,
-    ),
-    'large': (
-      'mobile': 1.5rem,
-      'desktop': 1.5rem,
-    ),
-  ),
-  $by-line-font-sizes
-);
-
-$by-line-line-heights: () !default;
-$by-line-line-heights: map-deep-merge(
-  (
-    'small': (
-      'mobile': 1.3,
-      'desktop': 1.3,
-    ),
-    'medium': (
-      'mobile': 1.3,
-      'desktop': 1.3,
-    ),
-    'large': (
-      'mobile': 1.3,
-      'desktop': 1.3,
-    ),
-  ),
-  $by-line-line-heights
+    $by-line-font-sizes
 );

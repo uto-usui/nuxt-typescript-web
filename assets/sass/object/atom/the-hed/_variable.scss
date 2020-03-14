@@ -2,36 +2,17 @@ $hed-font-sizes: () !default;
 $hed-font-sizes: map-deep-merge(
   (
     'small': (
-      'mobile': 2rem,
-      'desktop': 2rem,
+      'mobile': (0, 0),
+      'desktop': (1, 0),
     ),
     'medium': (
-      'mobile': 4rem,
-      'desktop': 4rem,
+      'mobile': (2, 2),
+      'desktop': (3, 2),
     ),
     'large': (
-      'mobile': 8rem,
-      'desktop': 8rem,
+      'mobile': (4, 1),
+      'desktop': (5, 1),
     ),
   ),
   $hed-font-sizes
-);
-
-$hed-line-heights: () !default;
-$hed-line-heights: map-deep-merge(
-  (
-    'small': (
-      'mobile': 1.5,
-      'desktop': 1.5,
-    ),
-    'medium': (
-      'mobile': 1.5,
-      'desktop': 1.5,
-    ),
-    'large': (
-      'mobile': 1.5,
-      'desktop': 1.5,
-    ),
-  ),
-  $hed-line-heights
 );

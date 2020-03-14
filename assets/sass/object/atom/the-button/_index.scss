@@ -47,7 +47,7 @@
   //
   @each $name, $size in $btn-font-sizes {
     &.the-button--#{$name} {
-      font-size: $size;
+      @include sizes($size);
     }
   }
 
@@ -194,7 +194,6 @@
   flex: 1 0 auto;
   align-items: center;
   justify-content: inherit;
-  line-height: normal;
   color: inherit;
 
   .icon.icon--left,

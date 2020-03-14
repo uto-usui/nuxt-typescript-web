@@ -11,17 +11,7 @@
     &.the-dec--#{$name} {
       @each $breakpoint, $size in $sizes {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
-          font-size: $size;
-        }
-      }
-    }
-  }
-
-  @each $name, $heights in $dec-line-heights {
-    &.the-dec--#{$name} {
-      @each $breakpoint, $height in $heights {
-        @include from(map-deep-get($breakpoints, $breakpoint)) {
-          line-height: $height;
+          @include sizes($size);
         }
       }
     }

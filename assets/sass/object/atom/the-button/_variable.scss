@@ -35,11 +35,11 @@ $btn-sizes: map-deep-merge(
 $btn-font-sizes: () !default;
 $btn-font-sizes: map-deep-merge(
   (
-    'x-small': 0.625rem,
-    'small': 0.75rem,
-    'medium': 0.875rem,
-    'large': 0.875rem,
-    'x-large': 1rem
+    'x-small': (-4),
+    'small': (-3),
+    'medium': (-2),
+    'large': (-1),
+    'x-large': (1)
   ),
   $btn-font-sizes
 );

@@ -17,14 +17,4 @@
       }
     }
   }
-
-  @each $name, $heights in $tag-line-heights {
-    &.the-tag--#{$name} {
-      @each $breakpoint, $height in $heights {
-        @include from(map-deep-get($breakpoints, $breakpoint)) {
-          line-height: $height;
-        }
-      }
-    }
-  }
 }

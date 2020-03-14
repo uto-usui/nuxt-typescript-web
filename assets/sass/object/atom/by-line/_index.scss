@@ -11,17 +11,7 @@
     &.by-line--#{$name} {
       @each $breakpoint, $size in $sizes {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
-          font-size: $size;
-        }
-      }
-    }
-  }
-
-  @each $name, $heights in $by-line-line-heights {
-    &.by-line--#{$name} {
-      @each $breakpoint, $height in $heights {
-        @include from(map-deep-get($breakpoints, $breakpoint)) {
-          line-height: $height;
+          @include sizes($size);
         }
       }
     }

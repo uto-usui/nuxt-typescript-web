@@ -10,7 +10,7 @@
     &.publish-date--#{$name} {
       @each $breakpoint, $size in $sizes {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
-          font-size: $size;
+          @include sizes($size);
         }
       }
     }
