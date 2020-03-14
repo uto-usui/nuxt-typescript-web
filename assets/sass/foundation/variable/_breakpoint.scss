@@ -1,6 +1,3 @@
-// rhythm
-$spacer: 4 !default;
-
 $breakpoints: () !default;
 $breakpoints: map-deep-merge(
   (
@@ -12,22 +9,3 @@ $breakpoints: map-deep-merge(
   ),
   $breakpoints
 );
-
-$grid-gutter: $spacer * 6 !default;
-$grid-columns: 12 !default;
-
-$container-padding-x: $grid-gutter / 2 !default;
-
-$grid-gutters: () !default;
-$grid-gutters: map-deep-merge(
-  (
-    'mobile': $spacer + 'vw',
-    'tablet': $spacer + 'vw',
-    'desktop': $spacer + 'vw',
-    'wideScreen': $spacer + 'vw',
-    'fullHd': $spacer * 6 + px
-  ),
-  $grid-gutters
-);
-
-$layout-max-width: 1400px
