@@ -6,6 +6,8 @@ import { PublishDateProps } from '~/components/atom/PublishDate/PublishDate'
 import { TheButtonProps } from '~/components/atom/TheButton/TheButton'
 import { TheDecProps } from '~/components/atom/TheDec/TheDec'
 import { TheHedProps } from '~/components/atom/TheHed/TheHed'
+
+import { TheParagraphProps } from '~/components/atom/TheParagraph/TheParagraph'
 import { ThePictureProps } from '~/components/atom/ThePicture/ThePicture'
 
 Vue.component('TheKicker', TheKicker)

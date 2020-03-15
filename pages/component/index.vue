@@ -3,6 +3,9 @@
     <div class="pc__layout">
       <Layout :full="true">
         <Row :noGutterDesktop="false" :noGutterTouch="false">
+          <Col :spanMobile="12">
+            <TheHed large>full width</TheHed>
+          </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
               1
@@ -24,6 +27,9 @@
     <div class="pc__layout">
       <Layout>
         <Row :noGutterDesktop="false" :noGutterTouch="false">
+          <Col :spanMobile="12">
+            <TheHed large>max width</TheHed>
+          </Col>
           <Col :spanMobile="1" v-for="index in 12" :key="`col2${index}`">
             <div class="pc__inner">
               {{ index }}
@@ -35,6 +41,9 @@
     <div class="pc__layout">
       <Layout>
         <Row :noGutterDesktop="true" :noGutterTouch="true">
+          <Col :spanMobile="12">
+            <TheHed large>button</TheHed>
+          </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <TheButton color="primary" small>small</TheButton>
@@ -102,6 +111,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
+          <Col :spanMobile="6">
+            <TheHed large>title</TheHed>
+          </Col>
+          <Col :spanMobile="6">
+            <TheHed large>kicker</TheHed>
+          </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <TheHed small>title</TheHed>
@@ -138,6 +153,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
+          <Col :spanMobile="6">
+            <TheHed large>publish date</TheHed>
+          </Col>
+          <Col :spanMobile="6">
+            <TheHed large>dec</TheHed>
+          </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" small
@@ -172,8 +193,7 @@
             <div class="pc__inner">
               <TheDec
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consectetur cumque debitis delectus ipsum iusto maxime nemo non
-                officiis optio provident recusandae
+                Consectetur cumque debitis delectus
               </TheDec>
             </div>
           </Col>
@@ -181,8 +201,7 @@
             <div class="pc__inner">
               <TheDec large
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Consectetur cumque debitis delectus ipsum iusto maxime nemo non
-                officiis optio provident recusandae
+                Consectetur cumque debitis delectus
               </TheDec>
             </div>
           </Col>
@@ -192,6 +211,9 @@
     <div class="pc__layout">
       <Layout :full="true">
         <Row>
+          <Col :spanMobile="12">
+            <TheHed large>divider</TheHed>
+          </Col>
           <Col :spanMobile="12">
             <div class="pc__inner">
               <TheDivider />
@@ -203,6 +225,9 @@
     <div class="pc__layout">
       <Layout>
         <Row>
+          <Col :spanMobile="12">
+            <TheHed large>by line</TheHed>
+          </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
               <ByLine small>By YUTARO KOSHIMOTO</ByLine>
@@ -224,6 +249,9 @@
     <div class="pc__layout">
       <Layout>
         <Row>
+          <Col :spanMobile="12">
+            <TheHed large>picture</TheHed>
+          </Col>
           <Col :spanMobile="3">
             <div>
               <ThePicture
@@ -295,6 +323,12 @@
       <Layout>
         <Row>
           <Col :spanMobile="6">
+            <TheHed large>tag</TheHed>
+          </Col>
+          <Col :spanMobile="6">
+            <TheHed large>caption</TheHed>
+          </Col>
+          <Col :spanMobile="6">
             <div class="pc__inner">
               <TagList />
             </div>
@@ -307,6 +341,42 @@
           <Col :spanMobile="3">
             <div class="pc__inner">
               <TheCaption>ARCO KERSTIN/GETTY IMAGES</TheCaption>
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <TheHed large>paragraph</TheHed>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TheParagraph small
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit.</TheParagraph
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TheParagraph
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit.</TheParagraph
+              >
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TheParagraph large
+                >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit.</TheParagraph
+              >
             </div>
           </Col>
         </Row>
@@ -332,6 +402,7 @@ import TheDec from '@/components/atom/TheDec/TheDec'
 import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
+import TheParagraph from '@/components/atom/TheParagraph/TheParagraph'
 import ThePicture from '@/components/atom/ThePicture/ThePicture'
 
 import TagList from '@/components/molecules/TagList/TagList.vue'
@@ -355,6 +426,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TheDivider,
     TheHed,
     TheKicker,
+    TheParagraph,
     ThePicture,
   },
   data: () => ({

@@ -1,0 +1,19 @@
+@import "./variable";
+
+@include scheme(the-paragraph) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+}
+
+.the-paragraph {
+  text-align: left;
+  //
+  @each $name, $sizes in $paragraph-font-sizes {
+    &.the-paragraph--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          @include sizes($size);
+        }
+      }
+    }
+  }
+}

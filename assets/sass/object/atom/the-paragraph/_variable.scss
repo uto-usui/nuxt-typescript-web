@@ -1,0 +1,18 @@
+$paragraph-font-sizes: () !default;
+$paragraph-font-sizes: map-deep-merge(
+  (
+    'small': (
+      'mobile': (-2, 1),
+      'desktop': (-2, 1),
+    ),
+    'medium': (
+      'mobile': (0, 2),
+      'desktop': (0, 2),
+    ),
+    'large': (
+      'mobile': (1, 2),
+      'desktop': (1, 2),
+    ),
+  ),
+  $paragraph-font-sizes
+);
