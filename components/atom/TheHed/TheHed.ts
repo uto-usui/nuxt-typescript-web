@@ -1,4 +1,4 @@
-import 'Sass/object/atom/the-hed/_index.scss'
+import '~/assets/sass/object/atom/the-hed/_index.scss'
 
 import {
   computed,

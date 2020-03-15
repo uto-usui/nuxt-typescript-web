@@ -5,6 +5,7 @@
 }
 
 .the-hed {
+  font-weight: 600;
   //
   @each $name, $sizes in $hed-font-sizes {
     &.the-hed--#{$name} {
