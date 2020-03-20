@@ -2,6 +2,8 @@
 import * as Vuex from 'vuex'
 
 import { UA } from 'nuxt-user-agent/lib/types'
+import { Vue } from 'vue/types/vue'
+import { SetupContext } from '@vue/composition-api'
 import { Gtag } from './gtag'
 import { ImageEnvType } from '~/plugins/image-env'
 
@@ -25,5 +27,11 @@ declare module '@nuxt/vue-app/' {
     $ua: UA
     $gtag: Gtag
     $image: ImageEnvType
+  }
+}
+
+declare module '@vue/composition-api/dist/component/component' {
+  interface SetupContext {
+    refs: { [key: string]: Vue | Element | Vue[] | Element[] }
   }
 }
