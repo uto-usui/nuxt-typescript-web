@@ -117,15 +117,25 @@ module.exports = {
    *
    * css break points
    * /assets/sass/foundation/variable/_breakpoint.scss
+   *
+   * <mq-layout mq="lg">
+   *   <span> Display on lg </span>
+   * </mq-layout>
+   * <mq-layout mq="md+">
+   *   <span> Display on md and larger </span>
+   * </mq-layout>
+   * <mq-layout :mq="['sm', 'lg']">
+   *   <span> Display on sm and lg </span>
+   * </mq-layout>
    */
   mq: {
-    defaultBreakpoint: 'default',
+    defaultBreakpoint: 'mobile',
     breakpoints: {
-      mobile: 0,
-      tablet: 768,
-      desktop: 1024,
-      widescreen: 1200,
-      fullhd: 1680,
+      mobile: 767,
+      tablet: 1023,
+      desktop: 1199,
+      wideScreen: 1679,
+      fullHd: Infinity,
     },
   },
 
