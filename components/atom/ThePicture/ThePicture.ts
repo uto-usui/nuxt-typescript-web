@@ -20,6 +20,11 @@ export const ThePictureProps = {
     default: [],
   },
 
+  isWebP: {
+    type: Boolean,
+    default: false,
+  },
+
   width: {
     type: Number,
     default: 0,
@@ -64,6 +69,10 @@ export default defineComponent({
       }
     })
 
+    const replaceWebP = (string: string) => {
+      return string.replace(/.jpg/g, '.webp')
+    }
+
     const directives = !root.$image.lazy
       ? [
           {
@@ -85,13 +94,21 @@ export default defineComponent({
             attrs: {
               src:
                 root.$image.ready && root.$image.lazy
-                  ? props.src
+                  ? props.isWebP && root.$image.webP
+                    ? replaceWebP(props.src)
+                    : props.src
                   : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
               srcset:
                 root.$image.ready && root.$image.lazy
-                  ? getSrcSet.value
+                  ? props.isWebP && root.$image.webP
+                    ? replaceWebP(getSrcSet.value)
+                    : getSrcSet.value
                   : undefined,
-              dataSrcset: !root.$image.lazy ? getSrcSet.value : undefined,
+              dataSrcset: !root.$image.lazy
+                ? props.isWebP && root.$image.webP
+                  ? replaceWebP(getSrcSet.value)
+                  : getSrcSet.value
+                : undefined,
               alt: props.alt,
               loading: root.$image.lazy ? 'lazy' : undefined,
             },
