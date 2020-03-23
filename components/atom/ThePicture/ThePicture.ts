@@ -17,7 +17,7 @@ export const ThePictureProps = {
 
   srcSetItems: {
     type: Array as PropType<string[]>,
-    default: [],
+    default: () => [],
   },
 
   isWebP: {
@@ -99,16 +99,17 @@ export default defineComponent({
                     : props.src
                   : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
               srcset:
-                root.$image.ready && root.$image.lazy
+                props.srcSetItems[0] && root.$image.ready && root.$image.lazy
                   ? props.isWebP && root.$image.webP
                     ? replaceWebP(getSrcSet.value)
                     : getSrcSet.value
                   : undefined,
-              dataSrcset: !root.$image.lazy
-                ? props.isWebP && root.$image.webP
-                  ? replaceWebP(getSrcSet.value)
-                  : getSrcSet.value
-                : undefined,
+              dataSrcset:
+                props.srcSetItems[0] && !root.$image.lazy
+                  ? props.isWebP && root.$image.webP
+                    ? replaceWebP(getSrcSet.value)
+                    : getSrcSet.value
+                  : undefined,
               alt: props.alt,
               loading: root.$image.lazy ? 'lazy' : undefined,
             },
