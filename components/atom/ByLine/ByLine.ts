@@ -13,17 +13,19 @@ import {
   deliverSizeClass,
 } from '~/components/mixins/DeliverSizeClass'
 
+export const ByLineProps = {
+  ...deliverSizeClassProps,
+
+  tag: {
+    type: String,
+    default: 'p',
+  },
+}
+
 export default defineComponent({
   name: 'ByLine',
 
-  props: {
-    ...deliverSizeClassProps,
-
-    tag: {
-      type: String,
-      default: 'p',
-    },
-  },
+  props: ByLineProps,
 
   setup: (props, { slots }) => {
     const baseClassName = 'by-line'
