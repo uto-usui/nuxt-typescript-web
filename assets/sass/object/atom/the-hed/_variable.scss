@@ -2,8 +2,8 @@ $hed-font-sizes: () !default;
 $hed-font-sizes: map-deep-merge(
   (
     'small': (
-      'mobile': (0, 0),
-      'desktop': (1, 0),
+      'mobile': (0, 1),
+      'desktop': (1, 1),
     ),
     'medium': (
       'mobile': (2, 2),
