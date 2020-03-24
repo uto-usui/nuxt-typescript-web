@@ -1,0 +1,19 @@
+@import "./variable";
+
+@include scheme(job-title) using($material) {
+  color: map-deep-get($material, 'text', 'secondary');
+}
+
+.job-title {
+  text-align: left;
+  //
+  @each $name, $sizes in $job-title-font-sizes {
+    &.job-title--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          @include sizes($size);
+        }
+      }
+    }
+  }
+}
