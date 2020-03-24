@@ -4,7 +4,7 @@
       <TheHed :small="!large">{{ title }}</TheHed>
     </div>
     <div class="tt__meta">
-      <TheKicker>{{ cat }}</TheKicker>
+      <TheKicker v-if="cat">{{ cat }}</TheKicker>
       <PublishDate :pub-date="pubDate">{{ pubDateFormatted }} </PublishDate>
     </div>
   </div>

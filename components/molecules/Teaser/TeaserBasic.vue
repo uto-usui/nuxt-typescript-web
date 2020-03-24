@@ -10,7 +10,7 @@
             :height="1"
           />
         </div>
-        <div class="tb__wrap">
+        <div class="tb__text-wrap">
           <TheTeaserText
             :cat="cat"
             :pub-date="pubDate"

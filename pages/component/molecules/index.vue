@@ -38,6 +38,30 @@
         </Row>
       </Layout>
     </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <TheHed large>Teaser inline</TheHed>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserInline />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserInline />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserInline />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -54,12 +78,14 @@ import TheHed from '~/components/atom/TheHed/TheHed'
 
 import TagList from '~/components/molecules/TagList/TagList.vue'
 import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic.vue'
+import TeaserInline from '~/components/molecules/Teaser/TeaserInline.vue'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
     Wrapper,
     TagList,
     TeaserBasic,
+    TeaserInline,
     TheHed,
     Layout,
     Row,

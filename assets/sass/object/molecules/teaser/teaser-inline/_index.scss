@@ -1,0 +1,25 @@
+@import "./variable";
+
+.teaser-inline {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.ti__inner {
+  position: relative;
+}
+
+.ti__area {
+  display: flex;
+}
+
+.ti__img {
+  flex: 1 1;
+}
+
+.ti__text-wrap {
+  flex: 1 1;
+  margin-left: space-scalar(4);
+}
+
