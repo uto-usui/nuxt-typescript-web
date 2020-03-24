@@ -1,0 +1,32 @@
+@import "./variable";
+
+.teaser-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.tc__inner {
+  position: relative;
+}
+
+.tc__area {
+  //
+}
+
+
+.tc__img {
+  //
+}
+
+.tc__text-wrap {
+  padding: space-scalar(5);
+}
+
+.tc__author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: space-scalar(5);
+}
+
