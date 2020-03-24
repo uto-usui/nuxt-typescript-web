@@ -1,0 +1,18 @@
+@import "./variable";
+
+.teaser-text {
+  text-align: left;
+  //
+  &.teaser-text--large {
+    //
+  }
+}
+
+.tt__title {
+  padding-top: space-scalar(5);
+  padding-bottom: space-scalar(4);
+}
+
+.tt__meta {
+  //
+}
