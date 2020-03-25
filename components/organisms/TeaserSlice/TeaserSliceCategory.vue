@@ -3,7 +3,7 @@
     <Layout>
       <Row>
         <Col :spanMobile="6">
-          <TeaserBasic :link="list[0].link" :title="list[0].title" />
+          <TeaserBasic :link="list[0].link" :title="list[0].title" large />
         </Col>
         <Col :spanMobile="3" v-for="index in 2" :key="`tscCol${index}`">
           <div v-for="_index in 2" :key="`_tscCol${_index}`" class="tsc__item">
