@@ -3,22 +3,11 @@
     <Layout>
       <Row>
         <Col :spanMobile="6">
-          <TeaserBasic />
+          <TeaserBasic :link="list[0].link" :title="list[0].title" />
         </Col>
-        <Col :spanMobile="3">
-          <div class="tsc__item">
-            <TeaserBasic />
-          </div>
-          <div class="tsc__item">
-            <TeaserBasic />
-          </div>
-        </Col>
-        <Col :spanMobile="3">
-          <div class="tsc__item">
-            <TeaserBasic />
-          </div>
-          <div class="tsc__item">
-            <TeaserBasic />
+        <Col :spanMobile="3" v-for="index in 2" :key="`tscCol${index}`">
+          <div v-for="_index in 2" :key="`_tscCol${_index}`" class="tsc__item">
+            <TeaserBasic :title="list[_index - 1 + index + index - 1].title" />
           </div>
         </Col>
       </Row>
