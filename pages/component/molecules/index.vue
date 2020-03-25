@@ -4,7 +4,9 @@
       <Layout>
         <Row>
           <Col :spanMobile="12">
-            <TheHed large>tag</TheHed>
+            <div class="pc__inner">
+              <TheHed large>tag</TheHed>
+            </div>
           </Col>
           <Col :spanMobile="6">
             <div class="pc__inner">
@@ -18,7 +20,9 @@
       <Layout>
         <Row>
           <Col :spanMobile="12">
-            <TheHed large>Teaser Basic</TheHed>
+            <div class="pc__inner">
+              <TheHed large>Teaser Basic</TheHed>
+            </div>
           </Col>
           <Col :spanMobile="3">
             <div class="pc__inner">
@@ -42,7 +46,14 @@
       <Layout>
         <Row>
           <Col :spanMobile="12">
-            <TheHed large>Teaser inline</TheHed>
+            <div class="pc__inner">
+              <TheHed large>Teaser inline</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserInline />
+            </div>
           </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
@@ -54,9 +65,30 @@
               <TeaserInline />
             </div>
           </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheHed large>Teaser card</TheHed>
+            </div>
+          </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
-              <TeaserInline />
+              <TeaserCard />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserCard />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserCard />
             </div>
           </Col>
         </Row>
@@ -79,6 +111,7 @@ import TheHed from '~/components/atom/TheHed/TheHed'
 import TagList from '~/components/molecules/TagList/TagList.vue'
 import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic.vue'
 import TeaserInline from '~/components/molecules/Teaser/TeaserInline.vue'
+import TeaserCard from '~/components/molecules/Teaser/TeaserCard'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -86,6 +119,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TagList,
     TeaserBasic,
     TeaserInline,
+    TeaserCard,
     TheHed,
     Layout,
     Row,

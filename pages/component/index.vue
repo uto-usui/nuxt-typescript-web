@@ -18,7 +18,7 @@
           </Col>
           <Col :spanMobile="4">
             <div class="pc__inner">
-              3
+              <n-link to="/component/organisms/">organisms</n-link>
             </div>
           </Col>
         </Row>
