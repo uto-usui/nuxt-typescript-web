@@ -1,0 +1,12 @@
+@import "./variable";
+
+.teaser-slice-category {
+  //
+}
+
+.tsc__item {
+  //
+  + .tsc__item {
+    margin-top: 4vw;
+  }
+}
