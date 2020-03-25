@@ -2,16 +2,16 @@ $publish-date-font-size: () !default;
 $publish-date-font-size: map-deep-merge(
   (
     'small': (
+      'mobile': (-3, 0),
+      'desktop': (-2, 0),
+    ),
+    'medium': (
       'mobile': (-2, 0),
       'desktop': (-1, 0),
     ),
-    'medium': (
-      'mobile': (0, 2),
-      'desktop': (1, 2),
-    ),
     'large': (
-      'mobile': (1, 1),
-      'desktop': (2, 1),
+      'mobile': (0, 1),
+      'desktop': (1, 1),
     ),
   ),
   $publish-date-font-size
