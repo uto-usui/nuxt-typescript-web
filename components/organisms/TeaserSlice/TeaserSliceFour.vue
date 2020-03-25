@@ -1,5 +1,5 @@
 <template>
-  <div class="teaser-slice-for">
+  <div class="teaser-slice-four">
     <Layout>
       <Row>
         <Col :spanMobile="3" v-for="index in 4" :key="`tsfCol${index}`">
