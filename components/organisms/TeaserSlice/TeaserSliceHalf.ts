@@ -3,9 +3,9 @@ import { defineComponent, PropType } from '@vue/composition-api'
 import TeaserSliceJson from './TeaserSlice.json'
 
 import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic'
-import { Col, Layout, Row } from '@/components/core/grid'
+import { Col, Layout, Row } from '~/components/core/grid'
 
-export const TeaserSliceCategoryProps = {
+export const TeaserSliceHalfProps = {
   list: {
     type: Array as PropType<typeof TeaserSliceJson[]>,
     default: () => TeaserSliceJson,
@@ -13,9 +13,9 @@ export const TeaserSliceCategoryProps = {
 }
 
 export default defineComponent({
-  name: 'TeaserSliceCategory',
+  name: 'TeaserSliceHalf',
 
-  props: TeaserSliceCategoryProps,
+  props: TeaserSliceHalfProps,
 
   components: {
     TeaserBasic,

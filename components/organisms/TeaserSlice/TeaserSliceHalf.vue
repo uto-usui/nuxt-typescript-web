@@ -1,12 +1,12 @@
 <template>
-  <div class="teaser-slice-category">
+  <div class="teaser-slice-half">
     <Layout>
       <Row>
         <Col :spanMobile="6">
           <TeaserBasic :link="list[0].link" :title="list[0].title" large />
         </Col>
         <Col :spanMobile="3" v-for="index in 2" :key="`tscCol${index}`">
-          <div v-for="_index in 2" :key="`_tscCol${_index}`" class="tsc__item">
+          <div v-for="_index in 2" :key="`_tscCol${_index}`" class="tsh__item">
             <TeaserBasic :title="list[_index - 1 + index + index - 1].title" />
           </div>
         </Col>
@@ -15,8 +15,8 @@
   </div>
 </template>
 
-<script lang="ts" src="./TeaserSliceCategory.ts"></script>
+<script lang="ts" src="./TeaserSliceHalf.ts"></script>
 
 <style lang="scss">
-@import '~Sass/object/organisms/teaser-slice/category/_index.scss';
+@import '~Sass/object/organisms/teaser-slice/half/_index.scss';
 </style>
