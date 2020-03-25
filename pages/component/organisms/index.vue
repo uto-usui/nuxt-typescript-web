@@ -10,7 +10,39 @@
           </Col>
           <Col :spanMobile="12">
             <div class="pc__inner">
-              <TeaserSliceCategory />
+              <TeaserSliceHalf />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheHed large>Teaser Slice Four</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TeaserSliceFour />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheHed large>Teaser Slice Trio</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TeaserSliceTrio />
             </div>
           </Col>
         </Row>
@@ -30,13 +62,17 @@ import { Col, Layout, Row } from '~/components/core/grid'
 
 import TheHed from '~/components/atom/TheHed/TheHed'
 
-import TeaserSliceCategory from '~/components/organisms/TeaserSlice/TeaserSliceCategory.vue'
+import TeaserSliceHalf from '~/components/organisms/TeaserSlice/TeaserSliceHalf.vue'
+import TeaserSliceFour from '~/components/organisms/TeaserSlice/TeaserSliceFour.vue'
+import TeaserSliceTrio from '~/components/organisms/TeaserSlice/TeaserSliceTrio'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
     Wrapper,
     TheHed,
-    TeaserSliceCategory,
+    TeaserSliceHalf,
+    TeaserSliceFour,
+    TeaserSliceTrio,
     Layout,
     Row,
     Col,
