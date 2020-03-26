@@ -1,13 +1,21 @@
 @import "./variable";
 
-.tag-list {
-  // display: flex;
+.slice-hed-line {
+  width: 100%;
 }
 
-.tl__items {
-  display: flex;
+.shl__title {
+  text-align: left;
 }
 
-.tl__item {
-  margin-left: 1rem;
+.shl__sub {
+  text-align: left;
+}
+
+.shl__button {
+  text-align: right;
+}
+
+.shl__item {
+  //
 }

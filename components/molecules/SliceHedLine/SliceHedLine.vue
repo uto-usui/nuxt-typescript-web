@@ -1,7 +1,7 @@
 <template>
   <div class="slice-hed-line">
     <Layout :full="true">
-      <Row>
+      <Row :align="'center'">
         <Col :spanMobile="sub ? 3 : 6">
           <div class="shl__title">
             <SliceHed :small="small">{{ title }}</SliceHed>
@@ -27,5 +27,5 @@
 <script lang="ts" src="./SliceHedLine.ts"></script>
 
 <style lang="scss">
-@import '~assets/sass/object/molecules/tag-list/_index.scss';
+@import '~assets/sass/object/molecules/slice-head-line/_index.scss';
 </style>

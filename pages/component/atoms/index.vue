@@ -61,7 +61,7 @@
           </Col>
           <Col :spanMobile="2">
             <div class="pc__inner">
-              <TheButton outlined>outlined</TheButton>
+              <TheButton outlined color="primary">outlined</TheButton>
             </div>
           </Col>
           <Col :spanMobile="2">
