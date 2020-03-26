@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-half">
-    <Layout>
+    <Layout :full="true">
       <Row>
         <Col :spanMobile="6">
           <TeaserBasic :link="list[0].link" :title="list[0].title" large />

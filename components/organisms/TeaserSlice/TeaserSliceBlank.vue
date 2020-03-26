@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-blank">
-    <Layout>
+    <Layout :full="true">
       <Row>
         <Col
           :spanMobile="3"
