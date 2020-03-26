@@ -1,0 +1,54 @@
+@import "./variable";
+
+.teaser-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+
+@include scheme(teaser-box) using($material) {
+  background-color: map-deep-get($material, 'box');
+}
+
+.tb__inner {
+  position: relative;
+  padding: space-scalar(4);
+}
+
+.tb__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tb__hed {
+  flex: 1 1;
+  text-align: left;
+}
+
+.tb__button {
+  flex: 1 1;
+  text-align: right;
+}
+
+.tb__divider {
+  margin-top: space-scalar(6);
+  margin-bottom: space-scalar(4);
+}
+
+.tb__area {
+  position: relative;
+  display: flex;
+}
+
+.tb__img {
+  flex: 1 1;
+  margin-left: space-scalar(4);
+}
+
+.tb__text-wrap {
+  flex: 1 1;
+  text-align: left;
+}
+

@@ -102,6 +102,32 @@
         <Row>
           <Col :spanMobile="12">
             <div class="pc__inner">
+              <TheHed large>Teaser Box</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserBox />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserBox />
+            </div>
+          </Col>
+          <Col :spanMobile="4">
+            <div class="pc__inner">
+              <TeaserBox />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
               <TheHed large>Teaser card</TheHed>
             </div>
           </Col>
@@ -142,6 +168,7 @@ import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic.vue'
 import TeaserInline from '~/components/molecules/Teaser/TeaserInline.vue'
 import TeaserCard from '~/components/molecules/Teaser/TeaserCard'
 import SliceHedLine from '@/components/molecules/SliceHedLine/SliceHedLine'
+import TeaserBox from '@/components/molecules/Teaser/TeaserBox'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -149,6 +176,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TagList,
     TeaserBasic,
     TeaserInline,
+    TeaserBox,
     TeaserCard,
     TheHed,
     SliceHedLine,

@@ -4,14 +4,14 @@ import Anchor from '~/components/core/Anchor/Anchor'
 import ThePicture from '~/components/atom/ThePicture/ThePicture'
 
 import TheTeaserText from '@/components/molecules/Teaser/common/TeaserCommonText.vue'
-import { TheTeaserTextProps } from '@/components/molecules/Teaser/common/TeaserCommonText'
+import { TeaserTextProps } from '@/components/molecules/Teaser/common/TeaserCommonText'
 
 export const TeaserBasicProps = {
   link: {
     type: String,
     default: '/',
   },
-  ...TheTeaserTextProps,
+  ...TeaserTextProps,
 }
 
 export default defineComponent({

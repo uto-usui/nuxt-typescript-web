@@ -7,7 +7,7 @@ import TheDivider from '~/components/atom/TheDivider/TheDivider'
 import ThePicture from '~/components/atom/ThePicture/ThePicture'
 
 import TheTeaserText from '~/components/molecules/Teaser/common/TeaserCommonText.vue'
-import { TheTeaserTextProps } from '~/components/molecules/Teaser/common/TeaserCommonText'
+import { TeaserTextProps } from '~/components/molecules/Teaser/common/TeaserCommonText'
 
 interface TeaserCardAuthor {
   name: string
@@ -28,7 +28,7 @@ export const TeaserCardProps = {
       }
     },
   },
-  ...TheTeaserTextProps,
+  ...TeaserTextProps,
 }
 
 export default defineComponent({

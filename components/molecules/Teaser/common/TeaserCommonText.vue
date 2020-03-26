@@ -1,7 +1,7 @@
 <template>
   <div :class="[{ 'teaser-text--large': large }]" class="teaser-text">
     <div class="tt__title">
-      <TheHed :small="!large">{{ title }}</TheHed>
+      <TheHed :tag="'h3'" :small="!large">{{ title }}</TheHed>
     </div>
     <div class="tt__meta">
       <TheKicker v-if="cat">{{ cat }}</TheKicker>

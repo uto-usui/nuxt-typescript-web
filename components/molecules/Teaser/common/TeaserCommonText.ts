@@ -2,7 +2,7 @@ import PublishDate from '@/components/atom/PublishDate/PublishDate'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
 
-export const TheTeaserTextProps = {
+export const TeaserTextProps = {
   large: {
     type: Boolean,
     default: false,
@@ -28,5 +28,5 @@ export const TheTeaserTextProps = {
 export default {
   name: 'TeaserCommonText',
   components: { PublishDate, TheHed, TheKicker },
-  props: TheTeaserTextProps,
+  props: TeaserTextProps,
 }

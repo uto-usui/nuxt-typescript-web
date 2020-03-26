@@ -26,6 +26,6 @@
 
 <script lang="ts" src="./TeaserBasic.ts"></script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~Sass/object/molecules/teaser/teaser-basic/_index.scss';
 </style>

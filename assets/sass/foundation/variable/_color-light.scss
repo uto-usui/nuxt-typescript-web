@@ -7,6 +7,7 @@ $material-light: map-deep-merge(
     'background': map-get($shades, 'white'),
     'surface': map-get($shades, 'white'),
     'cards': map-get($shades, 'white'),
+    'box': map-get($shades, 'white'),
     'dividers': rgba(map-get($shades, 'black'), 0.12),
     'text': (
       'theme': map-get($shades, 'white'),
