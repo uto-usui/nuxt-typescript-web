@@ -21,6 +21,35 @@
         <Row>
           <Col :spanMobile="12">
             <div class="pc__inner">
+              <TheHed large>Slice Hed Line</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <SliceHedLine />
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <SliceHedLine
+                :sub="`いまこそ気候崩壊の避けられない真実`"
+                :to="``"
+              />
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <SliceHedLine small />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
               <TheHed large>Teaser Basic</TheHed>
             </div>
           </Col>
@@ -112,6 +141,7 @@ import TagList from '~/components/molecules/TagList/TagList.vue'
 import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic.vue'
 import TeaserInline from '~/components/molecules/Teaser/TeaserInline.vue'
 import TeaserCard from '~/components/molecules/Teaser/TeaserCard'
+import SliceHedLine from '@/components/molecules/SliceHedLine/SliceHedLine'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -121,6 +151,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TeaserInline,
     TeaserCard,
     TheHed,
+    SliceHedLine,
     Layout,
     Row,
     Col,
