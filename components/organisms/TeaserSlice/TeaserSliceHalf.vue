@@ -2,6 +2,11 @@
   <div class="teaser-slice-half">
     <Layout :full="true">
       <Row>
+        <Col :spanMobile="12">
+          <div class="tsh__title">
+            <SliceHedLine />
+          </div>
+        </Col>
         <Col :spanMobile="6">
           <TeaserBasic :link="list[0].link" :title="list[0].title" large />
         </Col>

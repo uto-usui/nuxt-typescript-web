@@ -2,6 +2,21 @@
   <div class="teaser-slice-blank">
     <Layout :full="true">
       <Row>
+        <Col :spanMobile="12">
+          <div class="tsb__title">
+            <SliceHedLine :sub="`This is short lead texts... `" :to="''" />
+          </div>
+        </Col>
+        <Col :spanMobile="12">
+          <div class="tsb__divider">
+            <TheDivider />
+          </div>
+        </Col>
+        <Col :spanMobile="12">
+          <div class="tsh__sub">
+            <SliceHedLine :title="`#cat`" small />
+          </div>
+        </Col>
         <Col
           :spanMobile="3"
           :offsetMobile="index === 1 ? 3 : null"

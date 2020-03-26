@@ -2,6 +2,11 @@
   <div class="teaser-slice-four">
     <Layout :full="true">
       <Row>
+        <Col :spanMobile="12">
+          <div class="tsf__title">
+            <SliceHedLine />
+          </div>
+        </Col>
         <Col :spanMobile="3" v-for="index in 4" :key="`tsfCol${index}`">
           <div class="tsf__item">
             <TeaserBasic :title="list[index - 1].title" />
