@@ -1,0 +1,19 @@
+@import "./variable";
+
+@include scheme(slice-hed) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+}
+
+.slice-hed {
+  font-weight: 600;
+  //
+  @each $name, $sizes in $slice-font-sizes {
+    &.slice-hed--#{$name} {
+      @each $breakpoint, $size in $sizes {
+        @include from(map-deep-get($breakpoints, $breakpoint)) {
+          @include sizes($size);
+        }
+      }
+    }
+  }
+}

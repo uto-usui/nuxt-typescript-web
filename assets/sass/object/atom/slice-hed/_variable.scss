@@ -1,0 +1,18 @@
+$slice-font-sizes: () !default;
+$slice-font-sizes: map-deep-merge(
+  (
+    'small': (
+      'mobile': (0, 1),
+      'desktop': (1, 1),
+    ),
+    'medium': (
+      'mobile': (2, 2),
+      'desktop': (3, 2),
+    ),
+    'large': (
+      'mobile': (4, 2),
+      'desktop': (5, 2),
+    ),
+  ),
+  $slice-font-sizes
+);
