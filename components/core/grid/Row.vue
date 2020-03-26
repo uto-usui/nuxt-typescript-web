@@ -4,7 +4,6 @@ import { mergeData } from 'vue-functional-data-merge'
 import { PropOptions } from '@vue/composition-api'
 import { breakpoints } from '@/assets/js/info'
 import { upperFirst } from '@/assets/js/helper'
-import { Dictionary } from '@/types/global'
 
 function makeProps(prefix: string, def: () => PropOptions) {
   return breakpoints.reduce((props, val) => {
