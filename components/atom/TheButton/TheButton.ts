@@ -118,6 +118,7 @@ export default defineComponent({
       if (color) {
         data.class.push({
           [`the-button--${color}`]: true,
+          'the-button--color': true,
         })
       }
       return data
