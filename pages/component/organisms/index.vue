@@ -64,6 +64,22 @@
         </Row>
       </Layout>
     </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheHed large>Teaser Slice Boxes</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TeaserSliceBoxes />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -82,6 +98,7 @@ import TeaserSliceHalf from '~/components/organisms/TeaserSlice/TeaserSliceHalf.
 import TeaserSliceFour from '~/components/organisms/TeaserSlice/TeaserSliceFour.vue'
 import TeaserSliceTrio from '~/components/organisms/TeaserSlice/TeaserSliceTrio'
 import TeaserSliceBlank from '~/components/organisms/TeaserSlice/TeaserSliceBlank'
+import TeaserSliceBoxes from '@/components/organisms/TeaserSlice/TeaserSliceBoxes'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -91,6 +108,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TeaserSliceFour,
     TeaserSliceTrio,
     TeaserSliceBlank,
+    TeaserSliceBoxes,
     Layout,
     Row,
     Col,

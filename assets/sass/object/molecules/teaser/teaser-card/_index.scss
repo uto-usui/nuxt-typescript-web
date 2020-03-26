@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+@include scheme(teaser-card) using($material) {
+  background-color: map-deep-get($material, 'cards');
+}
+
 .tc__inner {
   position: relative;
 }
