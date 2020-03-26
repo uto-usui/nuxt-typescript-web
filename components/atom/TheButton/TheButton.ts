@@ -117,7 +117,7 @@ export default defineComponent({
       }
       if (color) {
         data.class.push({
-          [color + '--text']: true,
+          [`the-button--${color}`]: true,
         })
       }
       return data
