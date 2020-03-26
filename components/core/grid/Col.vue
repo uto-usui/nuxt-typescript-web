@@ -3,8 +3,7 @@ import Vue, { PropOptions } from 'vue'
 import { mergeData } from 'vue-functional-data-merge'
 import { breakpoints } from '@/assets/js/info'
 import { upperFirst } from '@/assets/js/helper'
-
-type Dictionary<T> = Record<string, T>
+import { Dictionary } from '@/types/global'
 
 /**
  * create vue component props - span

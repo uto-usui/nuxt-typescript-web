@@ -1,7 +1,23 @@
+$alignment: start end center;
+$alignValues: join($alignment, baseline stretch);
+$justifyValues: join($alignment, space-between space-around);
+
 .row {
   display: flex;
   flex: 1 1 100%;
   flex-flow: wrap;
+
+  @each $alignValue in $alignValues {
+    &.row--align-#{$alignValue} {
+      align-items: $alignValue;
+    }
+  }
+
+  @each $justifyValue in $justifyValues {
+    &.row--justify-#{$justifyValue} {
+      justify-content: $justifyValue;
+    }
+  }
 
   // negative margin
   @each $size, $width in $breakpoints {
@@ -10,6 +26,18 @@
 
       margin-right: calc(#{$gutter} * -1);
       margin-left: calc(#{$gutter} * -1);
+    }
+
+    @each $alignValue in $alignValues {
+      &.row--align-#{$alignValue}-#{$size} {
+        align-items: $alignValue;
+      }
+    }
+
+    @each $justifyValue in $justifyValues {
+      &.row--justify-#{$justifyValue}-#{$size} {
+        justify-content: $justifyValue;
+      }
     }
   }
 
