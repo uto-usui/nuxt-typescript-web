@@ -6,8 +6,8 @@ $dec-font-sizes: map-deep-merge(
       'desktop': (-1, 0),
     ),
     'medium': (
-      'mobile': (0, 2),
-      'desktop': (1, 2),
+      'mobile': (-1, 2),
+      'desktop': (0, 2),
     ),
     'large': (
       'mobile': (1, 1),

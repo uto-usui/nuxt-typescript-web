@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-boxes">
-    <Layout :full="true">
+    <Layout full>
       <Row>
         <Col :spanMobile="4" v-for="index in 3" :key="`tsfCol${index}`">
           <div class="tsb__item">

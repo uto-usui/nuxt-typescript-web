@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-trio">
-    <Layout :full="true">
+    <Layout full>
       <Row>
         <Col :spanMobile="12">
           <div class="tsh__title">

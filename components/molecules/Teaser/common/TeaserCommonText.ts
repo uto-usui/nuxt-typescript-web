@@ -1,15 +1,24 @@
 import PublishDate from '@/components/atom/PublishDate/PublishDate'
 import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
+import TheDec from '@/components/atom/TheDec/TheDec'
 
 export const TeaserTextProps = {
-  large: {
+  half: {
+    type: Boolean,
+    default: false,
+  },
+  full: {
     type: Boolean,
     default: false,
   },
   title: {
     type: String,
     default: 'これはタイトルです、これはタイトルです、これはタイトルです。',
+  },
+  lead: {
+    type: String,
+    default: '',
   },
   cat: {
     type: String,
@@ -27,6 +36,6 @@ export const TeaserTextProps = {
 
 export default {
   name: 'TeaserCommonText',
-  components: { PublishDate, TheHed, TheKicker },
+  components: { PublishDate, TheHed, TheDec, TheKicker },
   props: TeaserTextProps,
 }

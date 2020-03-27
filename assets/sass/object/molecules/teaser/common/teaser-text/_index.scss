@@ -10,6 +10,9 @@
 
 .tt__title {
   //
+  &.tt__title--full {
+    margin-bottom: space-scalar(4);
+  }
 }
 
 .tt__meta {

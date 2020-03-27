@@ -3,21 +3,32 @@
     <Anchor :to="link" />
     <div class="ti__inner">
       <div class="ti__area">
-        <div class="ti__img">
-          <ThePicture
-            :src="require(`Images/test/02.jpg`)"
-            :width="1"
-            :height="1"
-          />
-        </div>
-        <div class="ti__text-wrap">
-          <TheTeaserText
-            :cat="''"
-            :pub-date="pubDate"
-            :pub-date-formatted="pubDateFormatted"
-            :title="title"
-          />
-        </div>
+        <Layout full>
+          <Row :align="'center'">
+            <Col :spanMobile="6">
+              <div class="ti__img">
+                <ThePicture
+                  :src="require(`Images/test/02.jpg`)"
+                  :width="1"
+                  :height="1"
+                />
+              </div>
+            </Col>
+            <Col :spanMobile="5" :offsetMobile="1">
+              <div class="ti__text-wrap">
+                <TheTeaserText
+                  :pub-date="pubDate"
+                  :pub-date-formatted="pubDateFormatted"
+                  :title="title"
+                  :lead="
+                    `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis, dignissimos exercitationem magni nulla perspiciatis quis rerum voluptatem? Delectus deleniti dicta ducimus fugiat ipsum molestiae nulla porro similique! Dolores, illum?`
+                  "
+                  :full="full"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Layout>
       </div>
     </div>
   </div>

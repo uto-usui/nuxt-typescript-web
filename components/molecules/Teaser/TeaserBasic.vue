@@ -16,7 +16,7 @@
             :pub-date="pubDate"
             :pub-date-formatted="pubDateFormatted"
             :title="title"
-            :large="large"
+            :half="half"
           />
         </div>
       </div>

@@ -1,7 +1,7 @@
 <template>
   <Wrapper>
     <div class="pc__layout">
-      <Layout :full="true">
+      <Layout full>
         <Row :noGutterDesktop="false" :noGutterTouch="false">
           <Col :spanMobile="12">
             <TheHed large>full width</TheHed>

@@ -80,6 +80,22 @@
         </Row>
       </Layout>
     </div>
+    <div class="pc__layout">
+      <Layout>
+        <Row>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TheHed large>Teaser Slice full</TheHed>
+            </div>
+          </Col>
+          <Col :spanMobile="12">
+            <div class="pc__inner">
+              <TeaserSliceFull />
+            </div>
+          </Col>
+        </Row>
+      </Layout>
+    </div>
   </Wrapper>
 </template>
 
@@ -99,6 +115,7 @@ import TeaserSliceFour from '~/components/organisms/TeaserSlice/TeaserSliceFour.
 import TeaserSliceTrio from '~/components/organisms/TeaserSlice/TeaserSliceTrio'
 import TeaserSliceBlank from '~/components/organisms/TeaserSlice/TeaserSliceBlank'
 import TeaserSliceBoxes from '@/components/organisms/TeaserSlice/TeaserSliceBoxes'
+import TeaserSliceFull from '@/components/organisms/TeaserSlice/TeaserSliceFull'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {
@@ -109,6 +126,7 @@ export default mixins(headMixin, TransitionMixin).extend({
     TeaserSliceTrio,
     TeaserSliceBlank,
     TeaserSliceBoxes,
+    TeaserSliceFull,
     Layout,
     Row,
     Col,

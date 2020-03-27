@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-half">
-    <Layout :full="true">
+    <Layout full>
       <Row>
         <Col :spanMobile="12">
           <div class="tsh__title">
@@ -8,7 +8,7 @@
           </div>
         </Col>
         <Col :spanMobile="6">
-          <TeaserBasic :link="list[0].link" :title="list[0].title" large />
+          <TeaserBasic :link="list[0].link" :title="list[0].title" half />
         </Col>
         <Col :spanMobile="3" v-for="index in 2" :key="`tscCol${index}`">
           <div v-for="_index in 2" :key="`_tscCol${_index}`" class="tsh__item">

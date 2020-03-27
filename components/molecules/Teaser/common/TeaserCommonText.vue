@@ -1,7 +1,12 @@
 <template>
-  <div :class="[{ 'teaser-text--large': large }]" class="teaser-text">
-    <div class="tt__title">
-      <TheHed :tag="'h3'" :small="!large">{{ title }}</TheHed>
+  <div class="teaser-text">
+    <div :class="[{ 'tt__title--full': full }]" class="tt__title">
+      <TheHed :tag="'h3'" :small="!half || !full" :large="full">{{
+        title
+      }}</TheHed>
+    </div>
+    <div v-if="lead" class="tt__lead">
+      <TheDec>{{ lead }}</TheDec>
     </div>
     <div class="tt__meta">
       <TheKicker v-if="cat">{{ cat }}</TheKicker>

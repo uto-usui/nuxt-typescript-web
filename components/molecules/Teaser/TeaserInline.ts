@@ -5,6 +5,7 @@ import ThePicture from '~/components/atom/ThePicture/ThePicture'
 
 import TheTeaserText from '@/components/molecules/Teaser/common/TeaserCommonText.vue'
 import { TeaserTextProps } from '~/components/molecules/Teaser/common/TeaserCommonText'
+import { Layout, Col, Row } from '@/components/core/grid'
 
 export const TeaserInlineProps = {
   link: {
@@ -23,5 +24,8 @@ export default defineComponent({
     TheTeaserText,
     Anchor,
     ThePicture,
+    Layout,
+    Row,
+    Col,
   },
 })
