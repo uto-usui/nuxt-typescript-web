@@ -14,7 +14,7 @@
                 />
               </div>
             </Col>
-            <Col :spanMobile="5" :offsetMobile="1">
+            <Col :spanMobile="5">
               <div class="ti__text-wrap">
                 <TheTeaserText
                   :pub-date="pubDate"
