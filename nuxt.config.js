@@ -172,9 +172,10 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    splitChunks: {
-      layouts: true,
-    },
+    // TODO wait patch version
+    // splitChunks: {
+    //   layouts: true,
+    // },
 
     loaders: {
       scss,
