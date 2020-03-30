@@ -5,7 +5,7 @@
       <div class="ti__area">
         <Layout full>
           <Row :align="'center'">
-            <Col :spanMobile="6">
+            <Col :span-mobile="6">
               <div class="ti__img">
                 <ThePicture
                   :src="require(`Images/test/02.jpg`)"
@@ -14,7 +14,7 @@
                 />
               </div>
             </Col>
-            <Col :spanMobile="5">
+            <Col :span-mobile="5">
               <div class="ti__text-wrap">
                 <TheTeaserText
                   :pub-date="pubDate"

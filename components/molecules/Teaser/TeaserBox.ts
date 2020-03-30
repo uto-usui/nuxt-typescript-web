@@ -1,5 +1,6 @@
 import { defineComponent } from '@vue/composition-api'
 
+import TheDivider from '@/components/atom/TheDivider/TheDivider'
 import Anchor from '~/components/core/Anchor/Anchor'
 import ThePicture from '~/components/atom/ThePicture/ThePicture'
 
@@ -7,7 +8,6 @@ import TheTeaserText from '~/components/molecules/Teaser/common/TeaserCommonText
 import { TeaserTextProps } from '~/components/molecules/Teaser/common/TeaserCommonText'
 import TheHed from '~/components/atom/TheHed/TheHed'
 import TheButton from '~/components/atom/TheButton/TheButton'
-import TheDivider from '@/components/atom/TheDivider/TheDivider'
 
 export const TeaserBoxProps = {
   link: {

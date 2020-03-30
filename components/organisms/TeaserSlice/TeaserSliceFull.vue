@@ -2,7 +2,7 @@
   <div class="teaser-slice-full">
     <Layout full>
       <Row>
-        <Col :spanMobile="12">
+        <Col :span-mobile="12">
           <div class="tsf__item">
             <TeaserInline full />
           </div>

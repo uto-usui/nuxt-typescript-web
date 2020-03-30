@@ -3,12 +3,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>tag</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <div class="pc__inner">
               <TagList />
             </div>
@@ -19,17 +19,17 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Slice Hed Line</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <SliceHedLine />
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <SliceHedLine
                 :sub="`いまこそ気候崩壊の避けられない真実`"
@@ -37,7 +37,7 @@
               />
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <SliceHedLine small />
             </div>
@@ -48,22 +48,22 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Basic</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div class="pc__inner">
               <TeaserBasic />
             </div>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div class="pc__inner">
               <TeaserBasic />
             </div>
           </Col>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <div class="pc__inner">
               <TeaserBasic large />
             </div>
@@ -74,22 +74,22 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser inline</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserInline />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserInline />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserInline />
             </div>
@@ -100,22 +100,22 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Box</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserBox />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserBox />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserBox />
             </div>
@@ -126,22 +126,22 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser card</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserCard />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserCard />
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TeaserCard />
             </div>
@@ -154,6 +154,8 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
+import SliceHedLine from '@/components/molecules/SliceHedLine/SliceHedLine'
+import TeaserBox from '@/components/molecules/Teaser/TeaserBox'
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
 
@@ -167,8 +169,6 @@ import TagList from '~/components/molecules/TagList/TagList.vue'
 import TeaserBasic from '~/components/molecules/Teaser/TeaserBasic.vue'
 import TeaserInline from '~/components/molecules/Teaser/TeaserInline.vue'
 import TeaserCard from '~/components/molecules/Teaser/TeaserCard'
-import SliceHedLine from '@/components/molecules/SliceHedLine/SliceHedLine'
-import TeaserBox from '@/components/molecules/Teaser/TeaserBox'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {

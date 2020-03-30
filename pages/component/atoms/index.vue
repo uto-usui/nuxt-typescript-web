@@ -2,21 +2,21 @@
   <Wrapper>
     <div class="pc__layout">
       <Layout full>
-        <Row :noGutterDesktop="false" :noGutterTouch="false">
-          <Col :spanMobile="12">
+        <Row :no-gutter-desktop="false" :no-gutter-touch="false">
+          <Col :span-mobile="12">
             <TheHed large>full width</TheHed>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               1
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               2
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               3
             </div>
@@ -26,11 +26,11 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="false" :noGutterTouch="false">
-          <Col :spanMobile="12">
+        <Row :no-gutter-desktop="false" :no-gutter-touch="false">
+          <Col :span-mobile="12">
             <TheHed large>max width</TheHed>
           </Col>
-          <Col :spanMobile="1" v-for="index in 12" :key="`col2${index}`">
+          <Col v-for="index in 12" :key="`col2${index}`" :span-mobile="1">
             <div class="pc__inner">
               {{ index }}
             </div>
@@ -40,36 +40,36 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="true" :noGutterTouch="true">
-          <Col :spanMobile="12">
+        <Row :no-gutter-desktop="true" :no-gutter-touch="true">
+          <Col :span-mobile="12">
             <TheHed large>button</TheHed>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton color="primary" small>small</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton color="secondary">medium</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton large>large</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton outlined color="primary">outlined</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton rounded>rounded</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton large tile>tile</TheButton>
             </div>
@@ -79,28 +79,28 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="true" :noGutterTouch="true">
-          <Col :spanMobile="2">
+        <Row :no-gutter-desktop="true" :no-gutter-touch="true">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton circle>🐈</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton disabled>disabled</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TheButton full x-large color="primary">full</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton x-large text>text</TheButton>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheButton :to="`/`" x-large>text</TheButton>
             </div>
@@ -111,38 +111,38 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <TheHed large>title</TheHed>
           </Col>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <TheHed large>kicker</TheHed>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheHed small>title</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheHed>title</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheHed large>title</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheKicker small>kicker<br />kicker</TheKicker>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheKicker :html="`kicker`">kicker</TheKicker>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheKicker :html="`kicker`" large>kicker</TheKicker>
             </div>
@@ -153,34 +153,34 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <TheHed large>publish date</TheHed>
           </Col>
-          <Col :spanMobile="6">
+          <Col :span-mobile="6">
             <TheHed large>dec</TheHed>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" small
                 >2000.12.12 TUE 18:00
               </PublishDate>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`"
                 >2000.12.12 TUE 18:00
               </PublishDate>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <PublishDate :datetime="`2020-03-03T01:55:09.304Z`" large
                 >2000.12.12 TUE 18:00
               </PublishDate>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheDec small
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -189,7 +189,7 @@
               </TheDec>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheDec
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -197,7 +197,7 @@
               </TheDec>
             </div>
           </Col>
-          <Col :spanMobile="2">
+          <Col :span-mobile="2">
             <div class="pc__inner">
               <TheDec large
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -211,10 +211,10 @@
     <div class="pc__layout">
       <Layout full>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <TheHed large>divider</TheHed>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheDivider />
             </div>
@@ -225,20 +225,20 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <TheHed large>by line</TheHed>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <ByLine small>By YUTARO KOSHIMOTO</ByLine>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <ByLine>By YUTARO KOSHIMOTO</ByLine>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <ByLine large>By YUTARO KOSHIMOTO</ByLine>
             </div>
@@ -249,10 +249,10 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <TheHed large>picture</TheHed>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
@@ -268,7 +268,7 @@
               ></ThePicture>
             </div>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
@@ -284,7 +284,7 @@
               ></ThePicture>
             </div>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
@@ -300,7 +300,7 @@
               ></ThePicture>
             </div>
           </Col>
-          <Col :spanMobile="3">
+          <Col :span-mobile="3">
             <div>
               <ThePicture
                 :src="require(`Images/test/02.jpg`)"
@@ -322,10 +322,10 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <TheHed large>paragraph</TheHed>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TheParagraph small
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
@@ -334,7 +334,7 @@
               >
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TheParagraph
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
@@ -343,7 +343,7 @@
               >
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <TheParagraph large
                 >Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem
@@ -360,8 +360,6 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import Wrapper from '~/components/Wrapper.vue'
-import Heading1 from '~/components/Heading1.vue'
 
 import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
@@ -377,6 +375,8 @@ import TheHed from '@/components/atom/TheHed/TheHed'
 import TheKicker from '@/components/atom/TheKicker/TheKicker'
 import TheParagraph from '@/components/atom/TheParagraph/TheParagraph'
 import ThePicture from '@/components/atom/ThePicture/ThePicture'
+import Heading1 from '~/components/Heading1.vue'
+import Wrapper from '~/components/Wrapper.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'

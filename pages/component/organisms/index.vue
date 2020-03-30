@@ -3,12 +3,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice Half</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceHalf />
             </div>
@@ -19,12 +19,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice Four</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceFour />
             </div>
@@ -35,12 +35,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice Blank</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceBlank />
             </div>
@@ -51,12 +51,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice Trio</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceTrio />
             </div>
@@ -67,12 +67,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice Boxes</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceBoxes />
             </div>
@@ -83,12 +83,12 @@
     <div class="pc__layout">
       <Layout>
         <Row>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TheHed large>Teaser Slice full</TheHed>
             </div>
           </Col>
-          <Col :spanMobile="12">
+          <Col :span-mobile="12">
             <div class="pc__inner">
               <TeaserSliceFull />
             </div>
@@ -101,6 +101,8 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
+import TeaserSliceBoxes from '@/components/organisms/TeaserSlice/TeaserSliceBoxes'
+import TeaserSliceFull from '@/components/organisms/TeaserSlice/TeaserSliceFull'
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
 
@@ -114,8 +116,6 @@ import TeaserSliceHalf from '~/components/organisms/TeaserSlice/TeaserSliceHalf.
 import TeaserSliceFour from '~/components/organisms/TeaserSlice/TeaserSliceFour.vue'
 import TeaserSliceTrio from '~/components/organisms/TeaserSlice/TeaserSliceTrio'
 import TeaserSliceBlank from '~/components/organisms/TeaserSlice/TeaserSliceBlank'
-import TeaserSliceBoxes from '@/components/organisms/TeaserSlice/TeaserSliceBoxes'
-import TeaserSliceFull from '@/components/organisms/TeaserSlice/TeaserSliceFull'
 
 export default mixins(headMixin, TransitionMixin).extend({
   components: {

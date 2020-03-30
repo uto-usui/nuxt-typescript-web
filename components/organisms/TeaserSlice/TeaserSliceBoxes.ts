@@ -1,8 +1,8 @@
 import { defineComponent, PropType } from '@vue/composition-api'
 
+import TeaserBox from '@/components/molecules/Teaser/TeaserBox'
 import TeaserSliceJson from './TeaserSlice.json'
 import { Col, Layout, Row } from '~/components/core/grid'
-import TeaserBox from '@/components/molecules/Teaser/TeaserBox'
 
 export const TeaserSliceFourProps = {
   list: {

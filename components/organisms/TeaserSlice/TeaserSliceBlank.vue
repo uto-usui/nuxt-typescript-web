@@ -2,26 +2,26 @@
   <div class="teaser-slice-blank">
     <Layout full>
       <Row>
-        <Col :spanMobile="12">
+        <Col :span-mobile="12">
           <div class="tsb__title">
             <SliceHedLine :sub="`This is short lead texts... `" :to="''" />
           </div>
         </Col>
-        <Col :spanMobile="12">
+        <Col :span-mobile="12">
           <div class="tsb__divider">
             <TheDivider />
           </div>
         </Col>
-        <Col :spanMobile="12">
+        <Col :span-mobile="12">
           <div class="tsh__sub">
             <SliceHedLine :title="`#cat`" small />
           </div>
         </Col>
         <Col
-          :spanMobile="3"
-          :offsetMobile="index === 1 ? 3 : null"
           v-for="index in 3"
           :key="`tsfCol${index}`"
+          :span-mobile="3"
+          :offset-mobile="index === 1 ? 3 : null"
         >
           <div class="tsb__item">
             <TeaserBasic :title="list[index - 1].title" />

@@ -1,5 +1,5 @@
 <template>
-  <h1 v-text="text" class="ph__title" />
+  <h1 class="ph__title" v-text="text" />
 </template>
 
 <script lang="ts">

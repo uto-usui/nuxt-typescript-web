@@ -2,21 +2,21 @@
   <Wrapper>
     <div class="pc__layout">
       <Layout full>
-        <Row :noGutterDesktop="false" :noGutterTouch="false">
-          <Col :spanMobile="12">
+        <Row :no-gutter-desktop="false" :no-gutter-touch="false">
+          <Col :span-mobile="12">
             <TheHed large>full width</TheHed>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <n-link to="/component/atoms/">atoms</n-link>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <n-link to="/component/molecules/">molecules</n-link>
             </div>
           </Col>
-          <Col :spanMobile="4">
+          <Col :span-mobile="4">
             <div class="pc__inner">
               <n-link to="/component/organisms/">organisms</n-link>
             </div>
@@ -26,11 +26,11 @@
     </div>
     <div class="pc__layout">
       <Layout>
-        <Row :noGutterDesktop="false" :noGutterTouch="false">
-          <Col :spanMobile="12">
+        <Row :no-gutter-desktop="false" :no-gutter-touch="false">
+          <Col :span-mobile="12">
             <TheHed large>max width</TheHed>
           </Col>
-          <Col :spanMobile="1" v-for="index in 12" :key="`col2${index}`">
+          <Col v-for="index in 12" :key="`col2${index}`" :span-mobile="1">
             <div class="pc__inner">
               {{ index }}
             </div>
@@ -43,8 +43,6 @@
 
 <script lang="ts">
 import mixins from 'vue-typed-mixins'
-import Wrapper from '~/components/Wrapper.vue'
-import Heading1 from '~/components/Heading1.vue'
 
 import Col from '@/components/core/grid/Col.vue'
 import Row from '@/components/core/grid/Row.vue'
@@ -62,6 +60,8 @@ import TheParagraph from '@/components/atom/TheParagraph/TheParagraph'
 import ThePicture from '@/components/atom/ThePicture/ThePicture'
 
 import TagList from '@/components/molecules/TagList/TagList.vue'
+import Heading1 from '~/components/Heading1.vue'
+import Wrapper from '~/components/Wrapper.vue'
 
 import headMixin from '~/mixins/Head.vue'
 import TransitionMixin from '~/mixins/Transition.vue'
