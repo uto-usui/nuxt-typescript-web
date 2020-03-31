@@ -1,13 +1,14 @@
 @import "./variable";
 
 .tag-list {
-  // display: flex;
+  text-align: left;
 }
 
 .tl__items {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tl__item {
-  margin-left: 1rem;
+  margin-right: 1em;
 }
