@@ -3,7 +3,7 @@
     <Anchor :to="link" />
     <div class="ti__inner">
       <div class="ti__area">
-        <Layout full>
+        <Layout>
           <Row :align="'center'">
             <Col :span-mobile="6">
               <div class="ti__img">

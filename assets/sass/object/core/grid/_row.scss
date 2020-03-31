@@ -19,13 +19,18 @@ $justifyValues: join($alignment, space-between space-around);
     }
   }
 
-  // negative margin
   @each $size, $width in $breakpoints {
+    // negative margin
     @media all and (min-width: #{$width}) {
       $gutter: map-deep-get($grid-gutters, $size);
 
       margin-right: calc(#{$gutter} * -1);
       margin-left: calc(#{$gutter} * -1);
+
+      .layout.layout--full & {
+        margin-right: calc(#{$gutter} * -1 / 2);
+        margin-left: calc(#{$gutter} * -1 / 2);
+      }
     }
 
     @each $alignValue in $alignValues {
@@ -43,34 +48,34 @@ $justifyValues: join($alignment, space-between space-around);
 
   // no gutter class
   @include touch {
-    &.row--no-gutter-touch {
-      padding-right: 0;
-      padding-left: 0;
-
-      @each $size, $width in $breakpoints {
-        @media all and (min-width: #{$width}) {
-          $gutter: map-deep-get($grid-gutters, $size);
-
-          margin-right: calc(#{$gutter} / 2 * -1);
-          margin-left: calc(#{$gutter} / 2 * -1);
-        }
-      }
-    }
+    //&.row--no-gutter-touch {
+    //  padding-right: 0;
+    //  padding-left: 0;
+    //
+    //  @each $size, $width in $breakpoints {
+    //    @media all and (min-width: #{$width}) {
+    //      $gutter: map-deep-get($grid-gutters, $size);
+    //
+    //      margin-right: calc(#{$gutter} / 2 * -1);
+    //      margin-left: calc(#{$gutter} / 2 * -1);
+    //    }
+    //  }
+    //}
   }
 
   @include desktop {
-    &.row--no-gutter-desktop {
-      padding-right: 0;
-      padding-left: 0;
-
-      @each $size, $width in $breakpoints {
-        @media all and (min-width: #{$width}) {
-          $gutter: map-deep-get($grid-gutters, $size);
-
-          margin-right: calc(#{$gutter} / 2 * -1);
-          margin-left: calc(#{$gutter} / 2 * -1);
-        }
-      }
-    }
+    //&.row--no-gutter-desktop {
+    //  padding-right: 0;
+    //  padding-left: 0;
+    //
+    //  @each $size, $width in $breakpoints {
+    //    @media all and (min-width: #{$width}) {
+    //      $gutter: map-deep-get($grid-gutters, $size);
+    //
+    //      margin-right: calc(#{$gutter} / 2 * -1);
+    //      margin-left: calc(#{$gutter} / 2 * -1);
+    //    }
+    //  }
+    //}
   }
 }

@@ -1,6 +1,4 @@
 .col {
-  width: 100%;
-
   // responsive gutter
   @each $size, $width in $breakpoints {
     //
@@ -16,9 +14,14 @@
       $n: $grid-columns;
 
       @while $n > 0 {
-        &--span-#{$size}-#{$n} {
-          flex: 0 0 $n / $grid-columns * 100%;
-          max-width: $n / $grid-columns * 100%;
+        &.col--span-#{$size}-#{$n} {
+          flex: 0 0 calc(#{$n} / #{$grid-columns} * (90vw + #{$gutter}));
+          max-width: calc(#{$n} / #{$grid-columns} * (90vw + #{$gutter}));
+          //
+          .layout.layout--full & {
+            flex: 0 0 $n / $grid-columns * 100vw;
+            max-width: $n / $grid-columns * 100vw;
+          }
         }
 
         &--order-#{$size}-#{$n} {
@@ -32,11 +35,40 @@
 
       @while $m >= 0 {
         &--offset-#{$size}-#{$m} {
-          margin-left: $m / $grid-columns * 100%;
+          margin-left: calc(#{$m} / #{$grid-columns} * (90vw + #{$gutter}));
+          //
+          .layout.layout--full & {
+            margin-left: $m / $grid-columns * 100vw;
+          }
         }
         $m: $m - 1;
       }
 
+    }
+  }
+
+  @include fullHd {
+    @each $size, $width in $breakpoints {
+      // size class
+      $o: $grid-columns;
+
+      @while $o > 0 {
+        &.col--span-#{$size}-#{$o} {
+          flex: 0 0 $o / $grid-columns * 100%;
+          max-width: $o / $grid-columns * 100%;
+        }
+
+        $o: $o - 1;
+      }
+
+      $p: $grid-columns;
+
+      @while $p >= 0 {
+        &--offset-#{$size}-#{$p} {
+          margin-left: $p / $grid-columns * 100%;
+        }
+        $p: $p - 1;
+      }
     }
   }
 

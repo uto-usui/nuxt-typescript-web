@@ -1,6 +1,6 @@
 <template>
   <div class="teaser-slice-full">
-    <Layout full>
+    <Layout>
       <Row>
         <Col :span-mobile="12">
           <div class="tsf__item">
