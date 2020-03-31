@@ -19,9 +19,9 @@ export const state = (): S => ({
  * getters
  */
 export const getters: Getters<S, G> = {
-  // getIsMenuOpen(state, getters, rootState, rootgetters) {
-  //   return state.isMenuOpen
-  // },
+  getIsMenuOpen(state, _getters, _rootState, _rootgetters) {
+    return state.isMenuOpen
+  },
 }
 
 /**

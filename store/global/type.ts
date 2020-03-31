@@ -18,10 +18,10 @@ export interface S {
  * getters
  */
 export interface G {
-  // getIsMenuOpen: boolean
+  getIsMenuOpen: boolean
 }
 export interface RG {
-  // 'global/getIsMenuOpen': G['getIsMenuOpen']
+  'global/getIsMenuOpen': G['getIsMenuOpen']
 }
 
 /**
