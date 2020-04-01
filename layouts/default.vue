@@ -17,15 +17,7 @@
     class="layout-default"
   >
     <div class="ld__header">
-      <Header />
-    </div>
-
-    <div class="ld__menu-trigger">
-      <MenuTrigger />
-    </div>
-
-    <div class="ld__menu">
-      <Menu />
+      <TheHeader />
     </div>
 
     <div class="ld__main">
@@ -42,11 +34,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import TheHeader from '@/components/organisms/TheHeader/TheHeader.vue'
 import Footer from '~/components/layout/Footer.vue'
 import Debug from '~/components/layout/Debug.vue'
-import Header from '~/components/layout/Header.vue'
-import Menu from '~/components/layout/Menu.vue'
-import MenuTrigger from '~/components/layout/MenuTrigger.vue'
 
 export type Data = {
   animationID: number
@@ -56,9 +46,7 @@ export default Vue.extend({
   components: {
     Footer,
     Debug,
-    Header,
-    Menu,
-    MenuTrigger,
+    TheHeader,
   },
   data: (): Data => ({
     animationID: 0,
@@ -74,6 +62,8 @@ export default Vue.extend({
     })
     //
     this.eventAttach()
+
+    // this.$dispatch('global/')
   },
   updated() {
     //

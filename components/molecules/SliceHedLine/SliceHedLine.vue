@@ -1,6 +1,6 @@
 <template>
   <div class="slice-hed-line">
-    <Layout full>
+    <Layout>
       <Row :align="'center'">
         <Col :span-mobile="sub ? 3 : 6">
           <div class="shl__title">

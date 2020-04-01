@@ -1,0 +1,54 @@
+@import "./variable";
+
+.the-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  transition: color 1s $easeOutSine;
+}
+
+@include scheme(the-header) using($material) {
+  color: map-deep-get($material, 'text', 'primary');
+}
+
+.th__inner {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+@include scheme(th__inner) using($material) {
+  background-color: map-deep-get($material, 'header', 'base');
+}
+
+.th__logo-wrap {
+  width: 100%;
+}
+
+.th__logo {
+  font-family: $font-montserrat;
+  text-align: left;
+  letter-spacing: 0.2em;
+}
+
+.th__trigger {
+  position: absolute;
+  top: 50%;
+  right: space-scalar(9);
+  transform: translateY(-50%);
+}
+
+.th__overlay {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+
+@include scheme(th__overlay) using($material) {
+  background-color: map-deep-get($material, 'header', 'base');
+}
