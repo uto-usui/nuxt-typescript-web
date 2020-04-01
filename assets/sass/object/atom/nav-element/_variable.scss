@@ -2,16 +2,16 @@ $nav-element-sizes: () !default;
 $nav-element-sizes: map-deep-merge(
   (
     'small': (
-      'mobile': (-2, 0),
-      'desktop': (-1, 0),
+      'mobile': (-4, 0),
+      'desktop': (0, 0),
     ),
     'medium': (
-      'mobile': (-1, 2),
-      'desktop': (0, 2),
+      'mobile': (2, 0),
+      'desktop': (2, 0),
     ),
     'large': (
-      'mobile': (1, 1),
-      'desktop': (2, 1),
+      'mobile': (2, 0),
+      'desktop': (4, 0),
     ),
   ),
   $nav-element-sizes

@@ -1,18 +1,28 @@
 @import "./variable";
 
-@include scheme(nav-element) using($material) {
+@include scheme('nav-element') using($material) {
   color: map-deep-get($material, 'text', 'link');
+  //
+  @include link-states($material);
+}
+
+@include scheme('nav-element.nav-element--large') using($material) {
+  color: map-deep-get($material, 'text', 'primary');
   //
   @include link-states($material);
 }
 
 .nav-element {
   //
+  &.nav-element--large {
+    font-weight: 600;
+  }
+  //
   @each $name, $sizes in $nav-element-sizes {
     &.nav-element--#{$name} {
       @each $breakpoint, $size in $sizes {
         @include from(map-deep-get($breakpoints, $breakpoint)) {
-          font-size: $size;
+          @include sizes($size);
         }
       }
     }
