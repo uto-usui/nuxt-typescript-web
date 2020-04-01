@@ -1,9 +1,14 @@
 <template>
-  <div class="the-header-trigger">
+  <button
+    class="the-header-trigger"
+    @click="
+      $dispatch('global/setIsMenuOpen', !$getters['global/getIsMenuOpen'])
+    "
+  >
     <div class="tht__inner">
       menu
     </div>
-  </div>
+  </button>
 </template>
 
 <script lang="ts" src="./TheHeaderTrigger.ts"></script>
