@@ -25,6 +25,9 @@ $material-dark: map-deep-merge(
     'surface': #121212,
     'cards': map-get($material-dark-elevation-colors, '1'),
     'box': map-get($material-dark-elevation-colors, '1'),
+    "header": (
+      "base": map-get($material-dark-elevation-colors, '1'),
+    ),
     'dividers': rgba(map-get($shades, 'white'), 0.12),
     'text': (
       'theme': map-get($shades, 'white'),
