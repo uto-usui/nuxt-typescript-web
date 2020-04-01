@@ -1,0 +1,23 @@
+@import "./variable";
+
+.nav-list {
+  text-align: left;
+}
+
+.nl__items {
+  //
+}
+
+.nl__item {
+  + .nl__item {
+    margin-top: space-scalar(3);
+    //
+    &.nl__item--large {
+      margin-top: space-scalar(4);
+    }
+    //
+    &.nl__item--small {
+      margin-top: space-scalar(2);
+    }
+  }
+}
