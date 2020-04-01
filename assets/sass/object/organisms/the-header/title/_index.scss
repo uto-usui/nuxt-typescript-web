@@ -1,0 +1,7 @@
+@import "./variable";
+
+.the-header-title {
+  font-weight: 600;
+  color: map-deep-get($color-primary-group, 'base');
+  text-align: left;
+}
